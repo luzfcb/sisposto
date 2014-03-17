@@ -1,0 +1,1 @@
+web: gunicorn --pythonpath="$PWD/sisposto" config.wsgi:application
