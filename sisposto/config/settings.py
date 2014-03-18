@@ -57,6 +57,8 @@ class Common(Configuration):
     # Apps specific for this project go here.
     LOCAL_APPS = (
         'users',  # custom users app
+        'main',
+        'core',
         # Your stuff: custom apps go here
     )
 
@@ -235,6 +237,7 @@ class Common(Configuration):
     ACCOUNT_AUTHENTICATION_METHOD = "username"
     ACCOUNT_EMAIL_REQUIRED = True
     ACCOUNT_EMAIL_VERIFICATION = "mandatory"
+    ACCOUNT_SIGNUP_FORM_CLASS = "users.forms.SignupForm"
     ########## END AUTHENTICATION CONFIGURATION
 
     ########## Custom user app defaults
@@ -441,6 +444,8 @@ if 1 == 2:
         'extra_views',  # conjunto de views reutilizaveis
         'braces',  # Reusable, generic mixins for Django
         'parsley',  # validacao no cliente
+        'main',
+        'core',
     )
 
     ########## MIDDLEWARE CONFIGURATION

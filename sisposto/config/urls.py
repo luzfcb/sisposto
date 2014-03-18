@@ -9,11 +9,13 @@ from django.views.generic import TemplateView
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
+from main.views import HomeView
+
 admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^$',
-        TemplateView.as_view(template_name='pages/home.html'),
+        HomeView.as_view(),
         name="home"),
     url(r'^about/$',
         TemplateView.as_view(template_name='pages/about.html'),

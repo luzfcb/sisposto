@@ -33,3 +33,15 @@ class UserProfile(models.Model):
 
     def __str__(self):
         return self.nome_completo
+
+
+
+class Empresa(models.Model):
+    nome = models.CharField(max_length=255)
+
+class SubEmpresa(models.Model):
+    nome = models.CharField(max_length=255)
+
+
+class Posto(models.Model):
+    funcionarios = models.ManyToManyField(UserProfile, related_name='posto')
