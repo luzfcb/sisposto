@@ -5,17 +5,20 @@ from django.core.urlresolvers import reverse
 # view imports
 from django.views.generic import DetailView
 from django.views.generic import RedirectView
-from django.views.generic import UpdateView
 from django.views.generic import ListView
 
 # Only authenticated users can access views using this.
 from braces.views import LoginRequiredMixin
 
+from extra_views import UpdateWithInlinesView
+
 # Import the form from users/forms.py
+
 from .forms import UserForm
 
 # Import the customized User model
 from .models import User
+from users.form_inlines import UserProfileInline
 
 
 class UserDetailView(LoginRequiredMixin, DetailView):
@@ -33,9 +36,10 @@ class UserRedirectView(LoginRequiredMixin, RedirectView):
             kwargs={"username": self.request.user.username})
 
 
-class UserUpdateView(LoginRequiredMixin, UpdateView):
+class UserUpdateView(LoginRequiredMixin, UpdateWithInlinesView):
 
     form_class = UserForm
+    inlines = [UserProfileInline]
 
     # we already imported User in the view code above, remember?
     model = User

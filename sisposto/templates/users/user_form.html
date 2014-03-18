@@ -12,6 +12,13 @@
             <form class="form-horizontal" method="post" action="{% url 'users:update' %}">
                 {% csrf_token %}
                 {{ form|crispy }}
+                {% if inlines %}
+                    {% for form_set in inlines %}
+                        {% if form_set %}
+                            {{ form_set|crispy }}
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
                 <div class="control-group">
                   <div class="controls">
                     <button type="submit" class="btn">Update</button>
