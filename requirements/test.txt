@@ -2,3 +2,18 @@
 -r base.txt
 coverage==3.7.1
 django-discover-runner==1.0
+# http://bitbucket.org/memedough/cov-core/overview
+cov-core
+
+# http://pylib.readthedocs.org/en/latest/
+py
+
+# http://pytest.org/latest/
+# http://pythontesting.net/framework/pytest/pytest-introduction/
+pytest
+
+# http://bitbucket.org/memedough/pytest-cov/overview
+pytest-cov
+
+# http://pytest-django.readthedocs.org/en/latest/
+pytest-django
