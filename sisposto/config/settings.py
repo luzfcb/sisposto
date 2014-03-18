@@ -49,6 +49,9 @@ class Common(Configuration):
         'south',  # Database migration helpers:
         'crispy_forms',  # Form layouts
         'avatar',  # for user avatars
+        'extra_views',  # conjunto de views reutilizaveis
+        'braces',  # Reusable, generic mixins for Django
+        'parsley',  # validacao no cliente
     )
 
     # Apps specific for this project go here.
@@ -377,7 +380,7 @@ class Production(Common):
 
     ########## EMAIL
     DEFAULT_FROM_EMAIL = values.Value(
-            'sgt <sgt-noreply@sisposto.herokuapp.com>')
+            'Admin - Fabio C. Barrionuevo da Luz <bnafta@gmail.com>')
     EMAIL_HOST = values.Value('smtp.sendgrid.com')
     EMAIL_HOST_PASSWORD = values.SecretValue(environ_prefix="", environ_name="SENDGRID_PASSWORD")
     EMAIL_HOST_USER = values.SecretValue(environ_prefix="", environ_name="SENDGRID_USERNAME")
@@ -435,6 +438,9 @@ if 1 == 2:
         'allauth.account',  # registration
         'allauth.socialaccount',  # registration
         'debug_toolbar',
+        'extra_views',  # conjunto de views reutilizaveis
+        'braces',  # Reusable, generic mixins for Django
+        'parsley',  # validacao no cliente
     )
 
     ########## MIDDLEWARE CONFIGURATION
