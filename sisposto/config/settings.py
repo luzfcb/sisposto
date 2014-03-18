@@ -21,6 +21,7 @@ except ImportError:
     # TODO: Fix this where even if in Dev this class is called.
     pass
 
+from memcacheify import memcacheify
 from configurations import Configuration, values
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
@@ -123,12 +124,13 @@ class Common(Configuration):
     ########## CACHING
     # Do this here because thanks to django-pylibmc-sasl and pylibmc memcacheify is painful to install on windows.
     # memcacheify is what's used in Production
-    CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
-        'LOCATION': ''
-        }
-    }
+    # CACHES = {
+    # 'default': {
+    #     'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+    #     'LOCATION': ''
+    #     }
+    # }
+    CACHES = memcacheify()
     ########## END CACHING
 
     ########## GENERAL CONFIGURATION
@@ -375,7 +377,7 @@ class Production(Common):
 
     ########## EMAIL
     DEFAULT_FROM_EMAIL = values.Value(
-            'sgt <sgt-noreply@posto.herokuapp.com>')
+            'sgt <sgt-noreply@sisposto.herokuapp.com>')
     EMAIL_HOST = values.Value('smtp.sendgrid.com')
     EMAIL_HOST_PASSWORD = values.SecretValue(environ_prefix="", environ_name="SENDGRID_PASSWORD")
     EMAIL_HOST_USER = values.SecretValue(environ_prefix="", environ_name="SENDGRID_USERNAME")
@@ -398,7 +400,7 @@ class Production(Common):
 
     ########## CACHING
     # Only do this here because thanks to django-pylibmc-sasl and pylibmc memcacheify is painful to install on windows.
-    CACHES = values.CacheURLValue(default="memcached://127.0.0.1:11211")
+    # CACHES = values.CacheURLValue(default="memcached://127.0.0.1:11211")
     ########## END CACHING
 
     ########## Your production stuff: Below this line define 3rd party libary settings
