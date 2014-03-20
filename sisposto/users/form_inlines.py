@@ -1,10 +1,11 @@
 # -*- coding: utf8 -*-
 from extra_views import InlineFormSet
-from users.models import UserProfile
+
+from users.models import Pessoa
 from .forms import UserProfileUpdateForm
 
 
 class UserProfileInline(InlineFormSet):
-    model = UserProfile
+    model = Pessoa
 
     form_class = UserProfileUpdateForm

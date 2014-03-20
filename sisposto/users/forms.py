@@ -2,7 +2,7 @@
 from django import forms
 from django.utils.translation import ugettext_lazy as _
 
-from .models import User, UserProfile
+from .models import User, Pessoa
 
 
 class UserForm(forms.ModelForm):
@@ -18,7 +18,7 @@ class UserForm(forms.ModelForm):
 class UserProfileUpdateForm(forms.ModelForm):
     class Meta:
         # Set this form to use the User model.
-        model = UserProfile
+        model = Pessoa
         fields = ('nome_completo', 'data_de_nascimento', 'naturalidade')
 
 

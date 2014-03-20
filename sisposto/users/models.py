@@ -18,7 +18,7 @@ class User(AbstractUser):
 
 
 @python_2_unicode_compatible
-class UserProfile(models.Model):
+class Pessoa(models.Model):
     user = models.OneToOneField(User, related_name='profile', null=True, blank=True)
     nome_completo = models.CharField(
         verbose_name=_('Nome Completo'),
@@ -36,12 +36,38 @@ class UserProfile(models.Model):
 
 
 
-class Empresa(models.Model):
-    nome = models.CharField(max_length=255)
-
+# escola estadual
 class SubEmpresa(models.Model):
     nome = models.CharField(max_length=255)
 
+# seduc
+class Empresa(models.Model):
+    nome = models.CharField(max_length=255)
+    subempresas = models.ManyToManyField('SubEmpresa',  through='SubempresaEmpresa')
 
+
+class SubempresaEmpresa(models.Model):
+    empresa = models.ForeignKey('Empresa')
+    subempresa = models.ForeignKey('SubEmpresa')
+    data_vinculo = models.CharField(max_length=255, null=True, blank=True)
+    data_desvinculo = models.CharField(max_length=255, null=True, blank=True)
+
+
+
+
+class Trabalham(models.Model):
+    nome = models.CharField(max_length=255)
+    pessoa = models.ForeignKey('Pessoa', to_field='nome_completo')
+    posto = models.ForeignKey('Posto')
+    registro = models.TextField()
+
+
+
+
+@python_2_unicode_compatible
 class Posto(models.Model):
-    funcionarios = models.ManyToManyField(UserProfile, related_name='posto')
+    nome = models.CharField(max_length=255)
+    funcionarios = models.ManyToManyField(Pessoa,  through='Trabalham')
+
+    def __str__(self):
+        return "{}".format(self.nome)

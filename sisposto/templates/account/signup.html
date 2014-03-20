@@ -1,4 +1,4 @@
-{% extends "account/base.html" %}
+{% extends "account/login.html" %}
 
 {% load url from future %}
 {% load i18n %}
@@ -6,21 +6,34 @@
 
 {% block title %}{% trans "Signup" %}{% endblock title %}
 
-{% block content %}
+
 <h1>{% trans "Sign Up" %}</h1>
 
 <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
 
-<form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
-  {% csrf_token %}
-  {{ form|crispy }}
+{% block login_register_button %}
+<span id="login-header-space"> <span class="hidden-mobile">Já possui conta?</span> <a href="{% url "account_login" %}" class="btn btn-danger">Faça Login</a> </span>
+{% endblock login_register_button %}
+
+{% block login_register_form_block %}
+<form id="smart-form-register" method="post" action="{% url 'account_signup' %}" class="smart-form client-form">
+{% csrf_token %}
+    <header>
+        Registration is FREE*
+    </header>
+
+  <fieldset>{{ form|crispy }}</fieldset>
   {% if redirect_field_value %}
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
   {% endif %}
-  <button class="btn" type="submit">{% trans "Sign Up" %} &raquo;</button>
+    <footer>
+        <button type="submit" class="btn btn-primary">
+            {% trans "Sign Up" %}
+        </button>
+    </footer>
 </form>
 
 
-{% endblock content %}
+{% endblock login_register_form_block %}
 
 

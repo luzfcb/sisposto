@@ -5,27 +5,50 @@
 
 {% block content %}
 
-<div class="container">
-    <div class="row">
-        <div class="col-lg-12">
+
+    <section id="widget-grid">
+        <article class="col-xs-12 col-sm-6 col-md-6 col-lg-6 sortable-grid ui-sortable">
             <h1>{% block header %}User: {{ user.username }}{% endblock %}</h1>
-            <form class="form-horizontal" method="post" action="{% url 'users:update' %}">
-                {% csrf_token %}
-                {{ form|crispy }}
-                {% if inlines %}
-                    {% for form_set in inlines %}
-                        {% if form_set %}
-                            {{ form_set|crispy }}
-                        {% endif %}
-                    {% endfor %}
-                {% endif %}
-                <div class="control-group">
-                  <div class="controls">
-                    <button type="submit" class="btn">Update</button>
-                  </div>
+
+            <div class="jarviswidget jarviswidget-sortable" id="wid-id-1" role="widget" style="">
+                <header role="heading">
+                </header>
+                <div role="content">
+
+                    <!-- end widget edit box -->
+
+                    <!-- widget content -->
+                    <div class="widget-body">
+                        <form class="" method="post" action="{% url 'users:update' %}">
+                            {% csrf_token %}
+                            {{ form|crispy }}
+                            {% if inlines %}
+                                {% for form_set in inlines %}
+                                    {% if form_set %}
+                                        {{ form_set|crispy }}
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
+                            <div class="form-actions">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <button class="btn btn-default" type="submit">
+                                            Cancel
+                                        </button>
+                                        <button class="btn btn-primary" type="submit">
+                                            <i class="fa fa-save"></i>
+                                            Submit
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-            </form>
-        </div>
-    </div>
-</div>
+            </div>
+
+        </article>
+    </section>
+
+
 {% endblock %}
