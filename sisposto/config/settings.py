@@ -50,6 +50,9 @@ class Common(Configuration):
         'crispy_forms',  # Form layouts
         'avatar',  # for user avatars
         'extra_views',  # conjunto de views reutilizaveis
+        'sitetree',
+        'sitetree_smartadmin',
+        'django_user_agents',  # mobile detect by webbrowser useragent
         'braces',  # Reusable, generic mixins for Django
         'parsley',  # validacao no cliente
     )
@@ -78,10 +81,12 @@ class Common(Configuration):
     MIDDLEWARE_CLASSES = (
         'django.contrib.sessions.middleware.SessionMiddleware',
         'django.middleware.common.CommonMiddleware',
+        'django.middleware.locale.LocaleMiddleware',
         'django.middleware.csrf.CsrfViewMiddleware',
         'django.contrib.auth.middleware.AuthenticationMiddleware',
         'django.contrib.messages.middleware.MessageMiddleware',
         'django.middleware.clickjacking.XFrameOptionsMiddleware',
+        'django_user_agents.middleware.UserAgentMiddleware',
     )
     ########## END MIDDLEWARE CONFIGURATION
 
@@ -238,6 +243,9 @@ class Common(Configuration):
     ACCOUNT_EMAIL_REQUIRED = True
     ACCOUNT_EMAIL_VERIFICATION = "mandatory"
     ACCOUNT_SIGNUP_FORM_CLASS = "users.forms.SignupForm"
+    LOGIN_URL = 'account_login'
+    LOGOUT_URL = 'account_logout'
+    ACCOUNT_LOGOUT_ON_GET = True
     ########## END AUTHENTICATION CONFIGURATION
 
     ########## Custom user app defaults
@@ -284,7 +292,8 @@ class Common(Configuration):
 
 
     ########## Your common stuff: Below this line define 3rd party libary settings
-
+    #SITETREE_MODEL_TREE = 'sitetree_smartadmin.SmartTree'
+    SITETREE_MODEL_TREE_ITEM = 'sitetree_smartadmin.SmartTreeItem'
 
 class Local(Common):
 
@@ -452,11 +461,12 @@ if 1 == 2:
     MIDDLEWARE_CLASSES = (
         'django.contrib.sessions.middleware.SessionMiddleware',
         'django.middleware.common.CommonMiddleware',
+        'django.middleware.locale.LocaleMiddleware',
         'django.middleware.csrf.CsrfViewMiddleware',
         'django.contrib.auth.middleware.AuthenticationMiddleware',
         'django.contrib.messages.middleware.MessageMiddleware',
         'django.middleware.clickjacking.XFrameOptionsMiddleware',
-        'debug_toolbar.middleware.DebugToolbarMiddleware',
+        'django_user_agents.middleware.UserAgentMiddleware',
     )
     ########## END MIDDLEWARE CONFIGURATION
 

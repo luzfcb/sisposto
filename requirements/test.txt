@@ -17,3 +17,6 @@ pytest-cov
 
 # http://pytest-django.readthedocs.org/en/latest/
 pytest-django
+
+# https://github.com/vandersonmota/model_mommy
+model_mommy
