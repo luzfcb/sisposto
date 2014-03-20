@@ -23,16 +23,21 @@ class Pessoa(models.Model):
     nome_completo = models.CharField(
         verbose_name=_('Nome Completo'),
         max_length=85,
-
+        unique=True,
     )
     data_de_nascimento = models.DateField(
         verbose_name=_('Data de Nascimento'),
         null=True
     )
     naturalidade = models.CharField(max_length=255, null=True, blank=True)
+    cadastro_concluido = models.BooleanField(default=False, editable=False)
 
     def __str__(self):
         return self.nome_completo
+
+
+class Estado(models.Model):
+    nome = models.CharField(max_length=255)
 
 
 
@@ -41,13 +46,14 @@ class SubEmpresa(models.Model):
     nome = models.CharField(max_length=255)
 
 # seduc
-class Empresa(models.Model):
+class SecretariaEstado(models.Model):
+    estado = models.OneToOneField('Estado', related_name='secretarias')
     nome = models.CharField(max_length=255)
     subempresas = models.ManyToManyField('SubEmpresa',  through='SubempresaEmpresa')
 
 
 class SubempresaEmpresa(models.Model):
-    empresa = models.ForeignKey('Empresa')
+    empresa = models.ForeignKey('SecretariaEstado')
     subempresa = models.ForeignKey('SubEmpresa')
     data_vinculo = models.CharField(max_length=255, null=True, blank=True)
     data_desvinculo = models.CharField(max_length=255, null=True, blank=True)

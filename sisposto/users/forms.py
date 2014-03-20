@@ -21,8 +21,11 @@ class UserProfileUpdateForm(forms.ModelForm):
         model = Pessoa
         fields = ('nome_completo', 'data_de_nascimento', 'naturalidade')
 
+    def save(self, commit=True):
 
 
+
+        return super(UserProfileUpdateForm, self).save(commit)
 
 
 class SignupForm(forms.Form):
