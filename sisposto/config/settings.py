@@ -87,6 +87,8 @@ class Common(Configuration):
         'django.contrib.messages.middleware.MessageMiddleware',
         'django.middleware.clickjacking.XFrameOptionsMiddleware',
         'django_user_agents.middleware.UserAgentMiddleware',
+        #
+        'users.middleware.UsersMiddleware',
     )
     ########## END MIDDLEWARE CONFIGURATION
 
@@ -295,6 +297,11 @@ class Common(Configuration):
     #SITETREE_MODEL_TREE = 'sitetree_smartadmin.SmartTree'
     SITETREE_MODEL_TREE_ITEM = 'sitetree_smartadmin.SmartTreeItem'
 
+    ########## Users app
+
+    ########## end Users app
+
+
 class Local(Common):
 
     ########## INSTALLED_APPS
@@ -325,6 +332,17 @@ class Local(Common):
     ########## end django-debug-toolbar
 
     ########## Your local stuff: Below this line define 3rd party libary settings
+
+    ########## django-extensions
+    INSTALLED_APPS += ('django_extensions',)
+    GRAPH_MODELS = {
+        'all_applications': False,
+        'group_models': True,
+        'pygraphviz': True,
+        'verbose-names': True,
+        'output': 'diagrama.png',
+    }
+    ########## end django-extensions
 
 
 class Production(Common):
@@ -455,6 +473,7 @@ if 1 == 2:
         'parsley',  # validacao no cliente
         'main',
         'core',
+        'django_extensions',
     )
 
     ########## MIDDLEWARE CONFIGURATION
