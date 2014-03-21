@@ -23,7 +23,6 @@ class Pessoa(models.Model):
     nome_completo = models.CharField(
         verbose_name=_('Nome Completo'),
         max_length=85,
-        unique=True,
     )
     data_de_nascimento = models.DateField(
         verbose_name=_('Data de Nascimento'),
@@ -63,8 +62,8 @@ class SubempresaEmpresa(models.Model):
 
 class Trabalham(models.Model):
     nome = models.CharField(max_length=255)
-    pessoa = models.ForeignKey('Pessoa', to_field='nome_completo')
-    posto = models.ForeignKey('Posto')
+    pessoa = models.ForeignKey('Pessoa', related_name='trabalhos')
+    posto = models.ForeignKey('Posto', related_name='trabalhadores')
     registro = models.TextField()
 
 

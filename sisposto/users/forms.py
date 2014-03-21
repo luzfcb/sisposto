@@ -29,25 +29,17 @@ class UserProfileUpdateForm(forms.ModelForm):
 
 
 class SignupForm(forms.Form):
-    signo_maia = forms.CharField(max_length=30, label='Signo Maia')
-    doenca_preferida = forms.CharField(max_length=30, label='Doenca Preferida')
+    #signo_maia = forms.CharField(max_length=30, label='Signo Maia')
+    #doenca_preferida = forms.CharField(max_length=30, label='Doenca Preferida')
 
-    def save(self, user):
-        doenca_preferida = self.cleaned_data['doenca_preferida']
-        signo_maia = self.cleaned_data['signo_maia']
-        print('#########################################')
-        print('funcao_save')
-        print('doenca_preferida: ', doenca_preferida)
-        print('signo_maia: ', signo_maia)
-        print('#########################################')
+    #def save(self, user):
+    #    #doenca_preferida = self.cleaned_data['doenca_preferida']
+    #    #signo_maia = self.cleaned_data['signo_maia']
 
     def signup(self, request, user):
-        doenca_preferida = self.cleaned_data['doenca_preferida']
-        signo_maia = self.cleaned_data['signo_maia']
-        print('#########################################')
-        print('funcao_signup')
-        print('doenca_preferida: ', doenca_preferida)
-        print('signo_maia: ', signo_maia)
-        print('request: ', request)
-        print('user: ', user.username)
-        print('#########################################')
+    #    #doenca_preferida = self.cleaned_data['doenca_preferida']
+    #    #signo_maia = self.cleaned_data['signo_maia']
+        pass
+
+
+
