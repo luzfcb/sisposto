@@ -1,6 +1,7 @@
 # -*- coding: utf8 -*-
 import re
 from django.conf import settings
+from django.contrib.auth.models import AnonymousUser
 from django.core.urlresolvers import reverse
 from django.shortcuts import redirect
 from django.views.generic import RedirectView
@@ -31,15 +32,16 @@ class UsersMiddleware(object):
         usuario = request.user
         if usuario:
             if usuario.is_authenticated():
-                try:
-                    profile = Pessoa.objects.get(user=usuario)
-                    if not profile.cadastro_concluido:
+                if not isinstance(usuario, AnonymousUser):
+                    try:
+                        profile = Pessoa.objects.get(user=usuario)
+                        if not profile.cadastro_concluido:
+                            if not profile_update_url_re.match(request.path):
+                                return redirect('users:update')
+                    except Pessoa.DoesNotExist as e:
+                        logger.debug(e.message)
                         if not profile_update_url_re.match(request.path):
                             return redirect('users:update')
-                except Pessoa.DoesNotExist as e:
-                    logger.debug(e.message)
-                    if not profile_update_url_re.match(request.path):
-                        return redirect('users:update')
             else:
                 print('NÃO esta autenticado')
                 #request.session['postos_disponiveis'] = "MUITOS POSTOS"
