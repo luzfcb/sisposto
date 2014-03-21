@@ -1,7 +1,7 @@
 {% load staticfiles %}
 {% load sitetree %}
 <!-- Note: This width of the aside area can be adjusted through LESS variables -->
-<aside id="left-panel">
+<aside id="left-panel" class="hidden-print">
 
     {% block login_info %}
 
@@ -34,6 +34,7 @@
         Please note that these links work a bit different than
         traditional hre="" links. See documentation for details.
         -->
+
 
         {% sitetree_menu from "sgt" include "trunk,topmenu" template "smartsitetree/menu.html" %}
 {#        <ul>#}

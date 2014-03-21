@@ -57,7 +57,7 @@
 		<!-- possible classes: minified, fixed-ribbon, fixed-header, fixed-width-->
 
 		<!-- HEADER -->
-		<header id="header">
+		<header id="header" class="hidden-print">
 			<div id="logo-group">
 
 				<!-- PLACE YOUR LOGO HERE -->
@@ -260,9 +260,9 @@
                                         ×
                                     </button>
 
-                                    <i class="fa-fw fa {% if message.tags %}fa-{{ message.tags }}{% endif %}"></i>
+                                    <i class="fa-fw fa {% if message.tags %}fa-{% if message.tags == "success" %}check{% elif message.tags == "error" %}times{% else %}{{ message.tags }}{% endif %}{% endif %}"></i>
                                     {% comment %}<strong>{% if message.tags %}{{ message.tags|capfirst }}{% endif %}</strong> {% endcomment %}
-                                    tag: {{ message.tags }} - {{ message }}
+                                    {{ message }}
                                 </div>
                             {% endfor %}
                         {% endif %}
