@@ -341,6 +341,12 @@
             <script src="{% static "smartadmin/js/plugin/js/plugin/fastclick/fastclick.js" %}"></script>
             {% endif %}
         {% endif %}
+
+        <!-- djangojs internationalization -->
+        {% load statici18n %}
+        <script src="{% statici18n LANGUAGE_CODE %}"></script>
+        <!-- END djangojs internationalization -->
+
 		<!-- BOOTSTRAP JS -->
 		<script src="{% static "smartadmin/js/bootstrap/bootstrap.min.js" %}"></script>
 
@@ -387,7 +393,7 @@
 		<!-- PAGE RELATED PLUGIN(S) 
 		<script src="..."></script>-->
 
-		
+
 
 		<script type="text/javascript">
 		

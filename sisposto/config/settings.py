@@ -46,6 +46,7 @@ class Common(Configuration):
         'django.contrib.admin',
     )
     THIRD_PARTY_APPS = (
+        'statici18n',
         'south',  # Database migration helpers:
         'crispy_forms',  # Form layouts
         'avatar',  # for user avatars
@@ -168,6 +169,9 @@ class Common(Configuration):
 
     # See: https://docs.djangoproject.com/en/dev/ref/settings/#use-tz
     USE_TZ = True
+    LOCALE_PATHS = (
+        join(BASE_DIR, 'locale'),
+    )
     ########## END GENERAL CONFIGURATION
 
     ########## TEMPLATE CONFIGURATION
@@ -212,6 +216,9 @@ class Common(Configuration):
     STATICFILES_DIRS = (
         join(BASE_DIR, 'static'),
     )
+
+    # See: https://github.com/zyegfryed/django-statici18n
+    STATICI18N_ROOT = join(BASE_DIR, 'static')
 
     # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
     STATICFILES_FINDERS = (
@@ -458,6 +465,7 @@ if 1 == 2:
 
         # Admin
         'django.contrib.admin',
+        'statici18n',
         'south',  # Database migration helpers:
         'crispy_forms',  # Form layouts
         'avatar',  # for user avatars

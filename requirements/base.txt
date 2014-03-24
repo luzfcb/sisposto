@@ -35,6 +35,9 @@ django-avatar==2.0
 
 
 # Your custom requirements go here
+# javascript internacionalizations
+django-statici18n
+
 django-extra-views
 django-parsley
 
