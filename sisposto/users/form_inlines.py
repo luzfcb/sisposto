@@ -1,4 +1,4 @@
-# -*- coding: utf8 -*-
+# -*- coding: utf-8 -*-
 from extra_views import InlineFormSet
 
 from users.models import Pessoa
