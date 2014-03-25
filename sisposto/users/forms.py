@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from django import forms
+from django.forms import CharField, EmailField
 from django.utils.translation import ugettext_lazy as _
 
 from .models import User, Pessoa
@@ -16,6 +17,10 @@ class UserForm(forms.ModelForm):
 
 
 class UserProfileUpdateForm(forms.ModelForm):
+    combo = forms.ComboField([CharField(max_length=20), EmailField()])
+    arquivo = forms.FileField()
+    outro_usuario = forms.ModelChoiceField(queryset=User.objects.all(), widget=forms.SelectMultiple(attrs={'class': "custom-scroll"}))
+    usuarios = forms.ModelMultipleChoiceField(queryset=User.objects.all(), widget=forms.CheckboxSelectMultiple())
     class Meta:
         # Set this form to use the User model.
         model = Pessoa

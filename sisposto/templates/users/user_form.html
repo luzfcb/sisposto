@@ -34,7 +34,7 @@
                         <div class="widget-body">
 
 
-                            <form class="" method="post" action="{% url 'users:update' %}">
+                            <form class="smart-form" method="post" action="{% url 'users:update' %}">
                                 {% csrf_token %}
                                 {{ form|crispy }}
                                 {% if inlines %}
@@ -44,19 +44,11 @@
                                         {% endif %}
                                     {% endfor %}
                                 {% endif %}
-                                <div class="form-actions">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <button class="btn btn-default" type="submit">
-                                                Cancel
-                                            </button>
-                                            <button class="btn btn-primary" type="submit">
-                                                <i class="fa fa-save"></i>
-                                                Submit
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
+                                <footer>
+                                    <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Submit</button>
+                                    <button type="button" class="btn btn-default" onclick="window.history.back();">Back</button>
+                                </footer>
+
                             </form>
 
                         </div>
