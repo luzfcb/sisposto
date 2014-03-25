@@ -1,0 +1,8 @@
+{% with formset.management_form as form %}
+    {% include 'crispysmartadmin/uni_form.html' %}
+{% endwith %}
+{% for form in formset %}
+    <fieldset class="multiFields">
+        {% include 'crispysmartadmin/uni_form.html' %}
+    </fieldset>
+{% endfor %}
