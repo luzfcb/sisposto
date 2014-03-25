@@ -9,7 +9,9 @@ dj-database-url==0.3.0
 
 # Forms
 django-braces==1.4.0
-django-crispy-forms==1.4.0
+#django-crispy-forms==1.4.0
+https://github.com/maraujop/django-crispy-forms/archive/dev.tar.gz
+
 django-floppyforms==1.1.1
 
 # Models
