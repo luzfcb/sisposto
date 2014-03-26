@@ -20,21 +20,21 @@ URLS_EXCLUIDAS = [
 
     # casa obrigatoriamente com o inicio da string
     r'^(?:%s)' % '|'.join([settings.MEDIA_URL,
-                           settings.STATIC_URL]),
+                           settings.STATIC_URL,
+                           '/__debug__/']),
 ]
 
 
-profile_update_url_re = re.compile(r'%s' % '|'.join(URLS_EXCLUIDAS))
+profile_update_url_re = re.compile(r'%s' % '|'.join(URLS_EXCLUIDAS), re.I)
 
 # TODO - checar implementacao
 class UsersMiddleware(object):
     def process_request(self, request):
-        usuario = request.user
-        if usuario:
-            if usuario.is_authenticated():
-                if not isinstance(usuario, AnonymousUser):
+        if request.user:
+            if request.user.is_authenticated():
+                if not isinstance(request.user, AnonymousUser):
                     try:
-                        profile = Pessoa.objects.get(user=usuario)
+                        profile = Pessoa.objects.get(user=request.user)
                         if not profile.cadastro_concluido:
                             if not profile_update_url_re.match(request.path):
                                 return redirect('users:update')
