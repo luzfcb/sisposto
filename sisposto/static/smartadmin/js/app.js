@@ -988,7 +988,7 @@ function setup_widgets_desktop() {
 
 			grid : 'article',
 			widgets : '.jarviswidget',
-			localStorage : true,
+			localStorage : false,
 			deleteSettingsKey : '#deletesettingskey-options',
 			settingsKeyLabel : 'Reset settings?',
 			deletePositionKey : '#deletepositionkey-options',
