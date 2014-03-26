@@ -11,7 +11,7 @@ def posto(request):
     """
     if hasattr(request, 'user'):
         user = request.user
-        posto_atual = None
+        posto_atual = 'Brasilia'
         postos = None
     else:
         posto_atual = None

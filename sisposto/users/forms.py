@@ -20,7 +20,7 @@ class UserProfileUpdateForm(forms.ModelForm):
     combo = forms.ComboField([CharField(max_length=20), EmailField()])
     arquivo = forms.FileField()
     outro_usuario = forms.ModelChoiceField(queryset=User.objects.all(), widget=forms.SelectMultiple(attrs={'class': "custom-scroll"}))
-    usuarios = forms.ModelMultipleChoiceField(queryset=User.objects.all(), widget=forms.CheckboxSelectMultiple())
+    usuarios = forms.ModelMultipleChoiceField(queryset=User.objects.all(), widget=forms.CheckboxSelectMultiple(attrs={'class': "checkbox-inline"}))
     class Meta:
         # Set this form to use the User model.
         model = Pessoa
