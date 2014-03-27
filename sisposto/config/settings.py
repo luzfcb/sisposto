@@ -306,7 +306,7 @@ class Common(Configuration):
     SITETREE_MODEL_TREE_ITEM = 'sitetree_smartadmin.SmartTreeItem'
 
     ########## Users app
-
+    USERS_MIDDLEWARE_DISABLE = True
     ########## end Users app
 
 
