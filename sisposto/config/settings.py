@@ -75,6 +75,7 @@ class Common(Configuration):
         'allauth',  # registration
         'allauth.account',  # registration
         'allauth.socialaccount',  # registration
+        'permissions_widget',  # django-permissions-widget - define after custom user
     )
     ########## END APP CONFIGURATION
 
@@ -470,12 +471,14 @@ if 1 == 2:
         'crispy_forms',  # Form layouts
         'avatar',  # for user avatars
         'users',  # custom users app
+
         # Your stuff: custom apps go here
         # Needs to come last for now because of a weird edge case between
         #   South and allauth
         'allauth',  # registration
         'allauth.account',  # registration
         'allauth.socialaccount',  # registration
+        'permissions_widget',  # django-permissions-widget - define after custom user
         'debug_toolbar',
         'extra_views',  # conjunto de views reutilizaveis
         'braces',  # Reusable, generic mixins for Django

@@ -6,5 +6,5 @@ from django.views.generic import TemplateView
 
 
 class HomeView(LoginRequiredMixin, TemplateView):
-    template_name = 'smartadmin/blank_.html'
+    template_name = 'users/profile_edit.html'
 

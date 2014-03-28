@@ -52,3 +52,7 @@ django-user-agents
 
 django-sitetree
 django-classy-tags
+
+# django-permissions-widget
+django-permissions-widget
+#https://github.com/mireq/django-permissions-widget/archive/187b8d644644f56610a10c6b4e0a0ff2d34f326e.tar.gz
