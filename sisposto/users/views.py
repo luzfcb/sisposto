@@ -6,7 +6,7 @@ from django.core.urlresolvers import reverse
 # view imports
 from django.utils.encoding import force_text
 from django.utils.translation import ugettext
-from django.views.generic import DetailView, UpdateView
+from django.views.generic import DetailView, UpdateView, FormView
 from django.views.generic import RedirectView
 from django.views.generic import ListView
 
@@ -16,6 +16,7 @@ from braces.views import LoginRequiredMixin, FormValidMessageMixin
 from extra_views import UpdateWithInlinesView
 
 # Import the form from users/forms.py
+from extra_views.multi import MultiFormView
 
 from .forms import UserForm
 
@@ -105,3 +106,49 @@ class UserListView(LoginRequiredMixin, ListView):
     # These next two lines tell the view to index lookups by username
     slug_field = "username"
     slug_url_kwarg = "username"
+
+
+# from extra_views.generic import GenericInlineFormSet
+# class UserProfileView(FormView):
+#
+#
+#     template_name = 'page.html'
+#     form_class = myform1
+#     second_form_class = myform2
+#     success_url = '/'
+#
+#     def get_context_data(self, **kwargs):
+#         context = super(MyClassView, self).get_context_data(**kwargs)
+#         if 'form' not in context:
+#             context['form'] = self.form_class(request=self.request)
+#         if 'form2' not in context:
+#             context['form2'] = self.second_form_class(request=self.request)
+#         return context
+#
+#     def get_object(self):
+#         return get_object_or_404(MyModel, pk=self.request.session['value_here'])
+#
+#     def form_invalid(self, **kwargs):
+#         return self.render_to_response(self.get_context_data(**kwargs))
+#
+#     def post(self, request, *args, **kwargs):
+#         self.object = self.get_object()
+#         if 'form' in request.POST:
+#             form_class = self.get_form_class()
+#             form_name = 'form'
+#         else:
+#             form_class = self.second_form_class
+#             form_name = 'form2'
+#
+#         form = self.get_form(form_class)
+#
+#         if form.is_valid():
+#             return self.form_valid(form)
+#         else:
+#             return self.form_invalid(**{form_name: form})
+class UserProfileView(MultiFormView):
+    template_name = 'users/profile_edit.html'
+    forms = {
+        'user_form': UserForm,
+        'outro_form': UserForm,
+    }
