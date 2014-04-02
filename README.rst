@@ -1,5 +1,5 @@
-[![endorse](https://api.coderwall.com/luzfcb/endorsecount.png)](https://coderwall.com/luzfcb)
-
+.. image:: https://api.coderwall.com/luzfcb/endorsecount.png
+        :target: https://coderwall.com/luzfcb
 
 sgt
 ==============================
