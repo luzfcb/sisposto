@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 # Import the reverse lookup function
+from allauth.account.forms import LoginForm
+from avatar.forms import UploadAvatarForm
 from django.core.exceptions import ImproperlyConfigured
 from django.core.urlresolvers import reverse
 
@@ -16,7 +18,8 @@ from braces.views import LoginRequiredMixin, FormValidMessageMixin
 from extra_views import UpdateWithInlinesView
 
 # Import the form from users/forms.py
-from extra_views.multi import MultiFormView
+from extra_views import multi
+# from utils.views import MultiFormView
 
 from .forms import UserForm
 
@@ -146,9 +149,16 @@ class UserListView(LoginRequiredMixin, ListView):
 #             return self.form_valid(form)
 #         else:
 #             return self.form_invalid(**{form_name: form})
-class UserProfileView(MultiFormView):
+class UserProfileView(multi.MultiFormView):
     template_name = 'users/profile_edit.html'
     forms = {
-        'user_form': UserForm,
-        'outro_form': UserForm,
-    }
+        'user': UserForm,
+        'login': LoginForm,
+        #'user2': UserForm,
+        }
+
+    # groups = {
+    #     'users': ('user', 'login'),
+    #     'users2': ('user2')
+    # }
+    #

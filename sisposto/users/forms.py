@@ -8,7 +8,7 @@ from .models import User, Pessoa
 
 
 class UserForm(forms.ModelForm):
-    user_permissions = PermissionSelectMultipleField()
+    #user_permissions = PermissionSelectMultipleField()
 
     class Meta:
         # Set this form to use the User model.
