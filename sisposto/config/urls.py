@@ -15,8 +15,12 @@ from users.views import UserProfileView
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^$',
+    url(
+        r'^p/(?P<username>[\w\-_]+)/$',
         UserProfileView.as_view(),
+        name="prof"),
+    url(r'^$',
+        HomeView.as_view(),
         name="home"),
     url(r'^about/$',
         TemplateView.as_view(template_name='pages/about.html'),

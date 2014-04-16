@@ -1,16 +1,25 @@
 # -*- coding: utf-8 -*-
 # Import the reverse lookup function
-from allauth.account.forms import LoginForm
+from allauth.account.forms import LoginForm, SignupForm
 from avatar.forms import UploadAvatarForm
+from crispy_forms.bootstrap import StrictButton, FormActions
+from crispy_forms.helper import FormHelper
+from crispy_forms.layout import Submit, Layout, Button, Div
+from django import shortcuts
+from django.contrib import messages
+from django.contrib.auth.forms import AuthenticationForm, UserChangeForm
 from django.core.exceptions import ImproperlyConfigured
 from django.core.urlresolvers import reverse
 
 # view imports
+from django.template import response
+from django.utils import http
 from django.utils.encoding import force_text
-from django.utils.translation import ugettext
-from django.views.generic import DetailView, UpdateView, FormView
+from django.utils.translation import ugettext as _
+from django.views.generic import DetailView, UpdateView, FormView, TemplateView
 from django.views.generic import RedirectView
 from django.views.generic import ListView
+
 
 # Only authenticated users can access views using this.
 from braces.views import LoginRequiredMixin, FormValidMessageMixin
@@ -21,7 +30,7 @@ from extra_views import UpdateWithInlinesView
 from extra_views import multi
 # from utils.views import MultiFormView
 
-from .forms import UserForm
+from .forms import UserForm, UserAtualizarForm, UserAllAuthSignupForm
 
 # Import the customized User model
 from .models import User
@@ -71,8 +80,8 @@ class UserDetailView(LoginRequiredMixin, ViewHasNameAndDescriptionMixin, DetailV
     # These next two lines tell the view to index lookups by username
     slug_field = "username"
     slug_url_kwarg = "username"
-    view_name = ugettext(u'Usuário - Detalhes')
-    view_description = ugettext(u'Informações detalhadas sobre o usuário')
+    view_name = _(u'Usuário - Detalhes')
+    view_description = _(u'Informações detalhadas sobre o usuário')
 
 
 class UserRedirectView(LoginRequiredMixin, RedirectView):
@@ -87,8 +96,8 @@ class UserUpdateView(LoginRequiredMixin, ViewHasNameAndDescriptionMixin, UpdateV
 
     form_class = UserForm
     inlines = [UserProfileInline]
-    view_name = ugettext(u'Usuário - Editar')
-    view_description = ugettext(u'Edita/Atualiza informações sobre o usuário')
+    view_name = _(u'Usuário - Editar')
+    view_description = _(u'Edita/Atualiza informações sobre o usuário')
     # we already imported User in the view code above, remember?
     model = User
 
@@ -149,16 +158,40 @@ class UserListView(LoginRequiredMixin, ListView):
 #             return self.form_valid(form)
 #         else:
 #             return self.form_invalid(**{form_name: form})
-class UserProfileView(multi.MultiFormView):
-    template_name = 'users/profile_edit.html'
-    forms = {
-        'user': UserForm,
-        'login': LoginForm,
-        #'user2': UserForm,
-        }
 
-    # groups = {
-    #     'users': ('user', 'login'),
-    #     'users2': ('user2')
-    # }
-    #
+class HorizontalFormHelper(FormHelper):
+    form_class = 'form-horizontal'
+    label_class = 'col-lg-2'
+    field_class = 'col-lg-10'
+
+    def __init__(self, form=None):
+        self.attrs = {}
+        self.inputs = []
+
+        if form is not None:
+            self.form = form
+            self.layout = self.build_default_layout(form)
+
+    def build_default_layout(self, form):
+        keys = form.fields.keys()
+        keys.append(FormActions(
+            Button('cancel', 'Cancelar', css_class='btn-default'),
+            Submit('salvar', u'Salvar modificacoes'),
+        ))
+        return Layout(*keys)
+
+
+
+class UserProfileView(LoginRequiredMixin, UpdateWithInlinesView):
+    model = User
+    template_name = 'users/profile_edit.html'
+    slug_url_kwarg = 'username'
+    slug_field = 'username'
+    form_class = UserAllAuthSignupForm
+
+
+
+
+
+
+
