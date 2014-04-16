@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 # Import the reverse lookup function
-from allauth.account.forms import LoginForm, SignupForm
-from avatar.forms import UploadAvatarForm
+from allauth.account.views import SignupView
 from crispy_forms.bootstrap import StrictButton, FormActions
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit, Layout, Button, Div
@@ -30,7 +29,7 @@ from extra_views import UpdateWithInlinesView
 from extra_views import multi
 # from utils.views import MultiFormView
 
-from .forms import UserForm, UserAtualizarForm, UserAllAuthSignupForm
+from .forms import UserForm, SignupForm
 
 # Import the customized User model
 from .models import User
@@ -187,11 +186,21 @@ class UserProfileView(LoginRequiredMixin, UpdateWithInlinesView):
     template_name = 'users/profile_edit.html'
     slug_url_kwarg = 'username'
     slug_field = 'username'
-    form_class = UserAllAuthSignupForm
+    form_class = SignupForm
 
 
 
 
+class MySignupView(SignupView):
 
+    def get_context_data(self, **kwargs):
+        ret = super(MySignupView, self).get_context_data(**kwargs)
+        #ret['all_tags'] = Tags.get_tags()
 
+        return ret
+
+    def get_form_class(self):
+        form = super(MySignupView, self).get_form_class()
+        form.helper = None
+        return form
 
