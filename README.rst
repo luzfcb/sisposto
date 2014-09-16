@@ -13,6 +13,9 @@ sgt
      :target: https://requires.io/github/luzfcb/sisposto/requirements/?branch=desenvolvimento
      :alt: Requirements Status
 
+.. image:: https://api.coderwall.com/luzfcb/endorsecount.png
+        :target: https://coderwall.com/luzfcb
+
 
 Sistema *Experimental* de Gerenciamento de Postos de Combustivel e Frota de Veiculos
 
