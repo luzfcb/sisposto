@@ -1,0 +1,11 @@
+# Local development dependencies go here
+-r base.txt
+coverage==3.7.1
+Sphinx==1.2.3
+
+# django-debug-toolbar that works with Django 1.5+
+django-debug-toolbar==1.2.1
+
+# pygraphviz criacao de diagrama dos relacionamentos
+pygraphviz==1.2
+
