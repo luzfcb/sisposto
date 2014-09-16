@@ -1,9 +1,0 @@
-{% if form.form_html %}
-    {{ form.media }}
-    {% if form_show_errors %}
-        {% include "crispysmartadmin/errors.html" %}
-    {% endif %}
-    {{ form.form_html }}
-{% else %}
-    {% include "crispysmartadmin/uni_form.html" %}
-{% endif %}
