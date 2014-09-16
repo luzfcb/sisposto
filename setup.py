@@ -14,16 +14,16 @@ import sisposto
 version = sisposto.__version__
 
 setup(
-    name='sgt',
+    name='sisposto',
     version=version,
-    author='',
+    author='Fabio Caritas Barrionuevo da Luz',
     author_email='bnafta@gmail.com',
     packages=[
         'sisposto',
     ],
     include_package_data=True,
     install_requires=[
-        'Django>=1.6.1',
+        'Django>=1.7',
     ],
     zip_safe=False,
     scripts=['sisposto/manage.py'],

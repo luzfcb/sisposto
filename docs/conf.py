@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# sgt documentation build configuration file, created by
+# sisposto documentation build configuration file, created by
 # sphinx-quickstart.
 #
 # This file is execfile()d with the current directory set to its containing dir.
@@ -40,8 +40,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'sgt'
-copyright = u'2014, Fábio Cáritas Barrionuevo da Luz'
+project = u'sisposto'
+copyright = u'2014, Fabio Caritas Barrionuevo da Luz'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -183,8 +183,8 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'sisposto.tex', u'sgt Documentation',
-   u'Fábio Cáritas Barrionuevo da Luz', 'manual'),
+  ('index', 'sisposto.tex', u'sisposto Documentation',
+   u'Fabio Caritas Barrionuevo da Luz', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -213,8 +213,8 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'sisposto', u'sgt Documentation',
-     [u'Fábio Cáritas Barrionuevo da Luz'], 1)
+    ('index', 'sisposto', u'sisposto Documentation',
+     [u'Fabio Caritas Barrionuevo da Luz'], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -227,9 +227,9 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'sisposto', u'sgt Documentation',
-   u'Fábio Cáritas Barrionuevo da Luz', 'sgt',
-   'Sistema de Gerenciamento de Posto de Combustivel e Frota de Veiculos','Miscellaneous'),
+  ('index', 'sisposto', u'sisposto Documentation',
+   u'Fabio Caritas Barrionuevo da Luz', 'sisposto',
+   'Sistema *Experimental* de Gerenciamento de Postos de Combustivel e Frota de Veiculos','Miscellaneous'),
 ]
 
 # Documents to append as an appendix to all manuals.

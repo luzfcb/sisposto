@@ -3,6 +3,11 @@
 *.pyc
 __pycache__
 
+#build
+build
+dist
+*.egg-info
+
 # Logs
 *.log
 pip-log.txt
@@ -30,3 +35,6 @@ node_modules/
 
 # Campass
 .sass-cache
+
+# sqlite
+*.sqlite
