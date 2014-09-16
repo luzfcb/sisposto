@@ -9,8 +9,8 @@ sgt
   :target: https://coveralls.io/r/luzfcb/sisposto
 
 
-.. image:: https://requires.io/github/luzfcb/sisposto/requirements.svg?branch=desenvolvimento
-     :target: https://requires.io/github/luzfcb/sisposto/requirements/?branch=desenvolvimento
+.. image:: https://requires.io/github/luzfcb/sisposto/requirements.svg?branch=master
+     :target: https://requires.io/github/luzfcb/sisposto/requirements/?branch=master
      :alt: Requirements Status
 
 .. image:: https://api.coderwall.com/luzfcb/endorsecount.png
