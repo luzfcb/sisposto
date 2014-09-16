@@ -1,6 +1,3 @@
-.. image:: https://api.coderwall.com/luzfcb/endorsecount.png
-        :target: https://coderwall.com/luzfcb
-
 sgt
 ==============================
 
@@ -26,6 +23,7 @@ Sistema *Experimental* de Gerenciamento de Postos de Combustivel e Frota de Veic
 
 Este software depende de bibliotecas proprietárias, caso deseje utiliza-lo, 
 você deve adquirir as licenças com os respectives detentores das mesmas.
+
 
 LICENSE: Copyright (c) 2014, Fábio Cáritas Barrionuevo da Luz
 
