@@ -76,3 +76,47 @@ class Posto(models.Model):
 
     def __str__(self):
         return "{}".format(self.nome)
+
+
+class Teste(models.Model):
+    id = models.AutoField(auto_created=True, unique=True, db_column='ID_PESSOA', primary_key=True)
+    #matricula_ergon_vinculo =
+
+#
+# ID_PESSOA
+# MATRICULA_ERGON_VINC;
+# Matricula;
+# DIGITO_ERGON;
+# MATRICULA_SIGESP;
+# CPF;
+# NOME;
+# DTNASCIMENTO;
+# SEXO;
+# NOMEMAE;
+# NOME_PAI;
+# LOGRADOURO;
+# BAIIRO;
+# MUNICIPIO;
+# CEP;
+# TELEFONE;
+# DTADMISSAO;
+# DT_INGRESSO;
+# TIPO_EXCLUSAO;
+# DATA_EXCLUSAO;
+# TIPOAFASTAMENTO;
+# DATA_DESATIVACAO;
+# SITUACAOFUNCIONAL;
+# LOTACAO;
+# DESCRICAO_LOTACAO;
+# ESTADOCIVIL;
+# RG;
+# ORGAO_EXP;
+# GRAUINSTRUCAO;
+# EMAIL;
+# ORGAOATUAL;
+# LICENCAMEDICA;
+# ID_TIPO_REGISTRO;
+# ORGAOORIGEM;
+# DTOBITO;
+# DTEXONERACAO;
+# TABELA_HORARIO
