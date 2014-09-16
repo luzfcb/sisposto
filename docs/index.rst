@@ -1,9 +1,9 @@
-.. sgt documentation master file, created by
+.. sisposto documentation master file, created by
    sphinx-quickstart.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to sgt's documentation!
+Welcome to sisposto's documentation!
 ====================================================================
 
 Contents:

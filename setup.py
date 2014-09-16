@@ -14,9 +14,9 @@ import sisposto
 version = sisposto.__version__
 
 setup(
-    name='sgt',
+    name='sisposto',
     version=version,
-    author='',
+    author='Fabio Caritas Barrionuevo da Luz',
     author_email='bnafta@gmail.com',
     packages=[
         'sisposto',
