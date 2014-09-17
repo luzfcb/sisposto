@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en-us">
 	<head>
@@ -5,52 +6,52 @@
 		<title> SmartAdmin </title>
 		<meta name="description" content="">
 		<meta name="author" content="">
-			
+
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		
+
 		<!-- #CSS Links -->
 		<!-- Basic Styles -->
-		<link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="{% static "smartadmin/css/bootstrap.min.css" %}">
+		<link rel="stylesheet" type="text/css" media="screen" href="{% static "smartadmin/css/font-awesome.min.css" %}">
 
 		<!-- SmartAdmin Styles : Please note (smartadmin-production.css) was created using LESS variables -->
-		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.min.css">
-		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="{% static "smartadmin/css/smartadmin-production.min.css" %}">
+		<link rel="stylesheet" type="text/css" media="screen" href="{% static "smartadmin/css/smartadmin-skins.min.css" %}">
 
 		<!-- SmartAdmin RTL Support is under construction
 			 This RTL CSS will be released in version 1.5
-		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-rtl.min.css"> -->
+		<link rel="stylesheet" type="text/css" media="screen" href="{% static "smartadmin/css/smartadmin-rtl.min.css" %}"> -->
 
 		<!-- We recommend you use "your_style.css" to override SmartAdmin
 		     specific styles this will also ensure you retrain your customization with each SmartAdmin update.
-		<link rel="stylesheet" type="text/css" media="screen" href="css/your_style.css"> -->
+		<link rel="stylesheet" type="text/css" media="screen" href="{% static "smartadmin/css/your_style.css" %}"> -->
 
 		<!-- Demo purpose only: goes with demo.js, you can delete this css when designing your own WebApp -->
-		<link rel="stylesheet" type="text/css" media="screen" href="css/demo.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="{% static "smartadmin/css/demo.min.css" %}">
 
 		<!-- #FAVICONS -->
-		<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
-		<link rel="icon" href="img/favicon/favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="{% static "smartadmin/img/favicon/favicon.ico" %}" type="image/x-icon">
+		<link rel="icon" href="{% static "smartadmin/img/favicon/favicon.ico" %}" type="image/x-icon">
 
 		<!-- #GOOGLE FONT -->
 		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
 
 		<!-- #APP SCREEN / ICONS -->
-		<!-- Specifying a Webpage Icon for Web Clip 
+		<!-- Specifying a Webpage Icon for Web Clip
 			 Ref: https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html -->
-		<link rel="apple-touch-icon" href="img/splash/sptouch-icon-iphone.png">
-		<link rel="apple-touch-icon" sizes="76x76" href="img/splash/touch-icon-ipad.png">
-		<link rel="apple-touch-icon" sizes="120x120" href="img/splash/touch-icon-iphone-retina.png">
-		<link rel="apple-touch-icon" sizes="152x152" href="img/splash/touch-icon-ipad-retina.png">
-		
+		<link rel="apple-touch-icon" href="{% static "smartadmin/img/splash/sptouch-icon-iphone.png" %}">
+		<link rel="apple-touch-icon" sizes="76x76" href="{% static "smartadmin/img/splash/touch-icon-ipad.png" %}">
+		<link rel="apple-touch-icon" sizes="120x120" href="{% static "smartadmin/img/splash/touch-icon-iphone-retina.png" %}">
+		<link rel="apple-touch-icon" sizes="152x152" href="{% static "smartadmin/img/splash/touch-icon-ipad-retina.png" %}">
+
 		<!-- iOS web-app metas : hides Safari UI Components and Changes Status Bar Appearance -->
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		
+
 		<!-- Startup image for web apps -->
-		<link rel="apple-touch-startup-image" href="img/splash/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
-		<link rel="apple-touch-startup-image" href="img/splash/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
-		<link rel="apple-touch-startup-image" href="img/splash/iphone.png" media="screen and (max-device-width: 320px)">
+		<link rel="apple-touch-startup-image" href="{% static "smartadmin/img/splash/ipad-landscape.png" %}" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
+		<link rel="apple-touch-startup-image" href="{% static "smartadmin/img/splash/ipad-portrait.png" %}" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
+		<link rel="apple-touch-startup-image" href="{% static "smartadmin/img/splash/iphone.png" %}" media="screen and (max-device-width: 320px)">
 
 
 		<style type="text/css">
@@ -77,7 +78,7 @@
 				height: 170px;
 				overflow: hidden;
 			}
-			
+
 			.optdual {
 				position: relative;
 			}
@@ -96,7 +97,7 @@
 		</style>
 
 	</head>
-	
+
 	<!-- #BODY -->
 	<!-- Possible Classes
 
@@ -117,7 +118,7 @@
 			<div id="logo-group">
 
 				<!-- PLACE YOUR LOGO HERE -->
-				<span id="logo"> <img src="img/logo.png" alt="SmartAdmin"> </span>
+				<span id="logo"> <img src="{% static "smartadmin/img/logo.png" %}" alt="SmartAdmin"> </span>
 				<!-- END LOGO PLACEHOLDER -->
 
 				<!-- Note: The activity badge color changes when clicked and resets the number to 0
@@ -193,19 +194,19 @@
 
 			<!-- pulled right: nav area -->
 			<div class="pull-right">
-				
+
 				<!-- collapse menu button -->
 				<div id="hide-menu" class="btn-header pull-right">
 					<span> <a href="javascript:void(0);" data-action="toggleMenu" title="Collapse Menu"><i class="fa fa-reorder"></i></a> </span>
 				</div>
 				<!-- end collapse menu -->
-				
+
 				<!-- #MOBILE -->
 				<!-- Top menu profile link : this shows only when top menu is active -->
 				<ul id="mobile-profile-img" class="header-dropdown-list hidden-xs padding-5">
 					<li class="">
-						<a href="#" class="dropdown-toggle no-margin userdropdown" data-toggle="dropdown"> 
-							<img src="img/avatars/sunny.png" alt="John Doe" class="online" />  
+						<a href="#" class="dropdown-toggle no-margin userdropdown" data-toggle="dropdown">
+							<img src="{% static "smartadmin/img/avatars/sunny.png" %}" alt="John Doe" class="online" />
 						</a>
 						<ul class="dropdown-menu pull-right">
 							<li>
@@ -280,11 +281,11 @@
 					<span> <a href="javascript:void(0);" data-action="launchFullscreen" title="Full Screen"><i class="fa fa-arrows-alt"></i></a> </span>
 				</div>
 				<!-- end fullscreen button -->
-				
+
 				<!-- #Voice Command: Start Speech -->
 				<div id="speech-btn" class="btn-header transparent pull-right hidden-sm hidden-xs">
-					<div> 
-						<a href="javascript:void(0)" title="Voice Command" data-action="voiceCommand"><i class="fa fa-microphone"></i></a> 
+					<div>
+						<a href="javascript:void(0)" title="Voice Command" data-action="voiceCommand"><i class="fa fa-microphone"></i></a>
 						<div class="popover bottom"><div class="arrow"></div>
 							<div class="popover-content">
 								<h4 class="vc-title">Voice command activated <br><small>Please speak clearly into the mic</small></h4>
@@ -293,8 +294,8 @@
 									<br><small class="txt-color-red">Must <strong>"Allow"</strong> Microphone</small>
 									<br><small class="txt-color-red">Must have <strong>Internet Connection</strong></small>
 								</h4>
-								<a href="javascript:void(0);" class="btn btn-success" onclick="commands.help()">See Commands</a> 
-								<a href="javascript:void(0);" class="btn bg-color-purple txt-color-white" onclick="$('#speech-btn .popover').fadeOut(50);">Close Popup</a> 
+								<a href="javascript:void(0);" class="btn btn-success" onclick="commands.help()">See Commands</a>
+								<a href="javascript:void(0);" class="btn bg-color-purple txt-color-white" onclick="$('#speech-btn .popover').fadeOut(50);">Close Popup</a>
 							</div>
 						</div>
 					</div>
@@ -304,39 +305,39 @@
 				<!-- multiple lang dropdown : find all flags in the flags page -->
 				<ul class="header-dropdown-list hidden-xs">
 					<li>
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="img/blank.gif" class="flag flag-us" alt="United States"> <span> English (US) </span> <i class="fa fa-angle-down"></i> </a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-us" alt="United States"> <span> English (US) </span> <i class="fa fa-angle-down"></i> </a>
 						<ul class="dropdown-menu pull-right">
 							<li class="active">
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-us" alt="United States"> English (US)</a>
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-us" alt="United States"> English (US)</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-fr" alt="France"> Français</a>
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-fr" alt="France"> Français</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-es" alt="Spanish"> Español</a>
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-es" alt="Spanish"> Español</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-de" alt="German"> Deutsch</a>
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-de" alt="German"> Deutsch</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-jp" alt="Japan"> 日本語</a>
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-jp" alt="Japan"> 日本語</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-cn" alt="China"> 中文</a>
-							</li>	
-							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-it" alt="Italy"> Italiano</a>
-							</li>	
-							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-pt" alt="Portugal"> Portugal</a>
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-cn" alt="China"> 中文</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-ru" alt="Russia"> Русский язык</a>
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-it" alt="Italy"> Italiano</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-kp" alt="Korea"> 한국어</a>
-							</li>						
-							
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-pt" alt="Portugal"> Portugal</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-ru" alt="Russia"> Русский язык</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-kp" alt="Korea"> 한국어</a>
+							</li>
+
 						</ul>
 					</li>
 				</ul>
@@ -354,16 +355,16 @@
 
 			<!-- User info -->
 			<div class="login-info">
-				<span> <!-- User image size is adjusted inside CSS, it should stay as it --> 
-					
+				<span> <!-- User image size is adjusted inside CSS, it should stay as it -->
+
 					<a href="javascript:void(0);" id="show-shortcut" data-action="toggleShortcut">
-						<img src="img/avatars/sunny.png" alt="me" class="online" /> 
+						<img src="{% static "smartadmin/img/avatars/sunny.png" %}" alt="me" class="online" />
 						<span>
-							john.doe 
+							john.doe
 						</span>
 						<i class="fa fa-angle-down"></i>
-					</a> 
-					
+					</a>
+
 				</span>
 			</div>
 			<!-- end user info -->
@@ -464,10 +465,10 @@
 								<ul>
 									<li>
 										<a href="fa.html"><i class="fa fa-plane"></i> Font Awesome</a>
-									</li>	
+									</li>
 									<li>
 										<a href="glyph.html"><i class="glyphicon glyphicon-plane"></i> Glyph Icons</a>
-									</li>	
+									</li>
 									<li>
 										<a href="flags.html"><i class="fa fa-flag"></i> Flags</a>
 									</li>
@@ -516,7 +517,7 @@
 									</li>
 									<li>
 										<a href="#"><i class="fa fa-fw fa-folder-open"></i> Item #3</a>
-		
+
 										<ul>
 											<li>
 												<a href="#"><i class="fa fa-fw fa-folder-open"></i> 3ed Level </a>
@@ -530,13 +531,13 @@
 												</ul>
 											</li>
 										</ul>
-		
+
 									</li>
 								</ul>
 							</li>
 						</ul>
 					</li>
-				
+
 					<li>
 						<a href="calendar.html"><i class="fa fa-lg fa-fw fa-calendar"><em>3</em></i> <span class="menu-item-parent">Calendar</span></a>
 					</li>
@@ -620,8 +621,8 @@
 					</li>
 				</ul>
 			</nav>
-			<span class="minifyme" data-action="minifyMenu"> 
-				<i class="fa fa-arrow-circle-left hit"></i> 
+			<span class="minifyme" data-action="minifyMenu">
+				<i class="fa fa-arrow-circle-left hit"></i>
 			</span>
 
 		</aside>
@@ -633,10 +634,10 @@
 			<!-- RIBBON -->
 			<div id="ribbon">
 
-				<span class="ribbon-button-alignment"> 
+				<span class="ribbon-button-alignment">
 					<span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh"  rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings." data-html="true">
 						<i class="fa fa-refresh"></i>
-					</span> 
+					</span>
 				</span>
 
 				<!-- breadcrumb -->
@@ -658,7 +659,7 @@
 
 			</div>
 			<!-- END RIBBON -->
-			
+
 			<!-- MAIN CONTENT -->
 			<div id="content">
 				<!-- row -->
@@ -715,11 +716,11 @@
 									<h2 class="hidden-xs hidden-sm">jcrop </h2>
 
 									<ul class="nav nav-tabs pull-right in" id="myTab">
-										
+
 										<li class="active">
 											<a data-toggle="tab" href="#s1"><i class="fa fa-crop text-success"></i> <span class="hidden-mobile hidden-tablet">API</span></a>
 										</li>
-										
+
 										<li>
 											<a data-toggle="tab" href="#s2"><i class="fa fa-crop text-primary"></i> <span class="hidden-mobile hidden-tablet">Default</span></a>
 										</li>
@@ -757,7 +758,7 @@
 											<div class="tab-pane fade active in" id="s1">
 
 												<h4 class="margin-bottom-10">API Interface — real-time API example</h4>
-												
+
 												<div class="alert alert-info">
 													<b>Experimental shader active.</b>
 													Jcrop now includes a shading mode that facilitates building
@@ -767,16 +768,16 @@
 													<br>
 													View jcrop's documentation by going to: <a href="http://deepliquid.com/content/Jcrop.html" target="_blank">http://deepliquid.com/content/Jcrop.html</a>
 												</div>
-												
-												<img src="img/superbox/superbox-full-7.jpg" id="target-5" alt="[Jcrop Example]" class="pull-left" />
-						
+
+												<img src="{% static "smartadmin/img/superbox/superbox-full-7.jpg" %}" id="target-5" alt="[Jcrop Example]" class="pull-left" />
+
 												<div class="pull-left padding-gutter padding-top-0 padding-bottom-0">
-													
+
 													<fieldset>
 
 														<legend>
 															Option Toggles
-														</legend>										
+														</legend>
 
 														<span class="requiresjcrop">
 															<button id="setSelect" class="btn btn-default btn-sm">
@@ -790,7 +791,7 @@
 															</button>
 															<button id="disable" class="btn btn-default btn-sm">
 																Disable
-															</button> 
+															</button>
 														</span>
 														<button id="enable" class="btn btn-default btn-sm" style="display:none;">
 															Re-Enable
@@ -802,7 +803,7 @@
 															Attach Jcrop
 														</button>
 													</fieldset>
-													
+
 													<fieldset class="optdual requiresjcrop">
 														<legend>
 															Option Toggles
@@ -812,7 +813,7 @@
 															  <input type="checkbox" class="checkbox style-0" id="ar_lock">
 															  <span>Aspect ratio</span>
 															</label>
-															
+
 															<label class="checkbox">
 															  <input type="checkbox" class="checkbox style-0" id="size_lock">
 															  <span>minSize/maxSize setting</span>
@@ -823,12 +824,12 @@
 															  <input type="checkbox" class="checkbox style-0" id="can_click">
 															  <span>Allow new selections</span>
 															</label>
-															
+
 															<label class="checkbox">
 															  <input type="checkbox" class="checkbox style-0" id="can_move">
 															  <span>Selection can be moved</span>
 															</label>
-															
+
 															<label class="checkbox">
 															  <input type="checkbox" class="checkbox style-0" id="can_size">
 															  <span>Resizable selection</span>
@@ -836,7 +837,7 @@
 
 														</div>
 													</fieldset>
-						
+
 													<fieldset class="requiresjcrop">
 														<legend>
 															Change Image
@@ -853,8 +854,8 @@
 															</button>
 														</div>
 													</fieldset>
-												
-												</div>	
+
+												</div>
 
 											</div>
 											<!-- end s1 tab pane -->
@@ -871,7 +872,7 @@
 													the cropping behavior.
 												</div>
 
-												<img src="img/superbox/superbox-full-11.jpg" id="target" alt="[Jcrop Example]" />
+												<img src="{% static "smartadmin/img/superbox/superbox-full-11.jpg" %}" id="target" alt="[Jcrop Example]" />
 
 											</div>
 											<!-- end s1 tab pane -->
@@ -889,7 +890,7 @@
 												</div>
 
 												<!-- This is the image we're attaching Jcrop to -->
-												<img src="img/superbox/superbox-full-10.jpg" id="target-2" alt="[Jcrop Example]" />
+												<img src="{% static "smartadmin/img/superbox/superbox-full-10.jpg" %}" id="target-2" alt="[Jcrop Example]" />
 
 												<!-- This is the form that our event handler fills -->
 												<form id="coords"
@@ -936,11 +937,11 @@
 													view in the preview pane.
 												</div>
 
-												<img src="img/superbox/superbox-full-9.jpg" id="target-3" alt="[Jcrop Example]" />
+												<img src="{% static "smartadmin/img/superbox/superbox-full-9.jpg" %}" id="target-3" alt="[Jcrop Example]" />
 
 												<div id="preview-pane">
 													<div class="preview-container">
-														<img src="img/superbox/superbox-full-9.jpg" class="jcrop-preview" id="target-3a" alt="Preview" />
+														<img src="{% static "smartadmin/img/superbox/superbox-full-9.jpg" %}" class="jcrop-preview" id="target-3a" alt="Preview" />
 													</div>
 												</div>
 
@@ -964,11 +965,11 @@
 
 													<div class="col-sm-12 col-md-12 col-lg-12">
 
-														<img src="img/superbox/superbox-full-7.jpg" id="target-4" alt="Jcrop Image" class="pull-left" />
+														<img src="{% static "smartadmin/img/superbox/superbox-full-7.jpg" %}" id="target-4" alt="Jcrop Image" class="pull-left" />
 
-							
+
 														<div id="interface" class="pull-left padding-gutter padding-top-0 padding-bottom-0">
-															
+
 															<label class="checkbox">
 															  <input type="checkbox" class="checkbox style-0" id="fadetog">
 															  <span>Enable fading (bgFade: true)</span>
@@ -977,7 +978,7 @@
 															  <input type="checkbox" class="checkbox style-0" id="shadetog">
 															  <span>Use experimental shader (shade: true)</span>
 															</label>
-														
+
 														</div>
 													</div>
 
@@ -991,8 +992,8 @@
 
 												<h4 class="margin-bottom-10">Styling Example — style Jcrop dynamically with CSS</h4>
 
-												<img src="img/superbox/superbox-full-16.jpg" id="target-6" alt="[Jcrop Example]" />
-						
+												<img src="{% static "smartadmin/img/superbox/superbox-full-16.jpg" %}" id="target-6" alt="[Jcrop Example]" />
+
 												<div class="pull-left pull-left padding-gutter padding-top-0 padding-bottom-0">
 													<fieldset>
 														<legend>
@@ -1126,61 +1127,61 @@
 		<!--================================================== -->
 
 		<!-- PACE LOADER - turn this on if you want ajax loading to show (caution: uses lots of memory on iDevices)-->
-		<script data-pace-options='{ "restartOnRequestAfter": true }' src="js/plugin/pace/pace.min.js"></script>
+		<script data-pace-options='{ "restartOnRequestAfter": true }' src="{% static "smartadmin/js/plugin/pace/pace.min.js" %}"></script>
 
 		<!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 		<script>
 			if (!window.jQuery) {
-				document.write('<script src="js/libs/jquery-2.0.2.min.js"><\/script>');
+				document.write('<script src="{% static "smartadmin/js/libs/jquery-2.0.2.min.js" %}"><\/script>');
 			}
 		</script>
 
 		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 		<script>
 			if (!window.jQuery.ui) {
-				document.write('<script src="js/libs/jquery-ui-1.10.3.min.js"><\/script>');
+				document.write('<script src="{% static "smartadmin/js/libs/jquery-ui-1.10.3.min.js" %}"><\/script>');
 			}
 		</script>
 
 		<!-- IMPORTANT: APP CONFIG -->
-		<script src="js/app.config.js"></script>
+		<script src="{% static "smartadmin/js/app.config.js" %}"></script>
 
 		<!-- JS TOUCH : include this plugin for mobile drag / drop touch events-->
-		<script src="js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script> 
+		<script src="{% static "smartadmin/js/plugin/jquery-touch/jquery.ui.touch-punch.min.js" %}"></script>
 
 		<!-- BOOTSTRAP JS -->
-		<script src="js/bootstrap/bootstrap.min.js"></script>
+		<script src="{% static "smartadmin/js/bootstrap/bootstrap.min.js" %}"></script>
 
 		<!-- CUSTOM NOTIFICATION -->
-		<script src="js/notification/SmartNotification.min.js"></script>
+		<script src="{% static "smartadmin/js/notification/SmartNotification.min.js" %}"></script>
 
 		<!-- JARVIS WIDGETS -->
-		<script src="js/smartwidgets/jarvis.widget.min.js"></script>
+		<script src="{% static "smartadmin/js/smartwidgets/jarvis.widget.min.js" %}"></script>
 
 		<!-- EASY PIE CHARTS -->
-		<script src="js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js" %}"></script>
 
 		<!-- SPARKLINES -->
-		<script src="js/plugin/sparkline/jquery.sparkline.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/sparkline/jquery.sparkline.min.js" %}"></script>
 
 		<!-- JQUERY VALIDATE -->
-		<script src="js/plugin/jquery-validate/jquery.validate.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/jquery-validate/jquery.validate.min.js" %}"></script>
 
 		<!-- JQUERY MASKED INPUT -->
-		<script src="js/plugin/masked-input/jquery.maskedinput.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/masked-input/jquery.maskedinput.min.js" %}"></script>
 
 		<!-- JQUERY SELECT2 INPUT -->
-		<script src="js/plugin/select2/select2.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/select2/select2.min.js" %}"></script>
 
 		<!-- JQUERY UI + Bootstrap Slider -->
-		<script src="js/plugin/bootstrap-slider/bootstrap-slider.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/bootstrap-slider/bootstrap-slider.min.js" %}"></script>
 
 		<!-- browser msie issue fix -->
-		<script src="js/plugin/msie-fix/jquery.mb.browser.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/msie-fix/jquery.mb.browser.min.js" %}"></script>
 
 		<!-- FastClick: For mobile devices -->
-		<script src="js/plugin/fastclick/fastclick.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/fastclick/fastclick.min.js" %}"></script>
 
 		<!--[if IE 8]>
 
@@ -1189,23 +1190,23 @@
 		<![endif]-->
 
 		<!-- Demo purpose only -->
-		<script src="js/demo.min.js"></script>
+		<script src="{% static "smartadmin/js/demo.min.js" %}"></script>
 
 		<!-- MAIN APP JS FILE -->
-		<script src="js/app.min.js"></script>
+		<script src="{% static "smartadmin/js/app.min.js" %}"></script>
 
 		<!-- ENHANCEMENT PLUGINS : NOT A REQUIREMENT -->
 		<!-- Voice command : plugin -->
-		<script src="js/speech/voicecommand.min.js"></script>
+		<script src="{% static "smartadmin/js/speech/voicecommand.min.js" %}"></script>
 
-		<!-- PAGE RELATED PLUGIN(S) 
+		<!-- PAGE RELATED PLUGIN(S)
 		<script src="..."></script>-->
 
-		<script src="js/plugin/jcrop/jquery.Jcrop.min.js"></script>
-		<script src="js/plugin/jcrop/jquery.color.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/jcrop/jquery.Jcrop.min.js" %}"></script>
+		<script src="{% static "smartadmin/js/plugin/jcrop/jquery.color.min.js" %}"></script>
 
 		<script type="text/javascript">
-			
+
 			$(document).ready(function() {
 				pageSetUp();
 
@@ -1214,7 +1215,7 @@
 
 
 				// api_handler
-				
+
 				var api_handler = function() {
 
 					// The variable jcrop_api will hold a reference to the
@@ -1246,7 +1247,7 @@
 					};
 
 					// In this example, since Jcrop may be attached or detached
-					// at the whim of the user, I've wrapped the call into a function	
+					// at the whim of the user, I've wrapped the call into a function
 					initJcrop();
 
 					// Use the API to find cropping dimensions
@@ -1393,11 +1394,11 @@
 					});
 
 				}
-				
+
 				// end api_handler
 
 				// default
-				
+
 				var default_handler = function(){
 					$('#target').Jcrop();
 				}
@@ -1611,11 +1612,11 @@
 
 				}
 				// end animation_handler
-				
+
 				// styling_handler
-				
+
 				var styling_handler = function () {
-					
+
 					var api;
 
 					$('#target-6').Jcrop({
@@ -1667,13 +1668,13 @@
 								api.ui.holder.removeClass(c);
 						});
 					});
-					
+
 				}
-				
+
 				// end styling_handler
-				
+
 				//run functions
-				
+
 				api_handler();
 				default_handler();
 				basic_handler();
@@ -1689,7 +1690,7 @@
 			var _gaq = _gaq || [];
 				_gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
 				_gaq.push(['_trackPageview']);
-			
+
 			(function() {
 				var ga = document.createElement('script');
 				ga.type = 'text/javascript';

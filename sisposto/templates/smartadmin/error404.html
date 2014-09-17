@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en-us">
 	<head>
@@ -7,50 +8,50 @@
 		<title> SmartAdmin </title>
 		<meta name="description" content="">
 		<meta name="author" content="">
-			
+
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		<!-- Basic Styles -->
-		<link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="{% static "smartadmin/css/bootstrap.min.css" %}">
+		<link rel="stylesheet" type="text/css" media="screen" href="{% static "smartadmin/css/font-awesome.min.css" %}">
 
 		<!-- SmartAdmin Styles : Please note (smartadmin-production.css) was created using LESS variables -->
-		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.min.css">
-		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="{% static "smartadmin/css/smartadmin-production.min.css" %}">
+		<link rel="stylesheet" type="text/css" media="screen" href="{% static "smartadmin/css/smartadmin-skins.min.css" %}">
 
 		<!-- SmartAdmin RTL Support is under construction
 			 This RTL CSS will be released in version 1.5
-		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-rtl.min.css"> -->
+		<link rel="stylesheet" type="text/css" media="screen" href="{% static "smartadmin/css/smartadmin-rtl.min.css" %}"> -->
 
 		<!-- We recommend you use "your_style.css" to override SmartAdmin
 		     specific styles this will also ensure you retrain your customization with each SmartAdmin update.
-		<link rel="stylesheet" type="text/css" media="screen" href="css/your_style.css"> -->
+		<link rel="stylesheet" type="text/css" media="screen" href="{% static "smartadmin/css/your_style.css" %}"> -->
 
 		<!-- Demo purpose only: goes with demo.js, you can delete this css when designing your own WebApp -->
-		<link rel="stylesheet" type="text/css" media="screen" href="css/demo.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="{% static "smartadmin/css/demo.min.css" %}">
 
 		<!-- FAVICONS -->
-		<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
-		<link rel="icon" href="img/favicon/favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="{% static "smartadmin/img/favicon/favicon.ico" %}" type="image/x-icon">
+		<link rel="icon" href="{% static "smartadmin/img/favicon/favicon.ico" %}" type="image/x-icon">
 
 		<!-- GOOGLE FONT -->
 		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
 
-		<!-- Specifying a Webpage Icon for Web Clip 
+		<!-- Specifying a Webpage Icon for Web Clip
 			 Ref: https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html -->
-		<link rel="apple-touch-icon" href="img/splash/sptouch-icon-iphone.png">
-		<link rel="apple-touch-icon" sizes="76x76" href="img/splash/touch-icon-ipad.png">
-		<link rel="apple-touch-icon" sizes="120x120" href="img/splash/touch-icon-iphone-retina.png">
-		<link rel="apple-touch-icon" sizes="152x152" href="img/splash/touch-icon-ipad-retina.png">
-		
+		<link rel="apple-touch-icon" href="{% static "smartadmin/img/splash/sptouch-icon-iphone.png" %}">
+		<link rel="apple-touch-icon" sizes="76x76" href="{% static "smartadmin/img/splash/touch-icon-ipad.png" %}">
+		<link rel="apple-touch-icon" sizes="120x120" href="{% static "smartadmin/img/splash/touch-icon-iphone-retina.png" %}">
+		<link rel="apple-touch-icon" sizes="152x152" href="{% static "smartadmin/img/splash/touch-icon-ipad-retina.png" %}">
+
 		<!-- iOS web-app metas : hides Safari UI Components and Changes Status Bar Appearance -->
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		
+
 		<!-- Startup image for web apps -->
-		<link rel="apple-touch-startup-image" href="img/splash/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
-		<link rel="apple-touch-startup-image" href="img/splash/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
-		<link rel="apple-touch-startup-image" href="img/splash/iphone.png" media="screen and (max-device-width: 320px)">
+		<link rel="apple-touch-startup-image" href="{% static "smartadmin/img/splash/ipad-landscape.png" %}" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
+		<link rel="apple-touch-startup-image" href="{% static "smartadmin/img/splash/ipad-portrait.png" %}" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
+		<link rel="apple-touch-startup-image" href="{% static "smartadmin/img/splash/iphone.png" %}" media="screen and (max-device-width: 320px)">
 
 		<style>
 			.error-text-2 {
@@ -104,409 +105,409 @@
 			width: 1.5rem;
 			height: 1.5rem;
 			}
-		
+
 			50% {
 			-webkit-transform: translate3D(4rem, 3rem, 0);
 			opacity: 1;
 			z-index: 1;
 			-webkit-animation-timing-function: ease-in-out;
 			}
-		
+
 			55% {
 			z-index: -1;
 			}
-		
+
 			75% {
 			width: .75rem;
 			height: .75rem;
 			opacity: .5;
 			}
-		
+
 			100% {
 			-webkit-transform: translate3D(-3rem,-3rem,0);
 			z-index: -1;
 			}
 			}
-		
+
 			@-moz-keyframes particle-a {
 			0% {
 			-moz-transform: translate3D(-3rem,-3rem,0);
 			z-index: 1;
 			-moz-animation-timing-function: ease-in-out;
 			}
-		
+
 			25% {
 			width: 1.5rem;
 			height: 1.5rem;
 			}
-		
+
 			50% {
 			-moz-transform: translate3D(4rem, 3rem, 0);
 			opacity: 1;
 			z-index: 1;
 			-moz-animation-timing-function: ease-in-out;
 			}
-		
+
 			55% {
 			z-index: -1;
 			}
-		
+
 			75% {
 			width: .75rem;
 			height: .75rem;
 			opacity: .5;
 			}
-		
+
 			100% {
 			-moz-transform: translate3D(-3rem,-3rem,0);
 			z-index: -1;
 			}
 			}
-		
+
 			@-o-keyframes particle-a {
 			0% {
 			-o-transform: translate3D(-3rem,-3rem,0);
 			z-index: 1;
 			-o-animation-timing-function: ease-in-out;
 			}
-		
+
 			25% {
 			width: 1.5rem;
 			height: 1.5rem;
 			}
-		
+
 			50% {
 			-o-transform: translate3D(4rem, 3rem, 0);
 			opacity: 1;
 			z-index: 1;
 			-o-animation-timing-function: ease-in-out;
 			}
-		
+
 			55% {
 			z-index: -1;
 			}
-		
+
 			75% {
 			width: .75rem;
 			height: .75rem;
 			opacity: .5;
 			}
-		
+
 			100% {
 			-o-transform: translate3D(-3rem,-3rem,0);
 			z-index: -1;
 			}
 			}
-		
+
 			@keyframes particle-a {
 			0% {
 			transform: translate3D(-3rem,-3rem,0);
 			z-index: 1;
 			animation-timing-function: ease-in-out;
 			}
-		
+
 			25% {
 			width: 1.5rem;
 			height: 1.5rem;
 			}
-		
+
 			50% {
 			transform: translate3D(4rem, 3rem, 0);
 			opacity: 1;
 			z-index: 1;
 			animation-timing-function: ease-in-out;
 			}
-		
+
 			55% {
 			z-index: -1;
 			}
-		
+
 			75% {
 			width: .75rem;
 			height: .75rem;
 			opacity: .5;
 			}
-		
+
 			100% {
 			transform: translate3D(-3rem,-3rem,0);
 			z-index: -1;
 			}
 			}
-		
+
 			@-webkit-keyframes particle-b {
 			0% {
 			-webkit-transform: translate3D(3rem,-3rem,0);
 			z-index: 1;
 			-webkit-animation-timing-function: ease-in-out;
 			}
-		
+
 			25% {
 			width: 1.5rem;
 			height: 1.5rem;
 			}
-		
+
 			50% {
 			-webkit-transform: translate3D(-3rem, 3.5rem, 0);
 			opacity: 1;
 			z-index: 1;
 			-webkit-animation-timing-function: ease-in-out;
 			}
-		
+
 			55% {
 			z-index: -1;
 			}
-		
+
 			75% {
 			width: .5rem;
 			height: .5rem;
 			opacity: .5;
 			}
-		
+
 			100% {
 			-webkit-transform: translate3D(3rem,-3rem,0);
 			z-index: -1;
 			}
 			}
-		
+
 			@-moz-keyframes particle-b {
 			0% {
 			-moz-transform: translate3D(3rem,-3rem,0);
 			z-index: 1;
 			-moz-animation-timing-function: ease-in-out;
 			}
-		
+
 			25% {
 			width: 1.5rem;
 			height: 1.5rem;
 			}
-		
+
 			50% {
 			-moz-transform: translate3D(-3rem, 3.5rem, 0);
 			opacity: 1;
 			z-index: 1;
 			-moz-animation-timing-function: ease-in-out;
 			}
-		
+
 			55% {
 			z-index: -1;
 			}
-		
+
 			75% {
 			width: .5rem;
 			height: .5rem;
 			opacity: .5;
 			}
-		
+
 			100% {
 			-moz-transform: translate3D(3rem,-3rem,0);
 			z-index: -1;
 			}
 			}
-		
+
 			@-o-keyframes particle-b {
 			0% {
 			-o-transform: translate3D(3rem,-3rem,0);
 			z-index: 1;
 			-o-animation-timing-function: ease-in-out;
 			}
-		
+
 			25% {
 			width: 1.5rem;
 			height: 1.5rem;
 			}
-		
+
 			50% {
 			-o-transform: translate3D(-3rem, 3.5rem, 0);
 			opacity: 1;
 			z-index: 1;
 			-o-animation-timing-function: ease-in-out;
 			}
-		
+
 			55% {
 			z-index: -1;
 			}
-		
+
 			75% {
 			width: .5rem;
 			height: .5rem;
 			opacity: .5;
 			}
-		
+
 			100% {
 			-o-transform: translate3D(3rem,-3rem,0);
 			z-index: -1;
 			}
 			}
-		
+
 			@keyframes particle-b {
 			0% {
 			transform: translate3D(3rem,-3rem,0);
 			z-index: 1;
 			animation-timing-function: ease-in-out;
 			}
-		
+
 			25% {
 			width: 1.5rem;
 			height: 1.5rem;
 			}
-		
+
 			50% {
 			transform: translate3D(-3rem, 3.5rem, 0);
 			opacity: 1;
 			z-index: 1;
 			animation-timing-function: ease-in-out;
 			}
-		
+
 			55% {
 			z-index: -1;
 			}
-		
+
 			75% {
 			width: .5rem;
 			height: .5rem;
 			opacity: .5;
 			}
-		
+
 			100% {
 			transform: translate3D(3rem,-3rem,0);
 			z-index: -1;
 			}
 			}
-		
+
 			@-webkit-keyframes particle-c {
 			0% {
 			-webkit-transform: translate3D(-1rem,-3rem,0);
 			z-index: 1;
 			-webkit-animation-timing-function: ease-in-out;
 			}
-		
+
 			25% {
 			width: 1.3rem;
 			height: 1.3rem;
 			}
-		
+
 			50% {
 			-webkit-transform: translate3D(2rem, 2.5rem, 0);
 			opacity: 1;
 			z-index: 1;
 			-webkit-animation-timing-function: ease-in-out;
 			}
-		
+
 			55% {
 			z-index: -1;
 			}
-		
+
 			75% {
 			width: .5rem;
 			height: .5rem;
 			opacity: .5;
 			}
-		
+
 			100% {
 			-webkit-transform: translate3D(-1rem,-3rem,0);
 			z-index: -1;
 			}
 			}
-		
+
 			@-moz-keyframes particle-c {
 			0% {
 			-moz-transform: translate3D(-1rem,-3rem,0);
 			z-index: 1;
 			-moz-animation-timing-function: ease-in-out;
 			}
-		
+
 			25% {
 			width: 1.3rem;
 			height: 1.3rem;
 			}
-		
+
 			50% {
 			-moz-transform: translate3D(2rem, 2.5rem, 0);
 			opacity: 1;
 			z-index: 1;
 			-moz-animation-timing-function: ease-in-out;
 			}
-		
+
 			55% {
 			z-index: -1;
 			}
-		
+
 			75% {
 			width: .5rem;
 			height: .5rem;
 			opacity: .5;
 			}
-		
+
 			100% {
 			-moz-transform: translate3D(-1rem,-3rem,0);
 			z-index: -1;
 			}
 			}
-		
+
 			@-o-keyframes particle-c {
 			0% {
 			-o-transform: translate3D(-1rem,-3rem,0);
 			z-index: 1;
 			-o-animation-timing-function: ease-in-out;
 			}
-		
+
 			25% {
 			width: 1.3rem;
 			height: 1.3rem;
 			}
-		
+
 			50% {
 			-o-transform: translate3D(2rem, 2.5rem, 0);
 			opacity: 1;
 			z-index: 1;
 			-o-animation-timing-function: ease-in-out;
 			}
-		
+
 			55% {
 			z-index: -1;
 			}
-		
+
 			75% {
 			width: .5rem;
 			height: .5rem;
 			opacity: .5;
 			}
-		
+
 			100% {
 			-o-transform: translate3D(-1rem,-3rem,0);
 			z-index: -1;
 			}
 			}
-		
+
 			@keyframes particle-c {
 			0% {
 			transform: translate3D(-1rem,-3rem,0);
 			z-index: 1;
 			animation-timing-function: ease-in-out;
 			}
-		
+
 			25% {
 			width: 1.3rem;
 			height: 1.3rem;
 			}
-		
+
 			50% {
 			transform: translate3D(2rem, 2.5rem, 0);
 			opacity: 1;
 			z-index: 1;
 			animation-timing-function: ease-in-out;
 			}
-		
+
 			55% {
 			z-index: -1;
 			}
-		
+
 			75% {
 			width: .5rem;
 			height: .5rem;
 			opacity: .5;
 			}
-		
+
 			100% {
 			transform: translate3D(-1rem,-3rem,0);
 			z-index: -1;
@@ -534,7 +535,7 @@
 			<div id="logo-group">
 
 				<!-- PLACE YOUR LOGO HERE -->
-				<span id="logo"> <img src="img/logo.png" alt="SmartAdmin"> </span>
+				<span id="logo"> <img src="{% static "smartadmin/img/logo.png" %}" alt="SmartAdmin"> </span>
 				<!-- END LOGO PLACEHOLDER -->
 
 				<!-- Note: The activity badge color changes when clicked and resets the number to 0
@@ -610,19 +611,19 @@
 
 			<!-- pulled right: nav area -->
 			<div class="pull-right">
-				
+
 				<!-- collapse menu button -->
 				<div id="hide-menu" class="btn-header pull-right">
 					<span> <a href="javascript:void(0);" data-action="toggleMenu" title="Collapse Menu"><i class="fa fa-reorder"></i></a> </span>
 				</div>
 				<!-- end collapse menu -->
-				
+
 				<!-- #MOBILE -->
 				<!-- Top menu profile link : this shows only when top menu is active -->
 				<ul id="mobile-profile-img" class="header-dropdown-list hidden-xs padding-5">
 					<li class="">
-						<a href="#" class="dropdown-toggle no-margin userdropdown" data-toggle="dropdown"> 
-							<img src="img/avatars/sunny.png" alt="John Doe" class="online" />  
+						<a href="#" class="dropdown-toggle no-margin userdropdown" data-toggle="dropdown">
+							<img src="{% static "smartadmin/img/avatars/sunny.png" %}" alt="John Doe" class="online" />
 						</a>
 						<ul class="dropdown-menu pull-right">
 							<li>
@@ -697,11 +698,11 @@
 					<span> <a href="javascript:void(0);" data-action="launchFullscreen" title="Full Screen"><i class="fa fa-arrows-alt"></i></a> </span>
 				</div>
 				<!-- end fullscreen button -->
-				
+
 				<!-- #Voice Command: Start Speech -->
 				<div id="speech-btn" class="btn-header transparent pull-right hidden-sm hidden-xs">
-					<div> 
-						<a href="javascript:void(0)" title="Voice Command" data-action="voiceCommand"><i class="fa fa-microphone"></i></a> 
+					<div>
+						<a href="javascript:void(0)" title="Voice Command" data-action="voiceCommand"><i class="fa fa-microphone"></i></a>
 						<div class="popover bottom"><div class="arrow"></div>
 							<div class="popover-content">
 								<h4 class="vc-title">Voice command activated <br><small>Please speak clearly into the mic</small></h4>
@@ -710,50 +711,50 @@
 									<br><small class="txt-color-red">Must <strong>"Allow"</strong> Microphone</small>
 									<br><small class="txt-color-red">Must have <strong>Internet Connection</strong></small>
 								</h4>
-								<a href="javascript:void(0);" class="btn btn-success" onclick="commands.help()">See Commands</a> 
-								<a href="javascript:void(0);" class="btn bg-color-purple txt-color-white" onclick="$('#speech-btn .popover').fadeOut(50);">Close Popup</a> 
+								<a href="javascript:void(0);" class="btn btn-success" onclick="commands.help()">See Commands</a>
+								<a href="javascript:void(0);" class="btn bg-color-purple txt-color-white" onclick="$('#speech-btn .popover').fadeOut(50);">Close Popup</a>
 							</div>
 						</div>
 					</div>
 				</div>
 				<!-- end voice command -->
-				
+
 				<!-- multiple lang dropdown : find all flags in the flags page -->
 				<ul class="header-dropdown-list hidden-xs">
 					<li>
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="img/blank.gif" class="flag flag-us" alt="United States"> <span> English (US) </span> <i class="fa fa-angle-down"></i> </a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-us" alt="United States"> <span> English (US) </span> <i class="fa fa-angle-down"></i> </a>
 						<ul class="dropdown-menu pull-right">
 							<li class="active">
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-us" alt="United States"> English (US)</a>
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-us" alt="United States"> English (US)</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-fr" alt="France"> Français</a>
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-fr" alt="France"> Français</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-es" alt="Spanish"> Español</a>
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-es" alt="Spanish"> Español</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-de" alt="German"> Deutsch</a>
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-de" alt="German"> Deutsch</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-jp" alt="Japan"> 日本語</a>
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-jp" alt="Japan"> 日本語</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-cn" alt="China"> 中文</a>
-							</li>	
-							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-it" alt="Italy"> Italiano</a>
-							</li>	
-							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-pt" alt="Portugal"> Portugal</a>
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-cn" alt="China"> 中文</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-ru" alt="Russia"> Русский язык</a>
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-it" alt="Italy"> Italiano</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-kp" alt="Korea"> 한국어</a>
-							</li>						
-							
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-pt" alt="Portugal"> Portugal</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-ru" alt="Russia"> Русский язык</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-kp" alt="Korea"> 한국어</a>
+							</li>
+
 						</ul>
 					</li>
 				</ul>
@@ -771,16 +772,16 @@
 
 			<!-- User info -->
 			<div class="login-info">
-				<span> <!-- User image size is adjusted inside CSS, it should stay as it --> 
-					
+				<span> <!-- User image size is adjusted inside CSS, it should stay as it -->
+
 					<a href="javascript:void(0);" id="show-shortcut" data-action="toggleShortcut">
-						<img src="img/avatars/sunny.png" alt="me" class="online" /> 
+						<img src="{% static "smartadmin/img/avatars/sunny.png" %}" alt="me" class="online" />
 						<span>
-							john.doe 
+							john.doe
 						</span>
 						<i class="fa fa-angle-down"></i>
-					</a> 
-					
+					</a>
+
 				</span>
 			</div>
 			<!-- end user info -->
@@ -881,10 +882,10 @@
 								<ul>
 									<li>
 										<a href="fa.html"><i class="fa fa-plane"></i> Font Awesome</a>
-									</li>	
+									</li>
 									<li>
 										<a href="glyph.html"><i class="glyphicon glyphicon-plane"></i> Glyph Icons</a>
-									</li>	
+									</li>
 									<li>
 										<a href="flags.html"><i class="fa fa-flag"></i> Flags</a>
 									</li>
@@ -933,7 +934,7 @@
 									</li>
 									<li>
 										<a href="#"><i class="fa fa-fw fa-folder-open"></i> Item #3</a>
-		
+
 										<ul>
 											<li>
 												<a href="#"><i class="fa fa-fw fa-folder-open"></i> 3ed Level </a>
@@ -947,13 +948,13 @@
 												</ul>
 											</li>
 										</ul>
-		
+
 									</li>
 								</ul>
 							</li>
 						</ul>
 					</li>
-				
+
 					<li>
 						<a href="calendar.html"><i class="fa fa-lg fa-fw fa-calendar"><em>3</em></i> <span class="menu-item-parent">Calendar</span></a>
 					</li>
@@ -1037,8 +1038,8 @@
 					</li>
 				</ul>
 			</nav>
-			<span class="minifyme" data-action="minifyMenu"> 
-				<i class="fa fa-arrow-circle-left hit"></i> 
+			<span class="minifyme" data-action="minifyMenu">
+				<i class="fa fa-arrow-circle-left hit"></i>
 			</span>
 
 		</aside>
@@ -1050,10 +1051,10 @@
 			<!-- RIBBON -->
 			<div id="ribbon">
 
-				<span class="ribbon-button-alignment"> 
+				<span class="ribbon-button-alignment">
 					<span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh"  rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings." data-html="true">
 						<i class="fa fa-refresh"></i>
-					</span> 
+					</span>
 				</span>
 
 				<!-- breadcrumb -->
@@ -1081,9 +1082,9 @@
 
 				<!-- row -->
 				<div class="row">
-				
+
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-				
+
 						<div class="row">
 							<div class="col-sm-12">
 								<div class="text-center error-box">
@@ -1103,9 +1104,9 @@
 											<span class="input-group-addon"><i class="fa fa-fw fa-lg fa-search"></i></span>
 										</div>
 									</div>
-				
+
 									<div class="row">
-				
+
 										<div class="col-sm-12">
 											<ul class="list-inline">
 												<li>
@@ -1137,21 +1138,21 @@
 												</li>
 											</ul>
 										</div>
-				
+
 									</div>
-				
+
 								</div>
-				
+
 							</div>
-				
+
 						</div>
-				
+
 					</div>
 
 				<!-- end row -->
 
 			</div>
-			
+
 			</div>
 			<!-- END MAIN CONTENT -->
 
@@ -1244,61 +1245,61 @@
 		<!--================================================== -->
 
 		<!-- PACE LOADER - turn this on if you want ajax loading to show (caution: uses lots of memory on iDevices)-->
-		<script data-pace-options='{ "restartOnRequestAfter": true }' src="js/plugin/pace/pace.min.js"></script>
+		<script data-pace-options='{ "restartOnRequestAfter": true }' src="{% static "smartadmin/js/plugin/pace/pace.min.js" %}"></script>
 
 		<!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 		<script>
 			if (!window.jQuery) {
-				document.write('<script src="js/libs/jquery-2.0.2.min.js"><\/script>');
+				document.write('<script src="{% static "smartadmin/js/libs/jquery-2.0.2.min.js" %}"><\/script>');
 			}
 		</script>
 
 		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 		<script>
 			if (!window.jQuery.ui) {
-				document.write('<script src="js/libs/jquery-ui-1.10.3.min.js"><\/script>');
+				document.write('<script src="{% static "smartadmin/js/libs/jquery-ui-1.10.3.min.js" %}"><\/script>');
 			}
 		</script>
 
 		<!-- IMPORTANT: APP CONFIG -->
-		<script src="js/app.config.js"></script>
+		<script src="{% static "smartadmin/js/app.config.js" %}"></script>
 
 		<!-- JS TOUCH : include this plugin for mobile drag / drop touch events-->
-		<script src="js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script> 
+		<script src="{% static "smartadmin/js/plugin/jquery-touch/jquery.ui.touch-punch.min.js" %}"></script>
 
 		<!-- BOOTSTRAP JS -->
-		<script src="js/bootstrap/bootstrap.min.js"></script>
+		<script src="{% static "smartadmin/js/bootstrap/bootstrap.min.js" %}"></script>
 
 		<!-- CUSTOM NOTIFICATION -->
-		<script src="js/notification/SmartNotification.min.js"></script>
+		<script src="{% static "smartadmin/js/notification/SmartNotification.min.js" %}"></script>
 
 		<!-- JARVIS WIDGETS -->
-		<script src="js/smartwidgets/jarvis.widget.min.js"></script>
+		<script src="{% static "smartadmin/js/smartwidgets/jarvis.widget.min.js" %}"></script>
 
 		<!-- EASY PIE CHARTS -->
-		<script src="js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js" %}"></script>
 
 		<!-- SPARKLINES -->
-		<script src="js/plugin/sparkline/jquery.sparkline.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/sparkline/jquery.sparkline.min.js" %}"></script>
 
 		<!-- JQUERY VALIDATE -->
-		<script src="js/plugin/jquery-validate/jquery.validate.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/jquery-validate/jquery.validate.min.js" %}"></script>
 
 		<!-- JQUERY MASKED INPUT -->
-		<script src="js/plugin/masked-input/jquery.maskedinput.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/masked-input/jquery.maskedinput.min.js" %}"></script>
 
 		<!-- JQUERY SELECT2 INPUT -->
-		<script src="js/plugin/select2/select2.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/select2/select2.min.js" %}"></script>
 
 		<!-- JQUERY UI + Bootstrap Slider -->
-		<script src="js/plugin/bootstrap-slider/bootstrap-slider.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/bootstrap-slider/bootstrap-slider.min.js" %}"></script>
 
 		<!-- browser msie issue fix -->
-		<script src="js/plugin/msie-fix/jquery.mb.browser.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/msie-fix/jquery.mb.browser.min.js" %}"></script>
 
 		<!-- FastClick: For mobile devices -->
-		<script src="js/plugin/fastclick/fastclick.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/fastclick/fastclick.min.js" %}"></script>
 
 		<!--[if IE 8]>
 
@@ -1307,16 +1308,16 @@
 		<![endif]-->
 
 		<!-- Demo purpose only -->
-		<script src="js/demo.min.js"></script>
+		<script src="{% static "smartadmin/js/demo.min.js" %}"></script>
 
 		<!-- MAIN APP JS FILE -->
-		<script src="js/app.min.js"></script>
+		<script src="{% static "smartadmin/js/app.min.js" %}"></script>
 
 		<!-- ENHANCEMENT PLUGINS : NOT A REQUIREMENT -->
 		<!-- Voice command : plugin -->
-		<script src="js/speech/voicecommand.min.js"></script>
+		<script src="{% static "smartadmin/js/speech/voicecommand.min.js" %}"></script>
 
-		<!-- PAGE RELATED PLUGIN(S) 
+		<!-- PAGE RELATED PLUGIN(S)
 		<script src="..."></script>-->
 
 		<!-- Your GOOGLE ANALYTICS CODE Below -->
@@ -1324,7 +1325,7 @@
 			var _gaq = _gaq || [];
 				_gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
 				_gaq.push(['_trackPageview']);
-			
+
 			(function() {
 				var ga = document.createElement('script');
 				ga.type = 'text/javascript';

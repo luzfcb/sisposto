@@ -1,3 +1,5 @@
+{% load staticfiles %}
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en-us">
 	<head>
@@ -5,63 +7,63 @@
 		<title> SmartAdmin </title>
 		<meta name="description" content="">
 		<meta name="author" content="">
-			
+
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		
+
 		<!-- #CSS Links -->
 		<!-- Basic Styles -->
-		<link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="{% static "smartadmin/css/bootstrap.min.css" %}">
+		<link rel="stylesheet" type="text/css" media="screen" href="{% static "smartadmin/css/font-awesome.min.css" %}">
 
 		<!-- SmartAdmin Styles : Please note (smartadmin-production.css) was created using LESS variables -->
-		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.min.css">
-		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="{% static "smartadmin/css/smartadmin-production.min.css" %}">
+		<link rel="stylesheet" type="text/css" media="screen" href="{% static "smartadmin/css/smartadmin-skins.min.css" %}">
 
 		<!-- SmartAdmin RTL Support is under construction
 			 This RTL CSS will be released in version 1.5
-		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-rtl.min.css"> -->
+		<link rel="stylesheet" type="text/css" media="screen" href="{% static "smartadmin/css/smartadmin-rtl.min.css" %}"> -->
 
 		<!-- We recommend you use "your_style.css" to override SmartAdmin
 		     specific styles this will also ensure you retrain your customization with each SmartAdmin update.
-		<link rel="stylesheet" type="text/css" media="screen" href="css/your_style.css"> -->
+		<link rel="stylesheet" type="text/css" media="screen" href="{% static "smartadmin/css/your_style.css" %}"> -->
 
 		<!-- Demo purpose only: goes with demo.js, you can delete this css when designing your own WebApp -->
-		<link rel="stylesheet" type="text/css" media="screen" href="css/demo.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="{% static "smartadmin/css/demo.min.css" %}">
 
 		<!-- #FAVICONS -->
-		<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
-		<link rel="icon" href="img/favicon/favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="{% static "smartadmin/img/favicon/favicon.ico" %}" type="image/x-icon">
+		<link rel="icon" href="{% static "smartadmin/img/favicon/favicon.ico" %}" type="image/x-icon">
 
 		<!-- #GOOGLE FONT -->
 		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
 
 		<!-- #APP SCREEN / ICONS -->
-		<!-- Specifying a Webpage Icon for Web Clip 
+		<!-- Specifying a Webpage Icon for Web Clip
 			 Ref: https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html -->
-		<link rel="apple-touch-icon" href="img/splash/sptouch-icon-iphone.png">
-		<link rel="apple-touch-icon" sizes="76x76" href="img/splash/touch-icon-ipad.png">
-		<link rel="apple-touch-icon" sizes="120x120" href="img/splash/touch-icon-iphone-retina.png">
-		<link rel="apple-touch-icon" sizes="152x152" href="img/splash/touch-icon-ipad-retina.png">
-		
+		<link rel="apple-touch-icon" href="{% static "smartadmin/img/splash/sptouch-icon-iphone.png" %}">
+		<link rel="apple-touch-icon" sizes="76x76" href="{% static "smartadmin/img/splash/touch-icon-ipad.png" %}">
+		<link rel="apple-touch-icon" sizes="120x120" href="{% static "smartadmin/img/splash/touch-icon-iphone-retina.png" %}">
+		<link rel="apple-touch-icon" sizes="152x152" href="{% static "smartadmin/img/splash/touch-icon-ipad-retina.png" %}">
+
 		<!-- iOS web-app metas : hides Safari UI Components and Changes Status Bar Appearance -->
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		
+
 		<!-- Startup image for web apps -->
-		<link rel="apple-touch-startup-image" href="img/splash/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
-		<link rel="apple-touch-startup-image" href="img/splash/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
-		<link rel="apple-touch-startup-image" href="img/splash/iphone.png" media="screen and (max-device-width: 320px)">
+		<link rel="apple-touch-startup-image" href="{% static "smartadmin/img/splash/ipad-landscape.png" %}" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
+		<link rel="apple-touch-startup-image" href="{% static "smartadmin/img/splash/ipad-portrait.png" %}" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
+		<link rel="apple-touch-startup-image" href="{% static "smartadmin/img/splash/iphone.png" %}" media="screen and (max-device-width: 320px)">
 
 	</head>
 
 	<!--
 
 	TABLE OF CONTENTS.
-	
+
 	Use search to find needed section.
-	
+
 	===================================================================
-	
+
 	|  01. #CSS Links                |  all CSS links and file paths  |
 	|  02. #FAVICONS                 |  Favicon links and file paths  |
 	|  03. #GOOGLE FONT              |  Google font link              |
@@ -78,11 +80,11 @@
 	|  14. #PAGE FOOTER              |  page footer                   |
 	|  15. #SHORTCUT AREA            |  dropdown shortcuts area       |
 	|  16. #PLUGINS                  |  all scripts and plugins       |
-	
+
 	===================================================================
-	
+
 	-->
-	
+
 	<!-- #BODY -->
 	<!-- Possible Classes
 
@@ -103,7 +105,7 @@
 			<div id="logo-group">
 
 				<!-- PLACE YOUR LOGO HERE -->
-				<span id="logo"> <img src="img/logo.png" alt="SmartAdmin"> </span>
+				<span id="logo"> <img src="{% static "smartadmin/img/logo.png" %}" alt="SmartAdmin"> </span>
 				<!-- END LOGO PLACEHOLDER -->
 
 				<!-- Note: The activity badge color changes when clicked and resets the number to 0
@@ -180,19 +182,19 @@
 			<!-- #TOGGLE LAYOUT BUTTONS -->
 			<!-- pulled right: nav area -->
 			<div class="pull-right">
-				
+
 				<!-- collapse menu button -->
 				<div id="hide-menu" class="btn-header pull-right">
 					<span> <a href="javascript:void(0);" data-action="toggleMenu" title="Collapse Menu"><i class="fa fa-reorder"></i></a> </span>
 				</div>
 				<!-- end collapse menu -->
-				
+
 				<!-- #MOBILE -->
 				<!-- Top menu profile link : this shows only when top menu is active -->
 				<ul id="mobile-profile-img" class="header-dropdown-list hidden-xs padding-5">
 					<li class="">
-						<a href="#" class="dropdown-toggle no-margin userdropdown" data-toggle="dropdown"> 
-							<img src="img/avatars/sunny.png" alt="John Doe" class="online" />  
+						<a href="#" class="dropdown-toggle no-margin userdropdown" data-toggle="dropdown">
+							<img src="{% static "smartadmin/img/avatars/sunny.png" %}" alt="John Doe" class="online" />
 						</a>
 						<ul class="dropdown-menu pull-right">
 							<li>
@@ -229,7 +231,7 @@
 					<span> <a href="javascript:void(0)" title="Search"><i class="fa fa-search"></i></a> </span>
 				</div>
 				<!-- end search mobile button -->
-				
+
 				<!-- #SEARCH -->
 				<!-- input: search field -->
 				<form action="search.html" class="header-search pull-right">
@@ -246,11 +248,11 @@
 					<span> <a href="javascript:void(0);" data-action="launchFullscreen" title="Full Screen"><i class="fa fa-arrows-alt"></i></a> </span>
 				</div>
 				<!-- end fullscreen button -->
-				
+
 				<!-- #Voice Command: Start Speech -->
 				<div id="speech-btn" class="btn-header transparent pull-right hidden-sm hidden-xs">
-					<div> 
-						<a href="javascript:void(0)" title="Voice Command" data-action="voiceCommand"><i class="fa fa-microphone"></i></a> 
+					<div>
+						<a href="javascript:void(0)" title="Voice Command" data-action="voiceCommand"><i class="fa fa-microphone"></i></a>
 						<div class="popover bottom"><div class="arrow"></div>
 							<div class="popover-content">
 								<h4 class="vc-title">Voice command activated <br><small>Please speak clearly into the mic</small></h4>
@@ -259,8 +261,8 @@
 									<br><small class="txt-color-red">Must <strong>"Allow"</strong> Microphone</small>
 									<br><small class="txt-color-red">Must have <strong>Internet Connection</strong></small>
 								</h4>
-								<a href="javascript:void(0);" class="btn btn-success" onclick="commands.help()">See Commands</a> 
-								<a href="javascript:void(0);" class="btn bg-color-purple txt-color-white" onclick="$('#speech-btn .popover').fadeOut(50);">Close Popup</a> 
+								<a href="javascript:void(0);" class="btn btn-success" onclick="commands.help()">See Commands</a>
+								<a href="javascript:void(0);" class="btn bg-color-purple txt-color-white" onclick="$('#speech-btn .popover').fadeOut(50);">Close Popup</a>
 							</div>
 						</div>
 					</div>
@@ -270,39 +272,39 @@
 				<!-- multiple lang dropdown : find all flags in the flags page -->
 				<ul class="header-dropdown-list hidden-xs">
 					<li>
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="img/blank.gif" class="flag flag-us" alt="United States"> <span> English (US) </span> <i class="fa fa-angle-down"></i> </a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-us" alt="United States"> <span> English (US) </span> <i class="fa fa-angle-down"></i> </a>
 						<ul class="dropdown-menu pull-right">
 							<li class="active">
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-us" alt="United States"> English (US)</a>
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-us" alt="United States"> English (US)</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-fr" alt="France"> Français</a>
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-fr" alt="France"> Français</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-es" alt="Spanish"> Español</a>
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-es" alt="Spanish"> Español</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-de" alt="German"> Deutsch</a>
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-de" alt="German"> Deutsch</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-jp" alt="Japan"> 日本語</a>
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-jp" alt="Japan"> 日本語</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-cn" alt="China"> 中文</a>
-							</li>	
-							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-it" alt="Italy"> Italiano</a>
-							</li>	
-							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-pt" alt="Portugal"> Portugal</a>
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-cn" alt="China"> 中文</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-ru" alt="Russia"> Русский язык</a>
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-it" alt="Italy"> Italiano</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-kp" alt="Korea"> 한국어</a>
-							</li>						
-							
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-pt" alt="Portugal"> Portugal</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-ru" alt="Russia"> Русский язык</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-kp" alt="Korea"> 한국어</a>
+							</li>
+
 						</ul>
 					</li>
 				</ul>
@@ -321,16 +323,16 @@
 
 			<!-- User info -->
 			<div class="login-info">
-				<span> <!-- User image size is adjusted inside CSS, it should stay as it --> 
-					
+				<span> <!-- User image size is adjusted inside CSS, it should stay as it -->
+
 					<a href="javascript:void(0);" id="show-shortcut" data-action="toggleShortcut">
-						<img src="img/avatars/sunny.png" alt="me" class="online" /> 
+						<img src="{% static "smartadmin/img/avatars/sunny.png" %}" alt="me" class="online" />
 						<span>
-							john.doe 
+							john.doe
 						</span>
 						<i class="fa fa-angle-down"></i>
-					</a> 
-					
+					</a>
+
 				</span>
 			</div>
 			<!-- end user info -->
@@ -431,10 +433,10 @@
 								<ul>
 									<li>
 										<a href="fa.html"><i class="fa fa-plane"></i> Font Awesome</a>
-									</li>	
+									</li>
 									<li>
 										<a href="glyph.html"><i class="glyphicon glyphicon-plane"></i> Glyph Icons</a>
-									</li>	
+									</li>
 									<li>
 										<a href="flags.html"><i class="fa fa-flag"></i> Flags</a>
 									</li>
@@ -483,7 +485,7 @@
 									</li>
 									<li>
 										<a href="#"><i class="fa fa-fw fa-folder-open"></i> Item #3</a>
-		
+
 										<ul>
 											<li>
 												<a href="#"><i class="fa fa-fw fa-folder-open"></i> 3ed Level </a>
@@ -497,13 +499,13 @@
 												</ul>
 											</li>
 										</ul>
-		
+
 									</li>
 								</ul>
 							</li>
 						</ul>
 					</li>
-				
+
 					<li>
 						<a href="calendar.html"><i class="fa fa-lg fa-fw fa-calendar"><em>3</em></i> <span class="menu-item-parent">Calendar</span></a>
 					</li>
@@ -587,8 +589,8 @@
 					</li>
 				</ul>
 			</nav>
-			<span class="minifyme" data-action="minifyMenu"> 
-				<i class="fa fa-arrow-circle-left hit"></i> 
+			<span class="minifyme" data-action="minifyMenu">
+				<i class="fa fa-arrow-circle-left hit"></i>
 			</span>
 
 		</aside>
@@ -600,10 +602,10 @@
 			<!-- RIBBON -->
 			<div id="ribbon">
 
-				<span class="ribbon-button-alignment"> 
+				<span class="ribbon-button-alignment">
 					<span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh"  rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings." data-html="true">
 						<i class="fa fa-refresh"></i>
-					</span> 
+					</span>
 				</span>
 
 				<!-- breadcrumb -->
@@ -625,29 +627,29 @@
 
 			</div>
 			<!-- END RIBBON -->
-			
-			
+
+
 
 			<!-- MAIN CONTENT -->
 			<div id="content">
 
 				<!-- row -->
 				<div class="row">
-					
+
 					<!-- col -->
 					<div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
 						<h1 class="page-title txt-color-blueDark">
-							
+
 							<!-- PAGE HEADER -->
-							<i class="fa-fw fa fa-home"></i> 
-								Page Header 
-							<span>>  
+							<i class="fa-fw fa fa-home"></i>
+								Page Header
+							<span>>
 								Subtitle
 							</span>
 						</h1>
 					</div>
 					<!-- end col -->
-					
+
 					<!-- right side of the page with the sparkline graphs -->
 					<!-- col -->
 					<div class="col-xs-12 col-sm-5 col-md-5 col-lg-8">
@@ -675,90 +677,90 @@
 						<!-- end sparks -->
 					</div>
 					<!-- end col -->
-					
+
 				</div>
 				<!-- end row -->
-				
+
 				<!--
-					The ID "widget-grid" will start to initialize all widgets below 
-					You do not need to use widgets if you dont want to. Simply remove 
-					the <section></section> and you can use wells or panels instead 
+					The ID "widget-grid" will start to initialize all widgets below
+					You do not need to use widgets if you dont want to. Simply remove
+					the <section></section> and you can use wells or panels instead
 					-->
-				
+
 				<!-- widget grid -->
 				<section id="widget-grid" class="">
-				
+
 					<!-- row -->
 					<div class="row">
-						
+
 						<!-- NEW WIDGET START -->
 						<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-							
+
 							<!-- Widget ID (each widget will need unique ID)-->
 							<div class="jarviswidget" id="wid-id-0">
 								<!-- widget options:
 									usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
-									
-									data-widget-colorbutton="false"	
+
+									data-widget-colorbutton="false"
 									data-widget-editbutton="false"
 									data-widget-togglebutton="false"
 									data-widget-deletebutton="false"
 									data-widget-fullscreenbutton="false"
 									data-widget-custombutton="false"
-									data-widget-collapsed="true" 
+									data-widget-collapsed="true"
 									data-widget-sortable="false"
-									
+
 								-->
 								<header>
 									<span class="widget-icon"> <i class="fa fa-comments"></i> </span>
-									<h2>Widget Title </h2>				
-									
+									<h2>Widget Title </h2>
+
 								</header>
-				
+
 								<!-- widget div-->
 								<div>
-									
+
 									<!-- widget edit box -->
 									<div class="jarviswidget-editbox">
 										<!-- This area used as dropdown edit box -->
-										<input class="form-control" type="text">	
+										<input class="form-control" type="text">
 									</div>
 									<!-- end widget edit box -->
-									
+
 									<!-- widget content -->
 									<div class="widget-body">
-										
+
 										<!-- this is what the user will see -->
-				
+
 									</div>
 									<!-- end widget content -->
-									
+
 								</div>
 								<!-- end widget div -->
-								
+
 							</div>
 							<!-- end widget -->
-				
+
 						</article>
 						<!-- WIDGET END -->
-						
+
 					</div>
-				
+
 					<!-- end row -->
-				
+
 					<!-- row -->
-				
+
 					<div class="row">
-				
+
 						<!-- a blank row to get started -->
 						<div class="col-sm-12">
 							<!-- your contents here -->
 						</div>
-							
+
 					</div>
-				
+
 					<!-- end row -->
-				
+
 				</section>
 				<!-- end widget grid -->
 
@@ -854,61 +856,61 @@
 		<!--================================================== -->
 
 		<!-- PACE LOADER - turn this on if you want ajax loading to show (caution: uses lots of memory on iDevices)-->
-		<script data-pace-options='{ "restartOnRequestAfter": true }' src="js/plugin/pace/pace.min.js"></script>
+		<script data-pace-options='{ "restartOnRequestAfter": true }' src="{% static "smartadmin/js/plugin/pace/pace.min.js" %}"></script>
 
 		<!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 		<script>
 			if (!window.jQuery) {
-				document.write('<script src="js/libs/jquery-2.0.2.min.js"><\/script>');
+				document.write('<script src="{% static "smartadmin/js/libs/jquery-2.0.2.min.js" %}"><\/script>');
 			}
 		</script>
 
 		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 		<script>
 			if (!window.jQuery.ui) {
-				document.write('<script src="js/libs/jquery-ui-1.10.3.min.js"><\/script>');
+				document.write('<script src="{% static "smartadmin/js/libs/jquery-ui-1.10.3.min.js" %}"><\/script>');
 			}
 		</script>
 
 		<!-- IMPORTANT: APP CONFIG -->
-		<script src="js/app.config.js"></script>
+		<script src="{% static "smartadmin/js/app.config.js" %}"></script>
 
 		<!-- JS TOUCH : include this plugin for mobile drag / drop touch events-->
-		<script src="js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script> 
+		<script src="{% static "smartadmin/js/plugin/jquery-touch/jquery.ui.touch-punch.min.js" %}"></script>
 
 		<!-- BOOTSTRAP JS -->
-		<script src="js/bootstrap/bootstrap.min.js"></script>
+		<script src="{% static "smartadmin/js/bootstrap/bootstrap.min.js" %}"></script>
 
 		<!-- CUSTOM NOTIFICATION -->
-		<script src="js/notification/SmartNotification.min.js"></script>
+		<script src="{% static "smartadmin/js/notification/SmartNotification.min.js" %}"></script>
 
 		<!-- JARVIS WIDGETS -->
-		<script src="js/smartwidgets/jarvis.widget.min.js"></script>
+		<script src="{% static "smartadmin/js/smartwidgets/jarvis.widget.min.js" %}"></script>
 
 		<!-- EASY PIE CHARTS -->
-		<script src="js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js" %}"></script>
 
 		<!-- SPARKLINES -->
-		<script src="js/plugin/sparkline/jquery.sparkline.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/sparkline/jquery.sparkline.min.js" %}"></script>
 
 		<!-- JQUERY VALIDATE -->
-		<script src="js/plugin/jquery-validate/jquery.validate.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/jquery-validate/jquery.validate.min.js" %}"></script>
 
 		<!-- JQUERY MASKED INPUT -->
-		<script src="js/plugin/masked-input/jquery.maskedinput.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/masked-input/jquery.maskedinput.min.js" %}"></script>
 
 		<!-- JQUERY SELECT2 INPUT -->
-		<script src="js/plugin/select2/select2.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/select2/select2.min.js" %}"></script>
 
 		<!-- JQUERY UI + Bootstrap Slider -->
-		<script src="js/plugin/bootstrap-slider/bootstrap-slider.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/bootstrap-slider/bootstrap-slider.min.js" %}"></script>
 
 		<!-- browser msie issue fix -->
-		<script src="js/plugin/msie-fix/jquery.mb.browser.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/msie-fix/jquery.mb.browser.min.js" %}"></script>
 
 		<!-- FastClick: For mobile devices -->
-		<script src="js/plugin/fastclick/fastclick.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/fastclick/fastclick.min.js" %}"></script>
 
 		<!--[if IE 8]>
 
@@ -917,22 +919,22 @@
 		<![endif]-->
 
 		<!-- Demo purpose only -->
-		<script src="js/demo.min.js"></script>
+		<script src="{% static "smartadmin/js/demo.min.js" %}"></script>
 
 		<!-- MAIN APP JS FILE -->
-		<script src="js/app.min.js"></script>
+		<script src="{% static "smartadmin/js/app.min.js" %}"></script>
 
 		<!-- ENHANCEMENT PLUGINS : NOT A REQUIREMENT -->
 		<!-- Voice command : plugin -->
-		<script src="js/speech/voicecommand.min.js"></script>
+		<script src="{% static "smartadmin/js/speech/voicecommand.min.js" %}"></script>
 
-		<!-- PAGE RELATED PLUGIN(S) 
+		<!-- PAGE RELATED PLUGIN(S)
 		<script src="..."></script>-->
 
 		<script type="text/javascript">
 
 			$(document).ready(function() {
-			 	
+
 				/* DO NOT REMOVE : GLOBAL FUNCTIONS!
 				 *
 				 * pageSetUp(); WILL CALL THE FOLLOWING FUNCTIONS
@@ -962,30 +964,30 @@
 				 * and makes rendering easier.
 				 *
 				 */
-				
+
 				 pageSetUp();
-				 
+
 				/*
 				 * ALL PAGE RELATED SCRIPTS CAN GO BELOW HERE
 				 * eg alert("my home function");
-				 * 
+				 *
 				 * var pagefunction = function() {
 				 *   ...
 				 * }
-				 * loadScript("js/plugin/_PLUGIN_NAME_.js", pagefunction);
-				 * 
+				 * loadScript("js/plugin/_PLUGIN_NAME_.js" %}", pagefunction);
+				 *
 				 * TO LOAD A SCRIPT:
-				 * var pagefunction = function (){ 
-				 *  loadScript(".../plugin.js", run_after_loaded);	
+				 * var pagefunction = function (){
+				 *  loadScript(".../plugin.js" %}", run_after_loaded);
 				 * }
-				 * 
+				 *
 				 * OR
-				 * 
-				 * loadScript(".../plugin.js", run_after_loaded);
+				 *
+				 * loadScript(".../plugin.js" %}", run_after_loaded);
 				 */
-				
+
 			})
-		
+
 		</script>
 
 		<!-- Your GOOGLE ANALYTICS CODE Below -->
@@ -993,7 +995,7 @@
 			var _gaq = _gaq || [];
 				_gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
 				_gaq.push(['_trackPageview']);
-			
+
 			(function() {
 				var ga = document.createElement('script');
 				ga.type = 'text/javascript';

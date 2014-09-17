@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en-us">
 	<head>
@@ -7,50 +8,50 @@
 		<title> SmartAdmin </title>
 		<meta name="description" content="">
 		<meta name="author" content="">
-			
+
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		<!-- Basic Styles -->
-		<link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="{% static "smartadmin/css/bootstrap.min.css" %}">
+		<link rel="stylesheet" type="text/css" media="screen" href="{% static "smartadmin/css/font-awesome.min.css" %}">
 
 		<!-- SmartAdmin Styles : Please note (smartadmin-production.css) was created using LESS variables -->
-		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.min.css">
-		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="{% static "smartadmin/css/smartadmin-production.min.css" %}">
+		<link rel="stylesheet" type="text/css" media="screen" href="{% static "smartadmin/css/smartadmin-skins.min.css" %}">
 
 		<!-- SmartAdmin RTL Support is under construction
 			 This RTL CSS will be released in version 1.5
-		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-rtl.min.css"> -->
+		<link rel="stylesheet" type="text/css" media="screen" href="{% static "smartadmin/css/smartadmin-rtl.min.css" %}"> -->
 
 		<!-- We recommend you use "your_style.css" to override SmartAdmin
 		     specific styles this will also ensure you retrain your customization with each SmartAdmin update.
-		<link rel="stylesheet" type="text/css" media="screen" href="css/your_style.css"> -->
+		<link rel="stylesheet" type="text/css" media="screen" href="{% static "smartadmin/css/your_style.css" %}"> -->
 
 		<!-- Demo purpose only: goes with demo.js, you can delete this css when designing your own WebApp -->
-		<link rel="stylesheet" type="text/css" media="screen" href="css/demo.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="{% static "smartadmin/css/demo.min.css" %}">
 
 		<!-- FAVICONS -->
-		<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
-		<link rel="icon" href="img/favicon/favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="{% static "smartadmin/img/favicon/favicon.ico" %}" type="image/x-icon">
+		<link rel="icon" href="{% static "smartadmin/img/favicon/favicon.ico" %}" type="image/x-icon">
 
 		<!-- GOOGLE FONT -->
 		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
 
-		<!-- Specifying a Webpage Icon for Web Clip 
+		<!-- Specifying a Webpage Icon for Web Clip
 			 Ref: https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html -->
-		<link rel="apple-touch-icon" href="img/splash/sptouch-icon-iphone.png">
-		<link rel="apple-touch-icon" sizes="76x76" href="img/splash/touch-icon-ipad.png">
-		<link rel="apple-touch-icon" sizes="120x120" href="img/splash/touch-icon-iphone-retina.png">
-		<link rel="apple-touch-icon" sizes="152x152" href="img/splash/touch-icon-ipad-retina.png">
-		
+		<link rel="apple-touch-icon" href="{% static "smartadmin/img/splash/sptouch-icon-iphone.png" %}">
+		<link rel="apple-touch-icon" sizes="76x76" href="{% static "smartadmin/img/splash/touch-icon-ipad.png" %}">
+		<link rel="apple-touch-icon" sizes="120x120" href="{% static "smartadmin/img/splash/touch-icon-iphone-retina.png" %}">
+		<link rel="apple-touch-icon" sizes="152x152" href="{% static "smartadmin/img/splash/touch-icon-ipad-retina.png" %}">
+
 		<!-- iOS web-app metas : hides Safari UI Components and Changes Status Bar Appearance -->
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		
+
 		<!-- Startup image for web apps -->
-		<link rel="apple-touch-startup-image" href="img/splash/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
-		<link rel="apple-touch-startup-image" href="img/splash/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
-		<link rel="apple-touch-startup-image" href="img/splash/iphone.png" media="screen and (max-device-width: 320px)">
+		<link rel="apple-touch-startup-image" href="{% static "smartadmin/img/splash/ipad-landscape.png" %}" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
+		<link rel="apple-touch-startup-image" href="{% static "smartadmin/img/splash/ipad-portrait.png" %}" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
+		<link rel="apple-touch-startup-image" href="{% static "smartadmin/img/splash/iphone.png" %}" media="screen and (max-device-width: 320px)">
 
 	</head>
 	<body class="">
@@ -61,7 +62,7 @@
 			<div id="logo-group">
 
 				<!-- PLACE YOUR LOGO HERE -->
-				<span id="logo"> <img src="img/logo.png" alt="SmartAdmin"> </span>
+				<span id="logo"> <img src="{% static "smartadmin/img/logo.png" %}" alt="SmartAdmin"> </span>
 				<!-- END LOGO PLACEHOLDER -->
 
 				<!-- Note: The activity badge color changes when clicked and resets the number to 0
@@ -137,19 +138,19 @@
 
 			<!-- pulled right: nav area -->
 			<div class="pull-right">
-				
+
 				<!-- collapse menu button -->
 				<div id="hide-menu" class="btn-header pull-right">
 					<span> <a href="javascript:void(0);" data-action="toggleMenu" title="Collapse Menu"><i class="fa fa-reorder"></i></a> </span>
 				</div>
 				<!-- end collapse menu -->
-				
+
 				<!-- #MOBILE -->
 				<!-- Top menu profile link : this shows only when top menu is active -->
 				<ul id="mobile-profile-img" class="header-dropdown-list hidden-xs padding-5">
 					<li class="">
-						<a href="#" class="dropdown-toggle no-margin userdropdown" data-toggle="dropdown"> 
-							<img src="img/avatars/sunny.png" alt="John Doe" class="online" />  
+						<a href="#" class="dropdown-toggle no-margin userdropdown" data-toggle="dropdown">
+							<img src="{% static "smartadmin/img/avatars/sunny.png" %}" alt="John Doe" class="online" />
 						</a>
 						<ul class="dropdown-menu pull-right">
 							<li>
@@ -224,11 +225,11 @@
 					<span> <a href="javascript:void(0);" data-action="launchFullscreen" title="Full Screen"><i class="fa fa-arrows-alt"></i></a> </span>
 				</div>
 				<!-- end fullscreen button -->
-				
+
 				<!-- #Voice Command: Start Speech -->
 				<div id="speech-btn" class="btn-header transparent pull-right hidden-sm hidden-xs">
-					<div> 
-						<a href="javascript:void(0)" title="Voice Command" data-action="voiceCommand"><i class="fa fa-microphone"></i></a> 
+					<div>
+						<a href="javascript:void(0)" title="Voice Command" data-action="voiceCommand"><i class="fa fa-microphone"></i></a>
 						<div class="popover bottom"><div class="arrow"></div>
 							<div class="popover-content">
 								<h4 class="vc-title">Voice command activated <br><small>Please speak clearly into the mic</small></h4>
@@ -237,8 +238,8 @@
 									<br><small class="txt-color-red">Must <strong>"Allow"</strong> Microphone</small>
 									<br><small class="txt-color-red">Must have <strong>Internet Connection</strong></small>
 								</h4>
-								<a href="javascript:void(0);" class="btn btn-success" onclick="commands.help()">See Commands</a> 
-								<a href="javascript:void(0);" class="btn bg-color-purple txt-color-white" onclick="$('#speech-btn .popover').fadeOut(50);">Close Popup</a> 
+								<a href="javascript:void(0);" class="btn btn-success" onclick="commands.help()">See Commands</a>
+								<a href="javascript:void(0);" class="btn bg-color-purple txt-color-white" onclick="$('#speech-btn .popover').fadeOut(50);">Close Popup</a>
 							</div>
 						</div>
 					</div>
@@ -248,39 +249,39 @@
 				<!-- multiple lang dropdown : find all flags in the flags page -->
 				<ul class="header-dropdown-list hidden-xs">
 					<li>
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="img/blank.gif" class="flag flag-us" alt="United States"> <span> English (US) </span> <i class="fa fa-angle-down"></i> </a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-us" alt="United States"> <span> English (US) </span> <i class="fa fa-angle-down"></i> </a>
 						<ul class="dropdown-menu pull-right">
 							<li class="active">
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-us" alt="United States"> English (US)</a>
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-us" alt="United States"> English (US)</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-fr" alt="France"> Français</a>
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-fr" alt="France"> Français</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-es" alt="Spanish"> Español</a>
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-es" alt="Spanish"> Español</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-de" alt="German"> Deutsch</a>
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-de" alt="German"> Deutsch</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-jp" alt="Japan"> 日本語</a>
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-jp" alt="Japan"> 日本語</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-cn" alt="China"> 中文</a>
-							</li>	
-							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-it" alt="Italy"> Italiano</a>
-							</li>	
-							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-pt" alt="Portugal"> Portugal</a>
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-cn" alt="China"> 中文</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-ru" alt="Russia"> Русский язык</a>
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-it" alt="Italy"> Italiano</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-kp" alt="Korea"> 한국어</a>
-							</li>						
-							
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-pt" alt="Portugal"> Portugal</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-ru" alt="Russia"> Русский язык</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-kp" alt="Korea"> 한국어</a>
+							</li>
+
 						</ul>
 					</li>
 				</ul>
@@ -298,16 +299,16 @@
 
 			<!-- User info -->
 			<div class="login-info">
-				<span> <!-- User image size is adjusted inside CSS, it should stay as it --> 
-					
+				<span> <!-- User image size is adjusted inside CSS, it should stay as it -->
+
 					<a href="javascript:void(0);" id="show-shortcut" data-action="toggleShortcut">
-						<img src="img/avatars/sunny.png" alt="me" class="online" /> 
+						<img src="{% static "smartadmin/img/avatars/sunny.png" %}" alt="me" class="online" />
 						<span>
-							john.doe 
+							john.doe
 						</span>
 						<i class="fa fa-angle-down"></i>
-					</a> 
-					
+					</a>
+
 				</span>
 			</div>
 			<!-- end user info -->
@@ -408,10 +409,10 @@
 								<ul>
 									<li>
 										<a href="fa.html"><i class="fa fa-plane"></i> Font Awesome</a>
-									</li>	
+									</li>
 									<li>
 										<a href="glyph.html"><i class="glyphicon glyphicon-plane"></i> Glyph Icons</a>
-									</li>	
+									</li>
 									<li>
 										<a href="flags.html"><i class="fa fa-flag"></i> Flags</a>
 									</li>
@@ -460,7 +461,7 @@
 									</li>
 									<li>
 										<a href="#"><i class="fa fa-fw fa-folder-open"></i> Item #3</a>
-		
+
 										<ul>
 											<li>
 												<a href="#"><i class="fa fa-fw fa-folder-open"></i> 3ed Level </a>
@@ -474,13 +475,13 @@
 												</ul>
 											</li>
 										</ul>
-		
+
 									</li>
 								</ul>
 							</li>
 						</ul>
 					</li>
-				
+
 					<li>
 						<a href="calendar.html"><i class="fa fa-lg fa-fw fa-calendar"><em>3</em></i> <span class="menu-item-parent">Calendar</span></a>
 					</li>
@@ -564,8 +565,8 @@
 					</li>
 				</ul>
 			</nav>
-			<span class="minifyme" data-action="minifyMenu"> 
-				<i class="fa fa-arrow-circle-left hit"></i> 
+			<span class="minifyme" data-action="minifyMenu">
+				<i class="fa fa-arrow-circle-left hit"></i>
 			</span>
 
 		</aside>
@@ -577,10 +578,10 @@
 			<!-- RIBBON -->
 			<div id="ribbon">
 
-				<span class="ribbon-button-alignment"> 
+				<span class="ribbon-button-alignment">
 					<span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh"  rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings." data-html="true">
 						<i class="fa fa-refresh"></i>
-					</span> 
+					</span>
 				</span>
 
 				<!-- breadcrumb -->
@@ -613,8 +614,8 @@
 
 <div class="row">
 	<div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
-		<h1 class="page-title txt-color-blueDark"><i class="fa fa-desktop fa-fw "></i> 
-			UI Elements 
+		<h1 class="page-title txt-color-blueDark"><i class="fa fa-desktop fa-fw "></i>
+			UI Elements
 			<span>>
 			JQuery UI
 			</span>
@@ -745,19 +746,19 @@
 			<small>Horizontal Slider with tooltip</small></h3>
 
 
-			<input type="text" class="slider slider-primary" id="g1" value="" 
-					data-slider-max="500" 
-					data-slider-value="185" 
-					data-slider-selection = "before" 
+			<input type="text" class="slider slider-primary" id="g1" value=""
+					data-slider-max="500"
+					data-slider-value="185"
+					data-slider-selection = "before"
 					data-slider-handle="round">
 
-			<input type="text" class="slider slider-success" id="g2" value="" 
-					data-slider-max="1000" 
-					data-slider-step="1" 
-					data-slider-value="[150,760]" 
+			<input type="text" class="slider slider-success" id="g2" value=""
+					data-slider-max="1000"
+					data-slider-step="1"
+					data-slider-value="[150,760]"
 					data-slider-handle="squar">
 
-			
+
 					<h3>Usage <small>Its so simple...</small> </h3>
 				<pre>
 <code><strong>&lt;input class="slider slider-primary" data-slider-min="10" ..  /></strong></code>
@@ -767,7 +768,7 @@ data-slider-max="500"      <span class="text-muted"> // slider max value</span>
 data-slider-value="315"    <span class="text-muted"> // handler position on slider</span>
 data-slider-handle="round" <span class="text-muted"> // round or square</span> </pre>
 
-			
+
 		</div>
 
 		<div class="well well-sm well-light">
@@ -955,15 +956,15 @@ data-slider-handle="round" <span class="text-muted"> // round or square</span> <
 			</div>
 
 		</div>
-		
+
 		<div class="well well-sm well-light">
 			<h3>Progress Bar
 			<br>
 			<small>Default progress bar.</small></h3>
-			
+
 			<div id="progressbar"></div>
 		</div>
-	
+
 	</div>
 
 </div>
@@ -984,13 +985,13 @@ data-slider-handle="round" <span class="text-muted"> // round or square</span> <
 
 	<div class="hr hr-12 hr-double"></div>
 
-	
+
 		Currently using
 		<b>36% of your storage space</b>
 		<div class="progress progress-striped active no-margin">
 			<div class="progress-bar progress-primary" role="progressbar" style="width: 36%"></div>
 		</div>
-	
+
 </div><!-- #dialog-message -->
 
 			</div>
@@ -1085,61 +1086,61 @@ data-slider-handle="round" <span class="text-muted"> // round or square</span> <
 		<!--================================================== -->
 
 		<!-- PACE LOADER - turn this on if you want ajax loading to show (caution: uses lots of memory on iDevices)-->
-		<script data-pace-options='{ "restartOnRequestAfter": true }' src="js/plugin/pace/pace.min.js"></script>
+		<script data-pace-options='{ "restartOnRequestAfter": true }' src="{% static "smartadmin/js/plugin/pace/pace.min.js" %}"></script>
 
 		<!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 		<script>
 			if (!window.jQuery) {
-				document.write('<script src="js/libs/jquery-2.0.2.min.js"><\/script>');
+				document.write('<script src="{% static "smartadmin/js/libs/jquery-2.0.2.min.js" %}"><\/script>');
 			}
 		</script>
 
 		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 		<script>
 			if (!window.jQuery.ui) {
-				document.write('<script src="js/libs/jquery-ui-1.10.3.min.js"><\/script>');
+				document.write('<script src="{% static "smartadmin/js/libs/jquery-ui-1.10.3.min.js" %}"><\/script>');
 			}
 		</script>
 
 		<!-- IMPORTANT: APP CONFIG -->
-		<script src="js/app.config.js"></script>
+		<script src="{% static "smartadmin/js/app.config.js" %}"></script>
 
 		<!-- JS TOUCH : include this plugin for mobile drag / drop touch events-->
-		<script src="js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script> 
+		<script src="{% static "smartadmin/js/plugin/jquery-touch/jquery.ui.touch-punch.min.js" %}"></script>
 
 		<!-- BOOTSTRAP JS -->
-		<script src="js/bootstrap/bootstrap.min.js"></script>
+		<script src="{% static "smartadmin/js/bootstrap/bootstrap.min.js" %}"></script>
 
 		<!-- CUSTOM NOTIFICATION -->
-		<script src="js/notification/SmartNotification.min.js"></script>
+		<script src="{% static "smartadmin/js/notification/SmartNotification.min.js" %}"></script>
 
 		<!-- JARVIS WIDGETS -->
-		<script src="js/smartwidgets/jarvis.widget.min.js"></script>
+		<script src="{% static "smartadmin/js/smartwidgets/jarvis.widget.min.js" %}"></script>
 
 		<!-- EASY PIE CHARTS -->
-		<script src="js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js" %}"></script>
 
 		<!-- SPARKLINES -->
-		<script src="js/plugin/sparkline/jquery.sparkline.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/sparkline/jquery.sparkline.min.js" %}"></script>
 
 		<!-- JQUERY VALIDATE -->
-		<script src="js/plugin/jquery-validate/jquery.validate.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/jquery-validate/jquery.validate.min.js" %}"></script>
 
 		<!-- JQUERY MASKED INPUT -->
-		<script src="js/plugin/masked-input/jquery.maskedinput.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/masked-input/jquery.maskedinput.min.js" %}"></script>
 
 		<!-- JQUERY SELECT2 INPUT -->
-		<script src="js/plugin/select2/select2.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/select2/select2.min.js" %}"></script>
 
 		<!-- JQUERY UI + Bootstrap Slider -->
-		<script src="js/plugin/bootstrap-slider/bootstrap-slider.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/bootstrap-slider/bootstrap-slider.min.js" %}"></script>
 
 		<!-- browser msie issue fix -->
-		<script src="js/plugin/msie-fix/jquery.mb.browser.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/msie-fix/jquery.mb.browser.min.js" %}"></script>
 
 		<!-- FastClick: For mobile devices -->
-		<script src="js/plugin/fastclick/fastclick.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/fastclick/fastclick.min.js" %}"></script>
 
 		<!--[if IE 8]>
 
@@ -1148,40 +1149,40 @@ data-slider-handle="round" <span class="text-muted"> // round or square</span> <
 		<![endif]-->
 
 		<!-- Demo purpose only -->
-		<script src="js/demo.min.js"></script>
+		<script src="{% static "smartadmin/js/demo.min.js" %}"></script>
 
 		<!-- MAIN APP JS FILE -->
-		<script src="js/app.min.js"></script>
+		<script src="{% static "smartadmin/js/app.min.js" %}"></script>
 
 		<!-- ENHANCEMENT PLUGINS : NOT A REQUIREMENT -->
 		<!-- Voice command : plugin -->
-		<script src="js/speech/voicecommand.min.js"></script>
+		<script src="{% static "smartadmin/js/speech/voicecommand.min.js" %}"></script>
 
-		<!-- PAGE RELATED PLUGIN(S) 
+		<!-- PAGE RELATED PLUGIN(S)
 		<script src="..."></script>-->
 
-		
+
 
 		<script type="text/javascript">
-		
+
 		// DO NOT REMOVE : GLOBAL FUNCTIONS!
-		
+
 		$(document).ready(function() {
-			
+
 			pageSetUp();
-			
+
 			// menu
 			$("#menu").menu();
-		
+
 			/*
 			 * AUTO COMPLETE AJAX
 			 */
-		
+
 			function log(message) {
 				$("<div>").text(message).prependTo("#log");
 				$("#log").scrollTop(0);
 			}
-		
+
 			$("#city").autocomplete({
 				source : function(request, response) {
 					$.ajax({
@@ -1208,7 +1209,7 @@ data-slider-handle="round" <span class="text-muted"> // round or square</span> <
 					log(ui.item ? "Selected: " + ui.item.label : "Nothing selected, input was " + this.value);
 				}
 			});
-		
+
 			/*
 			 * Spinners
 			 */
@@ -1217,7 +1218,7 @@ data-slider-handle="round" <span class="text-muted"> // round or square</span> <
 				step : 0.01,
 				numberFormat : "n"
 			});
-		
+
 			$("#spinner-currency").spinner({
 				min : 5,
 				max : 2500,
@@ -1225,7 +1226,7 @@ data-slider-handle="round" <span class="text-muted"> // round or square</span> <
 				start : 1000,
 				numberFormat : "C"
 			});
-		
+
 			/*
 			 * CONVERT DIALOG TITLE TO HTML
 			 * REF: http://stackoverflow.com/questions/14488774/using-html-in-a-dialogs-title-in-jquery-ui-1-10
@@ -1239,19 +1240,19 @@ data-slider-handle="round" <span class="text-muted"> // round or square</span> <
 					}
 				}
 			}));
-		
-		
+
+
 			/*
 			* DIALOG SIMPLE
 			*/
-		
+
 			// Dialog click
 			$('#dialog_link').click(function() {
 				$('#dialog_simple').dialog('open');
 				return false;
-		
+
 			});
-		
+
 			$('#dialog_simple').dialog({
 				autoOpen : false,
 				width : 600,
@@ -1272,17 +1273,17 @@ data-slider-handle="round" <span class="text-muted"> // round or square</span> <
 					}
 				}]
 			});
-		
+
 			/*
 			* DIALOG HEADER ICON
 			*/
-		
+
 			// Modal Link
 			$('#modal_link').click(function() {
 				$('#dialog-message').dialog('open');
 				return false;
 			});
-		
+
 			$("#dialog-message").dialog({
 				autoOpen : false,
 				modal : true,
@@ -1300,31 +1301,31 @@ data-slider-handle="round" <span class="text-muted"> // round or square</span> <
 						$(this).dialog("close");
 					}
 				}]
-		
+
 			});
-		
+
 			/*
 			 * Remove focus from buttons
 			 */
 			$('.ui-dialog :button').blur();
-		
+
 			/*
 			 * Just Tabs
 			 */
-		
+
 			$('#tabs').tabs();
-		
+
 			/*
 			 *  Simple tabs adding and removing
 			 */
-		
+
 			$('#tabs2').tabs();
-		
+
 			// Dynamic tabs
 			var tabTitle = $("#tab_title"), tabContent = $("#tab_content"), tabTemplate = "<li style='position:relative;'> <span class='air air-top-left delete-tab' style='top:7px; left:7px;'><button class='btn btn-xs font-xs btn-default hover-transparent'><i class='fa fa-times'></i></button></span></span><a href='#{href}'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #{label}</a></li>", tabCounter = 2;
-		
+
 			var tabs = $("#tabs2").tabs();
-		
+
 			// modal dialog init: custom buttons and a "close" callback reseting the form inside
 			var dialog = $("#addtab").dialog({
 				autoOpen : false,
@@ -1336,10 +1337,10 @@ data-slider-handle="round" <span class="text-muted"> // round or square</span> <
 					"class" : "btn btn-default",
 					click : function() {
 						$(this).dialog("close");
-		
+
 					}
 				}, {
-		
+
 					html : "<i class='fa fa-plus'></i>&nbsp; Add",
 					"class" : "btn btn-danger",
 					click : function() {
@@ -1348,51 +1349,51 @@ data-slider-handle="round" <span class="text-muted"> // round or square</span> <
 					}
 				}]
 			});
-		
+
 			// addTab form: calls addTab function on submit and closes the dialog
 			var form = dialog.find("form").submit(function(event) {
 				addTab();
 				dialog.dialog("close");
 				event.preventDefault();
 			});
-		
+
 			// actual addTab function: adds new tab using the input from the form above
 			function addTab() {
 				var label = tabTitle.val() || "Tab " + tabCounter, id = "tabs-" + tabCounter, li = $(tabTemplate.replace(/#\{href\}/g, "#" + id).replace(/#\{label\}/g, label)), tabContentHtml = tabContent.val() || "Tab " + tabCounter + " content.";
-		
+
 				tabs.find(".ui-tabs-nav").append(li);
 				tabs.append("<div id='" + id + "'><p>" + tabContentHtml + "</p></div>");
 				tabs.tabs("refresh");
 				tabCounter++;
-		
+
 				// clear fields
 				$("#tab_title").val("");
 				$("#tab_content").val("");
 			}
-		
+
 			// addTab button: just opens the dialog
 			$("#add_tab").button().click(function() {
 				dialog.dialog("open");
 			});
-		
+
 			// close icon: removing the tab on click
 			$("#tabs2").on("click", 'span.delete-tab', function() {
-		
+
 				var panelId = $(this).closest("li").remove().attr("aria-controls");
 				$("#" + panelId).remove();
 				tabs.tabs("refresh");
 			});
-		
+
 			/*
 			* ACCORDION
 			*/
 			//jquery accordion
-			
+
 		     var accordionIcons = {
 		         header: "fa fa-plus",    // custom icon class
 		         activeHeader: "fa fa-minus" // custom icon class
 		     };
-		     
+
 			$("#accordion").accordion({
 				autoHeight : false,
 				heightStyle : "content",
@@ -1401,7 +1402,7 @@ data-slider-handle="round" <span class="text-muted"> // round or square</span> <
 				icons: accordionIcons,
 				header : "h4",
 			})
-		
+
 			/*
 			 * PROGRESS BAR
 			 */
@@ -1410,7 +1411,7 @@ data-slider-handle="round" <span class="text-muted"> // round or square</span> <
 		     	create: function( event, ui ) {
 		     		$(this).removeClass("ui-corner-all").addClass('progress').find(">:first-child").removeClass("ui-corner-left").addClass('progress-bar progress-bar-success');
 				}
-			});			
+			});
 
 		})
 
@@ -1421,7 +1422,7 @@ data-slider-handle="round" <span class="text-muted"> // round or square</span> <
 			var _gaq = _gaq || [];
 				_gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
 				_gaq.push(['_trackPageview']);
-			
+
 			(function() {
 				var ga = document.createElement('script');
 				ga.type = 'text/javascript';

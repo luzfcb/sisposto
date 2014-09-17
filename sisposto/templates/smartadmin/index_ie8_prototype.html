@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <!--[if IE 8]>         <html class="ie8" lang="en-us"> <![endif]-->
 <!--[if IE 9]>         <html class="ie9" lang="en-us"> <![endif]-->
@@ -9,58 +10,58 @@
 		<title> SmartAdmin </title>
 		<meta name="description" content="">
 		<meta name="author" content="">
-			
+
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		<!-- Basic Styles -->
-		<link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="{% static "smartadmin/css/bootstrap.min.css" %}">
+		<link rel="stylesheet" type="text/css" media="screen" href="{% static "smartadmin/css/font-awesome.min.css" %}">
 
 		<!-- SmartAdmin Styles : Please note (smartadmin-production.css) was created using LESS variables -->
-		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.min.css">
-		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="{% static "smartadmin/css/smartadmin-production.min.css" %}">
+		<link rel="stylesheet" type="text/css" media="screen" href="{% static "smartadmin/css/smartadmin-skins.min.css" %}">
 
 		<!-- SmartAdmin RTL Support is under construction
-		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-rtl.min.css"> -->
+		<link rel="stylesheet" type="text/css" media="screen" href="{% static "smartadmin/css/smartadmin-rtl.min.css" %}"> -->
 
 		<!-- We recommend you use "your_style.css" to override SmartAdmin
 		     specific styles this will also ensure you retrain your customization with each SmartAdmin update.
-		<link rel="stylesheet" type="text/css" media="screen" href="css/your_style.css"> -->
+		<link rel="stylesheet" type="text/css" media="screen" href="{% static "smartadmin/css/your_style.css" %}"> -->
 
 		<!-- Demo purpose only: goes with demo.js, you can delete this css when designing your own WebApp -->
-		<link rel="stylesheet" type="text/css" media="screen" href="css/demo.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="{% static "smartadmin/css/demo.min.css" %}">
 
 		<!-- FAVICONS -->
-		<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
-		<link rel="icon" href="img/favicon/favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="{% static "smartadmin/img/favicon/favicon.ico" %}" type="image/x-icon">
+		<link rel="icon" href="{% static "smartadmin/img/favicon/favicon.ico" %}" type="image/x-icon">
 
 		<!-- GOOGLE FONT -->
 		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
 
-		<!-- Specifying a Webpage Icon for Web Clip 
+		<!-- Specifying a Webpage Icon for Web Clip
 			 Ref: https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html -->
-		<link rel="apple-touch-icon" href="img/splash/sptouch-icon-iphone.png">
-		<link rel="apple-touch-icon" sizes="76x76" href="img/splash/touch-icon-ipad.png">
-		<link rel="apple-touch-icon" sizes="120x120" href="img/splash/touch-icon-iphone-retina.png">
-		<link rel="apple-touch-icon" sizes="152x152" href="img/splash/touch-icon-ipad-retina.png">
-		
+		<link rel="apple-touch-icon" href="{% static "smartadmin/img/splash/sptouch-icon-iphone.png" %}">
+		<link rel="apple-touch-icon" sizes="76x76" href="{% static "smartadmin/img/splash/touch-icon-ipad.png" %}">
+		<link rel="apple-touch-icon" sizes="120x120" href="{% static "smartadmin/img/splash/touch-icon-iphone-retina.png" %}">
+		<link rel="apple-touch-icon" sizes="152x152" href="{% static "smartadmin/img/splash/touch-icon-ipad-retina.png" %}">
+
 		<!-- iOS web-app metas : hides Safari UI Components and Changes Status Bar Appearance -->
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		
+
 		<!-- Startup image for web apps -->
-		<link rel="apple-touch-startup-image" href="img/splash/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
-		<link rel="apple-touch-startup-image" href="img/splash/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
-		<link rel="apple-touch-startup-image" href="img/splash/iphone.png" media="screen and (max-device-width: 320px)">
-		
+		<link rel="apple-touch-startup-image" href="{% static "smartadmin/img/splash/ipad-landscape.png" %}" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
+		<link rel="apple-touch-startup-image" href="{% static "smartadmin/img/splash/ipad-portrait.png" %}" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
+		<link rel="apple-touch-startup-image" href="{% static "smartadmin/img/splash/iphone.png" %}" media="screen and (max-device-width: 320px)">
+
 	 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	    <!--[if lt IE 9]>
-	    	<script src="http://cdn.jsdelivr.net/excanvas/r3/excanvas.compiled.js"></script>
-	      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script>
-	      <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+	    	<script src="http://cdn.jsdelivr.net/excanvas/r3/excanvas.compiled.js" %}"></script>
+	      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js" %}"></script>
+	      <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js" %}"></script>
 	    <![endif]-->
-		
+
 	</head>
 	<body class="">
 		<!-- possible classes: minified, fixed-ribbon, fixed-header, fixed-width-->
@@ -70,7 +71,7 @@
 			<div id="logo-group">
 
 				<!-- PLACE YOUR LOGO HERE -->
-				<span id="logo"> <img src="img/logo.png" alt="SmartAdmin"> </span>
+				<span id="logo"> <img src="{% static "smartadmin/img/logo.png" %}" alt="SmartAdmin"> </span>
 				<!-- END LOGO PLACEHOLDER -->
 
 				<!-- Note: The activity badge color changes when clicked and resets the number to 0
@@ -184,16 +185,16 @@
 				<!-- multiple lang dropdown : find all flags in the image folder -->
 				<ul class="header-dropdown-list hidden-xs">
 					<li>
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img alt="" src="img/flags/us.png"> <span> US </span> <i class="fa fa-angle-down"></i> </a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img alt="" src="{% static "smartadmin/img/flags/us.png" %}"> <span> US </span> <i class="fa fa-angle-down"></i> </a>
 						<ul class="dropdown-menu pull-right">
 							<li class="active">
-								<a href="javascript:void(0);"><img alt="" src="img/flags/us.png"> US</a>
+								<a href="javascript:void(0);"><img alt="" src="{% static "smartadmin/img/flags/us.png" %}"> US</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);"><img alt="" src="img/flags/es.png"> Spanish</a>
+								<a href="javascript:void(0);"><img alt="" src="{% static "smartadmin/img/flags/es.png" %}"> Spanish</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);"><img alt="" src="img/flags/de.png"> German</a>
+								<a href="javascript:void(0);"><img alt="" src="{% static "smartadmin/img/flags/de.png" %}"> German</a>
 							</li>
 						</ul>
 					</li>
@@ -212,16 +213,16 @@
 
 			<!-- User info -->
 			<div class="login-info">
-				<span> <!-- User image size is adjusted inside CSS, it should stay as it --> 
-					
+				<span> <!-- User image size is adjusted inside CSS, it should stay as it -->
+
 					<a href="javascript:void(0);" id="show-shortcut">
-						<img src="img/avatars/sunny.png" alt="me" class="online" /> 
+						<img src="{% static "smartadmin/img/avatars/sunny.png" %}" alt="me" class="online" />
 						<span>
-							john.doe 
+							john.doe
 						</span>
 						<i class="fa fa-angle-down"></i>
-					</a> 
-					
+					</a>
+
 				</span>
 			</div>
 			<!-- end user info -->
@@ -313,7 +314,7 @@
 								<ul>
 									<li>
 										<a href="fa.html"><i class="fa fa-plane"></i> Font Awesome</a>
-									</li>	
+									</li>
 									<li>
 										<a href="glyph.html"><i class="glyphicon glyphicon-plane"></i> Glyph Icons </a>
 									</li>
@@ -578,8 +579,8 @@
 													<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
 														<span class="demo-liveupdate-1"> <span class="onoffswitch-title">Live switch</span> <span class="onoffswitch">
 																<input type="checkbox" name="start_interval" class="onoffswitch-checkbox" id="start_interval">
-																<label class="onoffswitch-label" for="start_interval"> 
-																	<span class="onoffswitch-inner" data-swchon-text="ON" data-swchoff-text="OFF"></span> 
+																<label class="onoffswitch-label" for="start_interval">
+																	<span class="onoffswitch-inner" data-swchon-text="ON" data-swchoff-text="OFF"></span>
 																	<span class="onoffswitch-switch"></span> </label> </span> </span>
 														<div id="updating-chart" class="chart-large txt-color-blue"></div>
 
@@ -845,28 +846,28 @@
 											<div class="chat-list-body custom-scroll">
 												<ul id="chat-users">
 													<li>
-														<a href="javascript:void(0);"><img src="img/avatars/5.png" alt="">Robin Berry <span class="badge badge-inverse">23</span><span class="state"><i class="fa fa-circle txt-color-green pull-right"></i></span></a>
+														<a href="javascript:void(0);"><img src="{% static "smartadmin/img/avatars/5.png" %}" alt="">Robin Berry <span class="badge badge-inverse">23</span><span class="state"><i class="fa fa-circle txt-color-green pull-right"></i></span></a>
 													</li>
 													<li>
-														<a href="javascript:void(0);"><img src="img/avatars/male.png" alt="">Mark Zeukartech <span class="state"><i class="last-online pull-right">2hrs</i></span></a>
+														<a href="javascript:void(0);"><img src="{% static "smartadmin/img/avatars/male.png" %}" alt="">Mark Zeukartech <span class="state"><i class="last-online pull-right">2hrs</i></span></a>
 													</li>
 													<li>
-														<a href="javascript:void(0);"><img src="img/avatars/male.png" alt="">Belmain Dolson <span class="state"><i class="last-online pull-right">45m</i></span></a>
+														<a href="javascript:void(0);"><img src="{% static "smartadmin/img/avatars/male.png" %}" alt="">Belmain Dolson <span class="state"><i class="last-online pull-right">45m</i></span></a>
 													</li>
 													<li>
-														<a href="javascript:void(0);"><img src="img/avatars/male.png" alt="">Galvitch Drewbery <span class="state"><i class="fa fa-circle txt-color-green pull-right"></i></span></a>
+														<a href="javascript:void(0);"><img src="{% static "smartadmin/img/avatars/male.png" %}" alt="">Galvitch Drewbery <span class="state"><i class="fa fa-circle txt-color-green pull-right"></i></span></a>
 													</li>
 													<li>
-														<a href="javascript:void(0);"><img src="img/avatars/male.png" alt="">Sadi Orlaf <span class="state"><i class="fa fa-circle txt-color-green pull-right"></i></span></a>
+														<a href="javascript:void(0);"><img src="{% static "smartadmin/img/avatars/male.png" %}" alt="">Sadi Orlaf <span class="state"><i class="fa fa-circle txt-color-green pull-right"></i></span></a>
 													</li>
 													<li>
-														<a href="javascript:void(0);"><img src="img/avatars/male.png" alt="">Markus <span class="state"><i class="last-online pull-right">2m</i></span> </a>
+														<a href="javascript:void(0);"><img src="{% static "smartadmin/img/avatars/male.png" %}" alt="">Markus <span class="state"><i class="last-online pull-right">2m</i></span> </a>
 													</li>
 													<li>
-														<a href="javascript:void(0);"><img src="img/avatars/sunny.png" alt="">Sunny <span class="state"><i class="last-online pull-right">2m</i></span> </a>
+														<a href="javascript:void(0);"><img src="{% static "smartadmin/img/avatars/sunny.png" %}" alt="">Sunny <span class="state"><i class="last-online pull-right">2m</i></span> </a>
 													</li>
 													<li>
-														<a href="javascript:void(0);"><img src="img/avatars/male.png" alt="">Denmark <span class="state"><i class="last-online pull-right">2m</i></span> </a>
+														<a href="javascript:void(0);"><img src="{% static "smartadmin/img/avatars/male.png" %}" alt="">Denmark <span class="state"><i class="last-online pull-right">2m</i></span> </a>
 													</li>
 												</ul>
 											</div>
@@ -894,7 +895,7 @@
 										<div id="chat-body" class="chat-body custom-scroll">
 											<ul>
 												<li class="message">
-													<img src="img/avatars/5.png" class="online" alt="">
+													<img src="{% static "smartadmin/img/avatars/5.png" %}" class="online" alt="">
 													<div class="message-text">
 														<time>
 															2014-01-13
@@ -909,11 +910,11 @@
 														</p> </div>
 												</li>
 												<li class="message">
-													<img src="img/avatars/sunny.png" class="online" alt="">
+													<img src="{% static "smartadmin/img/avatars/sunny.png" %}" class="online" alt="">
 													<div class="message-text">
 														<time>
 															2014-01-13
-														</time> <a href="javascript:void(0);" class="username">John Doe</a> Haha! Yeah I know what you mean. Thanks for the file Sadi! <i class="fa fa-smile-o txt-color-orange"></i> 
+														</time> <a href="javascript:void(0);" class="username">John Doe</a> Haha! Yeah I know what you mean. Thanks for the file Sadi! <i class="fa fa-smile-o txt-color-orange"></i>
 													</div>
 												</li>
 											</ul>
@@ -1448,51 +1449,51 @@
 		<!--================================================== -->
 
 		<!-- PACE LOADER - turn this on if you want ajax loading to show (caution: uses lots of memory on iDevices)-->
-		<script data-pace-options='{ "restartOnRequestAfter": true }' src="js/plugin/pace/pace.min.js"></script>
+		<script data-pace-options='{ "restartOnRequestAfter": true }' src="{% static "smartadmin/js/plugin/pace/pace.min.js" %}"></script>
 
 		<!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<script>
 			if (!window.jQuery.ui) {
-				document.write('<script src="js/libs/jquery-ui-1.10.3.min.js"><\/script>');
+				document.write('<script src="{% static "smartadmin/js/libs/jquery-ui-1.10.3.min.js" %}"><\/script>');
 			}
 		</script>
-		
+
 		<!-- JS TOUCH : include this plugin for mobile drag / drop touch events
-		<script src="js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script> -->
+		<script src="{% static "smartadmin/js/plugin/jquery-touch/jquery.ui.touch-punch.min.js" %}"></script> -->
 
 		<!-- BOOTSTRAP JS -->
-		<script src="js/bootstrap/bootstrap.min.js"></script>
+		<script src="{% static "smartadmin/js/bootstrap/bootstrap.min.js" %}"></script>
 
 		<!-- CUSTOM NOTIFICATION -->
-		<script src="js/notification/SmartNotification.min.js"></script>
+		<script src="{% static "smartadmin/js/notification/SmartNotification.min.js" %}"></script>
 
 		<!-- JARVIS WIDGETS -->
-		<script src="js/smartwidgets/jarvis.widget.min.js"></script>
+		<script src="{% static "smartadmin/js/smartwidgets/jarvis.widget.min.js" %}"></script>
 
 		<!-- EASY PIE CHARTS -->
-		<script src="js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js" %}"></script>
 
 		<!-- SPARKLINES -->
-		<script src="js/plugin/sparkline/jquery.sparkline.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/sparkline/jquery.sparkline.min.js" %}"></script>
 
 		<!-- JQUERY VALIDATE -->
-		<script src="js/plugin/jquery-validate/jquery.validate.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/jquery-validate/jquery.validate.min.js" %}"></script>
 
 		<!-- JQUERY MASKED INPUT -->
-		<script src="js/plugin/masked-input/jquery.maskedinput.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/masked-input/jquery.maskedinput.min.js" %}"></script>
 
 		<!-- JQUERY SELECT2 INPUT -->
-		<script src="js/plugin/select2/select2.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/select2/select2.min.js" %}"></script>
 
 		<!-- JQUERY UI + Bootstrap Slider -->
-		<script src="js/plugin/bootstrap-slider/bootstrap-slider.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/bootstrap-slider/bootstrap-slider.min.js" %}"></script>
 
 		<!-- browser msie issue fix -->
-		<script src="js/plugin/msie-fix/jquery.mb.browser.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/msie-fix/jquery.mb.browser.min.js" %}"></script>
 
 		<!-- FastClick: For mobile devices -->
-		<script src="js/plugin/fastclick/fastclick.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/fastclick/fastclick.min.js" %}"></script>
 
 		<!--[if IE 7]>
 
@@ -1501,24 +1502,24 @@
 		<![endif]-->
 
 		<!-- Demo purpose only -->
-		<script src="js/demo.min.js"></script>
+		<script src="{% static "smartadmin/js/demo.min.js" %}"></script>
 
 		<!-- MAIN APP JS FILE -->
-		<script src="js/app.min.js"></script>
-		
+		<script src="{% static "smartadmin/js/app.min.js" %}"></script>
+
 		<!-- PAGE RELATED PLUGIN(S) -->
-		
+
 		<!-- Flot Chart Plugin: Flot Engine, Flot Resizer, Flot Tooltip -->
-		<script src="js/plugin/flot/jquery.flot.cust.min.js"></script>
-		<script src="js/plugin/flot/jquery.flot.resize.min.js"></script>
-		<script src="js/plugin/flot/jquery.flot.tooltip.min.js"></script>
-		
+		<script src="{% static "smartadmin/js/plugin/flot/jquery.flot.cust.min.js" %}"></script>
+		<script src="{% static "smartadmin/js/plugin/flot/jquery.flot.resize.min.js" %}"></script>
+		<script src="{% static "smartadmin/js/plugin/flot/jquery.flot.tooltip.min.js" %}"></script>
+
 		<!-- Vector Maps Plugin: Vectormap engine, Vectormap language -->
-		<script src="js/plugin/vectormap/jquery-jvectormap-1.2.2.min.js"></script>
-		<script src="js/plugin/vectormap/jquery-jvectormap-world-mill-en.js"></script>
-		
+		<script src="{% static "smartadmin/js/plugin/vectormap/jquery-jvectormap-1.2.2.min.js" %}"></script>
+		<script src="{% static "smartadmin/js/plugin/vectormap/jquery-jvectormap-world-mill-en.js" %}"></script>
+
 		<!-- Full Calendar -->
-		<script src="js/plugin/fullcalendar/jquery.fullcalendar.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/fullcalendar/jquery.fullcalendar.min.js" %}"></script>
 
 		<script>
 			$(document).ready(function() {

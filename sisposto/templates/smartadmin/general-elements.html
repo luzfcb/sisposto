@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en-us">
 	<head>
@@ -7,50 +8,50 @@
 		<title> SmartAdmin </title>
 		<meta name="description" content="">
 		<meta name="author" content="">
-			
+
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		<!-- Basic Styles -->
-		<link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="{% static "smartadmin/css/bootstrap.min.css" %}">
+		<link rel="stylesheet" type="text/css" media="screen" href="{% static "smartadmin/css/font-awesome.min.css" %}">
 
 		<!-- SmartAdmin Styles : Please note (smartadmin-production.css) was created using LESS variables -->
-		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.min.css">
-		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="{% static "smartadmin/css/smartadmin-production.min.css" %}">
+		<link rel="stylesheet" type="text/css" media="screen" href="{% static "smartadmin/css/smartadmin-skins.min.css" %}">
 
 		<!-- SmartAdmin RTL Support is under construction
 			 This RTL CSS will be released in version 1.5
-		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-rtl.min.css"> -->
+		<link rel="stylesheet" type="text/css" media="screen" href="{% static "smartadmin/css/smartadmin-rtl.min.css" %}"> -->
 
 		<!-- We recommend you use "your_style.css" to override SmartAdmin
 		     specific styles this will also ensure you retrain your customization with each SmartAdmin update.
-		<link rel="stylesheet" type="text/css" media="screen" href="css/your_style.css"> -->
+		<link rel="stylesheet" type="text/css" media="screen" href="{% static "smartadmin/css/your_style.css" %}"> -->
 
 		<!-- Demo purpose only: goes with demo.js, you can delete this css when designing your own WebApp -->
-		<link rel="stylesheet" type="text/css" media="screen" href="css/demo.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="{% static "smartadmin/css/demo.min.css" %}">
 
 		<!-- FAVICONS -->
-		<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
-		<link rel="icon" href="img/favicon/favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="{% static "smartadmin/img/favicon/favicon.ico" %}" type="image/x-icon">
+		<link rel="icon" href="{% static "smartadmin/img/favicon/favicon.ico" %}" type="image/x-icon">
 
 		<!-- GOOGLE FONT -->
 		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
 
-		<!-- Specifying a Webpage Icon for Web Clip 
+		<!-- Specifying a Webpage Icon for Web Clip
 			 Ref: https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html -->
-		<link rel="apple-touch-icon" href="img/splash/sptouch-icon-iphone.png">
-		<link rel="apple-touch-icon" sizes="76x76" href="img/splash/touch-icon-ipad.png">
-		<link rel="apple-touch-icon" sizes="120x120" href="img/splash/touch-icon-iphone-retina.png">
-		<link rel="apple-touch-icon" sizes="152x152" href="img/splash/touch-icon-ipad-retina.png">
-		
+		<link rel="apple-touch-icon" href="{% static "smartadmin/img/splash/sptouch-icon-iphone.png" %}">
+		<link rel="apple-touch-icon" sizes="76x76" href="{% static "smartadmin/img/splash/touch-icon-ipad.png" %}">
+		<link rel="apple-touch-icon" sizes="120x120" href="{% static "smartadmin/img/splash/touch-icon-iphone-retina.png" %}">
+		<link rel="apple-touch-icon" sizes="152x152" href="{% static "smartadmin/img/splash/touch-icon-ipad-retina.png" %}">
+
 		<!-- iOS web-app metas : hides Safari UI Components and Changes Status Bar Appearance -->
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		
+
 		<!-- Startup image for web apps -->
-		<link rel="apple-touch-startup-image" href="img/splash/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
-		<link rel="apple-touch-startup-image" href="img/splash/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
-		<link rel="apple-touch-startup-image" href="img/splash/iphone.png" media="screen and (max-device-width: 320px)">
+		<link rel="apple-touch-startup-image" href="{% static "smartadmin/img/splash/ipad-landscape.png" %}" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
+		<link rel="apple-touch-startup-image" href="{% static "smartadmin/img/splash/ipad-portrait.png" %}" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
+		<link rel="apple-touch-startup-image" href="{% static "smartadmin/img/splash/iphone.png" %}" media="screen and (max-device-width: 320px)">
 
 	</head>
 	<body class="">
@@ -61,7 +62,7 @@
 			<div id="logo-group">
 
 				<!-- PLACE YOUR LOGO HERE -->
-				<span id="logo"> <img src="img/logo.png" alt="SmartAdmin"> </span>
+				<span id="logo"> <img src="{% static "smartadmin/img/logo.png" %}" alt="SmartAdmin"> </span>
 				<!-- END LOGO PLACEHOLDER -->
 
 				<!-- Note: The activity badge color changes when clicked and resets the number to 0
@@ -137,19 +138,19 @@
 
 			<!-- pulled right: nav area -->
 			<div class="pull-right">
-				
+
 				<!-- collapse menu button -->
 				<div id="hide-menu" class="btn-header pull-right">
 					<span> <a href="javascript:void(0);" data-action="toggleMenu" title="Collapse Menu"><i class="fa fa-reorder"></i></a> </span>
 				</div>
 				<!-- end collapse menu -->
-				
+
 				<!-- #MOBILE -->
 				<!-- Top menu profile link : this shows only when top menu is active -->
 				<ul id="mobile-profile-img" class="header-dropdown-list hidden-xs padding-5">
 					<li class="">
-						<a href="#" class="dropdown-toggle no-margin userdropdown" data-toggle="dropdown"> 
-							<img src="img/avatars/sunny.png" alt="John Doe" class="online" />  
+						<a href="#" class="dropdown-toggle no-margin userdropdown" data-toggle="dropdown">
+							<img src="{% static "smartadmin/img/avatars/sunny.png" %}" alt="John Doe" class="online" />
 						</a>
 						<ul class="dropdown-menu pull-right">
 							<li>
@@ -224,11 +225,11 @@
 					<span> <a href="javascript:void(0);" data-action="launchFullscreen" title="Full Screen"><i class="fa fa-arrows-alt"></i></a> </span>
 				</div>
 				<!-- end fullscreen button -->
-				
+
 				<!-- #Voice Command: Start Speech -->
 				<div id="speech-btn" class="btn-header transparent pull-right hidden-sm hidden-xs">
-					<div> 
-						<a href="javascript:void(0)" title="Voice Command" data-action="voiceCommand"><i class="fa fa-microphone"></i></a> 
+					<div>
+						<a href="javascript:void(0)" title="Voice Command" data-action="voiceCommand"><i class="fa fa-microphone"></i></a>
 						<div class="popover bottom"><div class="arrow"></div>
 							<div class="popover-content">
 								<h4 class="vc-title">Voice command activated <br><small>Please speak clearly into the mic</small></h4>
@@ -237,8 +238,8 @@
 									<br><small class="txt-color-red">Must <strong>"Allow"</strong> Microphone</small>
 									<br><small class="txt-color-red">Must have <strong>Internet Connection</strong></small>
 								</h4>
-								<a href="javascript:void(0);" class="btn btn-success" onclick="commands.help()">See Commands</a> 
-								<a href="javascript:void(0);" class="btn bg-color-purple txt-color-white" onclick="$('#speech-btn .popover').fadeOut(50);">Close Popup</a> 
+								<a href="javascript:void(0);" class="btn btn-success" onclick="commands.help()">See Commands</a>
+								<a href="javascript:void(0);" class="btn bg-color-purple txt-color-white" onclick="$('#speech-btn .popover').fadeOut(50);">Close Popup</a>
 							</div>
 						</div>
 					</div>
@@ -248,39 +249,39 @@
 				<!-- multiple lang dropdown : find all flags in the flags page -->
 				<ul class="header-dropdown-list hidden-xs">
 					<li>
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="img/blank.gif" class="flag flag-us" alt="United States"> <span> English (US) </span> <i class="fa fa-angle-down"></i> </a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-us" alt="United States"> <span> English (US) </span> <i class="fa fa-angle-down"></i> </a>
 						<ul class="dropdown-menu pull-right">
 							<li class="active">
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-us" alt="United States"> English (US)</a>
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-us" alt="United States"> English (US)</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-fr" alt="France"> Français</a>
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-fr" alt="France"> Français</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-es" alt="Spanish"> Español</a>
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-es" alt="Spanish"> Español</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-de" alt="German"> Deutsch</a>
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-de" alt="German"> Deutsch</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-jp" alt="Japan"> 日本語</a>
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-jp" alt="Japan"> 日本語</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-cn" alt="China"> 中文</a>
-							</li>	
-							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-it" alt="Italy"> Italiano</a>
-							</li>	
-							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-pt" alt="Portugal"> Portugal</a>
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-cn" alt="China"> 中文</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-ru" alt="Russia"> Русский язык</a>
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-it" alt="Italy"> Italiano</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-kp" alt="Korea"> 한국어</a>
-							</li>						
-							
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-pt" alt="Portugal"> Portugal</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-ru" alt="Russia"> Русский язык</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-kp" alt="Korea"> 한국어</a>
+							</li>
+
 						</ul>
 					</li>
 				</ul>
@@ -298,16 +299,16 @@
 
 			<!-- User info -->
 			<div class="login-info">
-				<span> <!-- User image size is adjusted inside CSS, it should stay as it --> 
-					
+				<span> <!-- User image size is adjusted inside CSS, it should stay as it -->
+
 					<a href="javascript:void(0);" id="show-shortcut" data-action="toggleShortcut">
-						<img src="img/avatars/sunny.png" alt="me" class="online" /> 
+						<img src="{% static "smartadmin/img/avatars/sunny.png" %}" alt="me" class="online" />
 						<span>
-							john.doe 
+							john.doe
 						</span>
 						<i class="fa fa-angle-down"></i>
-					</a> 
-					
+					</a>
+
 				</span>
 			</div>
 			<!-- end user info -->
@@ -408,10 +409,10 @@
 								<ul>
 									<li>
 										<a href="fa.html"><i class="fa fa-plane"></i> Font Awesome</a>
-									</li>	
+									</li>
 									<li>
 										<a href="glyph.html"><i class="glyphicon glyphicon-plane"></i> Glyph Icons</a>
-									</li>	
+									</li>
 									<li>
 										<a href="flags.html"><i class="fa fa-flag"></i> Flags</a>
 									</li>
@@ -460,7 +461,7 @@
 									</li>
 									<li>
 										<a href="#"><i class="fa fa-fw fa-folder-open"></i> Item #3</a>
-		
+
 										<ul>
 											<li>
 												<a href="#"><i class="fa fa-fw fa-folder-open"></i> 3ed Level </a>
@@ -474,13 +475,13 @@
 												</ul>
 											</li>
 										</ul>
-		
+
 									</li>
 								</ul>
 							</li>
 						</ul>
 					</li>
-				
+
 					<li>
 						<a href="calendar.html"><i class="fa fa-lg fa-fw fa-calendar"><em>3</em></i> <span class="menu-item-parent">Calendar</span></a>
 					</li>
@@ -564,8 +565,8 @@
 					</li>
 				</ul>
 			</nav>
-			<span class="minifyme" data-action="minifyMenu"> 
-				<i class="fa fa-arrow-circle-left hit"></i> 
+			<span class="minifyme" data-action="minifyMenu">
+				<i class="fa fa-arrow-circle-left hit"></i>
 			</span>
 
 		</aside>
@@ -577,10 +578,10 @@
 			<!-- RIBBON -->
 			<div id="ribbon">
 
-				<span class="ribbon-button-alignment"> 
+				<span class="ribbon-button-alignment">
 					<span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh"  rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings." data-html="true">
 						<i class="fa fa-refresh"></i>
-					</span> 
+					</span>
 				</span>
 
 				<!-- breadcrumb -->
@@ -605,7 +606,7 @@
 
 			<!-- MAIN CONTENT -->
 			<div id="content">
-				
+
 				<div class="row">
 					<div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
 						<h1 class="page-title txt-color-blueDark"><i class="fa fa-desktop fa-fw "></i> UI Elements <span>>
@@ -634,16 +635,16 @@
 						</ul>
 					</div>
 				</div>
-				
+
 				<!-- widget grid -->
 				<section id="widget-grid" class="">
-				
+
 					<!-- row -->
 					<div class="row">
-				
+
 						<!-- NEW WIDGET START -->
 						<article class="col-sm-12">
-				
+
 							<div class="alert alert-warning fade in">
 								<button class="close" data-dismiss="alert">
 									×
@@ -651,7 +652,7 @@
 								<i class="fa-fw fa fa-warning"></i>
 								<strong>Warning</strong> Your monthly traffic is reaching limit.
 							</div>
-				
+
 							<div class="alert alert-success fade in">
 								<button class="close" data-dismiss="alert">
 									×
@@ -659,7 +660,7 @@
 								<i class="fa-fw fa fa-check"></i>
 								<strong>Success</strong> The page has been added.
 							</div>
-				
+
 							<div class="alert alert-info fade in">
 								<button class="close" data-dismiss="alert">
 									×
@@ -667,7 +668,7 @@
 								<i class="fa-fw fa fa-info"></i>
 								<strong>Info!</strong> You have 198 unread messages.
 							</div>
-				
+
 							<div class="alert alert-danger fade in">
 								<button class="close" data-dismiss="alert">
 									×
@@ -675,25 +676,25 @@
 								<i class="fa-fw fa fa-times"></i>
 								<strong>Error!</strong> The daily cronjob has failed.
 							</div>
-				
+
 						</article>
 						<!-- WIDGET END -->
-				
+
 					</div>
-				
+
 					<!-- end row -->
-				
+
 					<!-- row -->
 					<div class="row">
-				
+
 						<!-- NEW WIDGET START -->
 						<article class="col-sm-12">
-				
+
 							<!-- Widget ID (each widget will need unique ID)-->
 							<div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-x" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">
 								<!-- widget options:
 								usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
-				
+
 								data-widget-colorbutton="false"
 								data-widget-editbutton="false"
 								data-widget-togglebutton="false"
@@ -702,24 +703,24 @@
 								data-widget-custombutton="false"
 								data-widget-collapsed="true"
 								data-widget-sortable="false"
-				
+
 								-->
 								<header>
 									<span class="widget-icon"> <i class="fa fa-align-justify"></i> </span>
 									<h2>Standard Progress Bars </h2>
-				
+
 								</header>
-				
+
 								<!-- widget div-->
 								<div>
-				
+
 									<!-- widget edit box -->
 									<div class="jarviswidget-editbox">
 										<!-- This area used as dropdown edit box -->
-				
+
 									</div>
 									<!-- end widget edit box -->
-				
+
 									<!-- widget content -->
 									<div class="widget-body">
 										<p class="alert alert-info no-margin">
@@ -741,9 +742,9 @@
 											</code>
 											or leave as is for the default size.
 										</p>
-				
+
 										<div class="row">
-				
+
 											<div class="col-sm-12">
 												<h3>Transitional Progress Bars</h3>
 												<p>
@@ -757,9 +758,9 @@
 													after the <strong>.progress-bar</strong> class
 												</p>
 												<div class="row">
-				
+
 													<div class="col-sm-6">
-				
+
 														<p>
 															For right alignment add class
 															<code>
@@ -767,7 +768,7 @@
 															</code>
 														</p>
 														<div class="well no-padding">
-				
+
 															<div class="bar-holder">
 																<div class="progress right" rel="tooltip" data-original-title="25%" data-placement="top">
 																	<div class="progress-bar bg-color-teal" aria-valuetransitiongoal="25"></div>
@@ -788,16 +789,16 @@
 																	<div class="progress-bar bg-color-redLight" aria-valuetransitiongoal="100"></div>
 																</div>
 															</div>
-				
+
 														</div>
 													</div>
-				
+
 													<div class="col-sm-6">
 														<p>
 															The default is left aligned.
 														</p>
 														<div class="well no-padding">
-				
+
 															<div class="bar-holder">
 																<div class="progress">
 																	<div class="progress-bar bg-color-teal" aria-valuetransitiongoal="25"></div>
@@ -818,23 +819,23 @@
 																	<div class="progress-bar bg-color-redLight" aria-valuetransitiongoal="100"></div>
 																</div>
 															</div>
-				
+
 														</div>
 													</div>
-				
+
 												</div>
 											</div>
-				
+
 										</div>
-				
+
 										<hr class="simple">
-				
+
 										<div class="row">
-				
+
 											<div class="col-sm-12">
 												<h3><small>Transitional Progress Bars continued...</small></h3>
 												<div class="row">
-				
+
 													<div class="col-sm-6 col-md-6 col-lg-3">
 														<p>
 															Add an overlapping div to progress-bar with the base css of
@@ -842,9 +843,9 @@
 																.progress .vertical
 															</code>
 														</p>
-				
+
 														<div class="well no-padding">
-				
+
 															<ul class="vertical-bars">
 																<li>
 																	<div class="progress vertical">
@@ -867,10 +868,10 @@
 																	</div>
 																</li>
 															</ul>
-				
+
 														</div>
 													</div>
-				
+
 													<div class="col-sm-6 col-md-6 col-lg-3">
 														<p>
 															Add an overlapping div to progress-bar with the base css of
@@ -878,7 +879,7 @@
 																.progress .vertical .bottom
 															</code>
 														</p>
-				
+
 														<div class="well no-padding">
 															<ul class="vertical-bars">
 																<li>
@@ -904,7 +905,7 @@
 															</ul>
 														</div>
 													</div>
-				
+
 													<div class="col-sm-6 col-md-6 col-lg-3">
 														<p>
 															Add an overlapping div to progress-bar with the base css of
@@ -912,9 +913,9 @@
 																.progress .vertical .wide-bar
 															</code>
 														</p>
-				
+
 														<div class="well no-padding">
-				
+
 															<ul class="vertical-bars">
 																<li>
 																	<div class="progress vertical wide-bar">
@@ -937,19 +938,19 @@
 																	</div>
 																</li>
 															</ul>
-				
+
 														</div>
 													</div>
-				
+
 													<div class="col-sm-6 col-md-6 col-lg-3">
-				
+
 														<p>
 															Add an overlapping div to progress-bar with the base css of
 															<code>
 																.bottom .wide-bar
 															</code>
 														</p>
-				
+
 														<div class="well no-padding">
 															<ul class="vertical-bars">
 																<li>
@@ -975,17 +976,17 @@
 															</ul>
 														</div>
 													</div>
-				
+
 												</div>
 											</div>
-				
+
 										</div>
-				
+
 										<div class="row">
 											<div class="col-sm-12">
 												<hr class="simple">
 												<h3>Default Progress Bars</h3>
-				
+
 												<p>
 													Micro progress bar <code>
 														.progress-micro</code>
@@ -993,12 +994,12 @@
 													<code>
 														.progress-bar-primary
 													</code>
-				
+
 												</p>
 												<div class="progress progress-micro">
 													<div class="progress-bar progress-bar-primary" role="progressbar" style="width: 44%;"></div>
 												</div>
-				
+
 												<p>
 													Extra small progress bar <code>
 														.progress-xs</code>
@@ -1011,7 +1012,7 @@
 												<div class="progress progress-xs">
 													<div class="progress-bar bg-color-blue" role="progressbar" style="width: 60%;"></div>
 												</div>
-				
+
 												<p>
 													Small progress bar <code>
 														.progress-sm</code>
@@ -1024,7 +1025,7 @@
 												<div class="progress progress-sm">
 													<div class="progress-bar bg-color-greenLight" role="progressbar" style="width: 40%"></div>
 												</div>
-				
+
 												<p>
 													Default progress bar with
 													<code>
@@ -1035,7 +1036,7 @@
 												<div class="progress">
 													<div class="progress-bar bg-color-redLight" role="progressbar" style="width: 60%"></div>
 												</div>
-				
+
 												<p>
 													Large progress bars <code>
 														.progress-lg</code>
@@ -1049,26 +1050,26 @@
 													<div class="progress-bar bg-color-blueLight" role="progressbar" style="width: 80%"></div>
 												</div>
 												<hr class="simple">
-				
+
 												<h3>Stripped Progress Bars</h3>
 												<p>
 													Sriped Progress bars made with CSS3 gradients, by adding the
 													<code>
 														.progress-striped
 													</code> class to the base class
-				
+
 												</p>
 												<p>
 													<span class="label label-info">Info!</span> Please be aware that this will not work in archaic browsers such as IE9 <span class="txt-color-purple pull-right"><i class="fa fa-warning"></i> 80% Complete</span>
 												</p>
 												<div class="progress">
-				
+
 													<div class="progress progress-striped">
 														<div class="progress-bar bg-color-purple" role="progressbar" style="width: 77%"></div>
 													</div>
-				
+
 												</div>
-				
+
 												<p>
 													Activate and animate a progress bar by adding the class
 													<code>
@@ -1092,49 +1093,49 @@
 													<code>
 														div.progress
 													</code>
-				
+
 													<span class="sparkline inline-block pull-right" data-sparkline-type='pie' data-sparkline-piecolor='["#71843F", "#C79121", "#A90329", "#ccc"]' data-sparkline-offset="90" data-sparkline-piesize="23px"> 35,20,10,35 </span>
-				
+
 												</p>
 												<div class="progress progress-sm">
 													<div class="progress-bar bg-color-greenLight" style="width: 35%"></div>
 													<div class="progress-bar bg-color-yellow" style="width: 20%"></div>
 													<div class="progress-bar bg-color-redLight" style="width: 10%"></div>
 												</div>
-				
+
 											</div>
 										</div>
-				
+
 									</div>
 									<!-- end widget body-->
-				
+
 								</div>
 								<!-- end widget content -->
-				
+
 							</div>
 							<!-- end widget -->
-				
+
 						</article>
 						<!-- WIDGET END -->
-				
+
 					</div>
-				
+
 					<!-- end row -->
-				
+
 					<!-- row -->
-				
+
 					<div class="row">
-				
+
 						<h2 class="row-seperator-header"><i class="fa fa-plus"></i> Customized Tabs </h2>
-				
+
 						<!-- NEW WIDGET START -->
 						<article class="col-sm-12 col-md-12 col-lg-6">
-				
+
 							<!-- Widget ID (each widget will need unique ID)-->
 							<div class="jarviswidget well" id="wid-id-3" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">
 								<!-- widget options:
 								usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
-				
+
 								data-widget-colorbutton="false"
 								data-widget-editbutton="false"
 								data-widget-togglebutton="false"
@@ -1143,27 +1144,27 @@
 								data-widget-custombutton="false"
 								data-widget-collapsed="true"
 								data-widget-sortable="false"
-				
+
 								-->
 								<header>
 									<span class="widget-icon"> <i class="fa fa-comments"></i> </span>
 									<h2>Default Tabs with border </h2>
-				
+
 								</header>
-				
+
 								<!-- widget div-->
 								<div>
-				
+
 									<!-- widget edit box -->
 									<div class="jarviswidget-editbox">
 										<!-- This area used as dropdown edit box -->
-				
+
 									</div>
 									<!-- end widget edit box -->
-				
+
 									<!-- widget content -->
 									<div class="widget-body">
-				
+
 										<p>
 											Tabs inside
 											<code>
@@ -1197,7 +1198,7 @@
 												</div> </a>
 											</li>
 										</ul>
-				
+
 										<div id="myTabContent1" class="tab-content padding-10">
 											<div class="tab-pane fade in active" id="s1">
 												<p>
@@ -1220,21 +1221,21 @@
 												</p>
 											</div>
 										</div>
-				
+
 									</div>
 									<!-- end widget content -->
-				
+
 								</div>
 								<!-- end widget div -->
-				
+
 							</div>
 							<!-- end widget -->
-				
+
 							<!-- Widget ID (each widget will need unique ID)-->
 							<div class="jarviswidget" id="wid-id-5" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">
 								<!-- widget options:
 								usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
-				
+
 								data-widget-colorbutton="false"
 								data-widget-editbutton="false"
 								data-widget-togglebutton="false"
@@ -1243,7 +1244,7 @@
 								data-widget-custombutton="false"
 								data-widget-collapsed="true"
 								data-widget-sortable="false"
-				
+
 								-->
 								<header>
 									<h2>Tabs left </h2>
@@ -1255,20 +1256,20 @@
 										</div>
 									</div>
 								</header>
-				
+
 								<!-- widget div-->
 								<div>
-				
+
 									<!-- widget edit box -->
 									<div class="jarviswidget-editbox">
 										<!-- This area used as dropdown edit box -->
-				
+
 									</div>
 									<!-- end widget edit box -->
-				
+
 									<!-- widget content -->
 									<div class="widget-body">
-				
+
 										<div class="tabs-left">
 											<ul class="nav nav-tabs tabs-left" id="demo-pill-nav">
 												<li class="active">
@@ -1286,7 +1287,7 @@
 													<p>
 														Dear Math, please grow up and solve your own problems, I'm tired of solving them for you.
 													</p>
-				
+
 													<p>
 														They say that love is more important than money, but have you ever tried to pay your bills with a hug?
 													</p>
@@ -1303,21 +1304,21 @@
 												</div>
 											</div>
 										</div>
-				
+
 									</div>
 									<!-- end widget content -->
-				
+
 								</div>
 								<!-- end widget div -->
-				
+
 							</div>
 							<!-- end widget -->
-				
+
 							<!-- Widget ID (each widget will need unique ID)-->
 							<div class="jarviswidget" id="wid-id-7" data-widget-editbutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">
 								<!-- widget options:
 								usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
-				
+
 								data-widget-colorbutton="false"
 								data-widget-editbutton="false"
 								data-widget-togglebutton="false"
@@ -1326,40 +1327,40 @@
 								data-widget-custombutton="false"
 								data-widget-collapsed="true"
 								data-widget-sortable="false"
-				
+
 								-->
 								<header>
 									<ul class="nav nav-tabs pull-left in">
-				
+
 										<li class="active">
-				
+
 											<a data-toggle="tab" href="#hr1"> <i class="fa fa-lg fa-arrow-circle-o-down"></i> <span class="hidden-mobile hidden-tablet"> Bottom Tabs </span> </a>
-				
+
 										</li>
-				
+
 										<li>
 											<a data-toggle="tab" href="#hr2"> <i class="fa fa-lg fa-arrow-circle-o-up"></i> <span class="hidden-mobile hidden-tablet"> Top Tabs <span class="label bg-color-blue txt-color-white"> label <i class="fa fa-exclamation"></i> </span> </span> </a>
 										</li>
-				
+
 									</ul>
 								</header>
-				
+
 								<!-- widget div-->
 								<div>
-				
+
 									<!-- widget edit box -->
 									<div class="jarviswidget-editbox">
 										<!-- This area used as dropdown edit box -->
-				
+
 									</div>
 									<!-- end widget edit box -->
-				
+
 									<!-- widget content -->
 									<div class="widget-body">
-				
+
 										<div class="tab-content">
 											<div class="tab-pane active" id="hr1">
-				
+
 												<div class="tabbable tabs-below">
 													<div class="tab-content padding-10">
 														<div class="tab-pane active" id="AA">
@@ -1390,10 +1391,10 @@
 														</li>
 													</ul>
 												</div>
-				
+
 											</div>
 											<div class="tab-pane" id="hr2">
-				
+
 												<ul class="nav nav-tabs">
 													<li class="active">
 														<a href="#iss1" data-toggle="tab">Item 1</a>
@@ -1422,30 +1423,30 @@
 														</p>
 													</div>
 												</div>
-				
+
 											</div>
 										</div>
-				
+
 									</div>
 									<!-- end widget content -->
-				
+
 								</div>
 								<!-- end widget div -->
-				
+
 							</div>
 							<!-- end widget -->
-				
+
 						</article>
 						<!-- WIDGET END -->
-				
+
 						<!-- NEW WIDGET START -->
 						<article class="col-sm-12 col-md-12 col-lg-6">
-				
+
 							<!-- Widget ID (each widget will need unique ID)-->
 							<div class="jarviswidget well" id="wid-id-4" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">
 								<!-- widget options:
 								usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
-				
+
 								data-widget-colorbutton="false"
 								data-widget-editbutton="false"
 								data-widget-togglebutton="false"
@@ -1454,24 +1455,24 @@
 								data-widget-custombutton="false"
 								data-widget-collapsed="true"
 								data-widget-sortable="false"
-				
+
 								-->
 								<header>
 									<span class="widget-icon"> <i class="fa fa-comments"></i> </span>
 									<h2>My Data </h2>
-				
+
 								</header>
-				
+
 								<!-- widget div-->
 								<div>
-				
+
 									<!-- widget edit box -->
 									<div class="jarviswidget-editbox">
 										<!-- This area used as dropdown edit box -->
-				
+
 									</div>
 									<!-- end widget edit box -->
-				
+
 									<!-- widget content -->
 									<div class="widget-body">
 										<p>
@@ -1482,7 +1483,7 @@
 											(Bordered Tabs)
 										</p>
 										<hr class="simple">
-				
+
 										<ul id="myTab3" class="nav nav-tabs tabs-pull-right bordered">
 											<li class="active">
 												<a href="#l1" data-toggle="tab">Tab Item 1 <span class="badge bg-color-pinkDark txt-color-white">99</span></a>
@@ -1502,7 +1503,7 @@
 												</ul>
 											</li>
 										</ul>
-				
+
 										<div id="myTabContent3" class="tab-content padding-10">
 											<div class="tab-pane fade in active" id="l1">
 												<p>
@@ -1525,21 +1526,21 @@
 												</p>
 											</div>
 										</div>
-				
+
 									</div>
 									<!-- end widget content -->
-				
+
 								</div>
 								<!-- end widget div -->
-				
+
 							</div>
 							<!-- end widget -->
-				
+
 							<!-- Widget ID (each widget will need unique ID)-->
 							<div class="jarviswidget" id="wid-id-6" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">
 								<!-- widget options:
 								usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
-				
+
 								data-widget-colorbutton="false"
 								data-widget-editbutton="false"
 								data-widget-togglebutton="false"
@@ -1548,26 +1549,26 @@
 								data-widget-custombutton="false"
 								data-widget-collapsed="true"
 								data-widget-sortable="false"
-				
+
 								-->
 								<header>
 									<h2>Tabs right </h2>
-				
+
 								</header>
-				
+
 								<!-- widget div-->
 								<div>
-				
+
 									<!-- widget edit box -->
 									<div class="jarviswidget-editbox">
 										<!-- This area used as dropdown edit box -->
-				
+
 									</div>
 									<!-- end widget edit box -->
-				
+
 									<!-- widget content -->
 									<div class="widget-body">
-				
+
 										<div class="tabs-right">
 											<ul class="nav nav-tabs">
 												<li class="active">
@@ -1603,21 +1604,21 @@
 												</div>
 											</div>
 										</div>
-				
+
 									</div>
 									<!-- end widget content -->
-				
+
 								</div>
 								<!-- end widget div -->
-				
+
 							</div>
 							<!-- end widget -->
-				
+
 							<!-- Widget ID (each widget will need unique ID)-->
 							<div class="jarviswidget" id="wid-id-8" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">
 								<!-- widget options:
 								usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
-				
+
 								data-widget-colorbutton="false"
 								data-widget-editbutton="false"
 								data-widget-togglebutton="false"
@@ -1626,41 +1627,41 @@
 								data-widget-custombutton="false"
 								data-widget-collapsed="true"
 								data-widget-sortable="false"
-				
+
 								-->
 								<header>
 									<h2>Header Tabs Right</h2>
 									<ul class="nav nav-tabs pull-right in">
-				
+
 										<li class="active">
-				
+
 											<a data-toggle="tab" href="#hb1"> <i class="fa fa-lg fa-arrow-circle-o-down"></i> <span class="hidden-mobile hidden-tablet"> Bottom Tabs right </span> </a>
-				
+
 										</li>
-				
+
 										<li>
 											<a data-toggle="tab" href="#hb2"> <i class="fa fa-lg fa-arrow-circle-o-up"></i> <span class="hidden-mobile hidden-tablet"> Top Tabs right <span class="label bg-color-blue txt-color-white"> label <i class="fa fa-exclamation"></i> </span> </span> </a>
 										</li>
-				
+
 									</ul>
 								</header>
-				
+
 								<!-- widget div-->
 								<div>
-				
+
 									<!-- widget edit box -->
 									<div class="jarviswidget-editbox">
 										<!-- This area used as dropdown edit box -->
-				
+
 									</div>
 									<!-- end widget edit box -->
-				
+
 									<!-- widget content -->
 									<div class="widget-body">
-				
+
 										<div class="tab-content">
 											<div class="tab-pane active" id="hb1">
-				
+
 												<div class="tabbable tabs-below">
 													<div class="tab-content padding-10">
 														<div class="tab-pane active" id="A1">
@@ -1691,10 +1692,10 @@
 														</li>
 													</ul>
 												</div>
-				
+
 											</div>
 											<div class="tab-pane" id="hb2">
-				
+
 												<ul id="internal-tab-1" class="nav nav-tabs tabs-pull-right">
 													<li class="active">
 														<a href="#is1" data-toggle="tab">Item 1</a>
@@ -1710,7 +1711,7 @@
 													<div class="tab-pane active" id="is1">
 														<p>
 															I love everyone! I love to be around some people, I love to stay away from others, and some I'd just love to punch right in the face!
-				
+
 														</p>
 													</div>
 													<div class="tab-pane fade" id="is2">
@@ -1724,39 +1725,39 @@
 														</p>
 													</div>
 												</div>
-				
+
 											</div>
 										</div>
-				
+
 									</div>
 									<!-- end widget content -->
-				
+
 								</div>
 								<!-- end widget div -->
-				
+
 							</div>
 							<!-- end widget -->
-				
+
 						</article>
 						<!-- WIDGET END -->
-				
+
 					</div>
-				
+
 					<!-- end row -->
-				
+
 					<!-- start row -->
 					<div class="row">
-				
+
 						<h2 class="row-seperator-header"><i class="fa fa-th-list"></i> Accordions </h2>
-				
+
 						<!-- NEW WIDGET START -->
 						<article class="col-sm-12 col-md-12 col-lg-6">
-				
+
 							<!-- Widget ID (each widget will need unique ID)-->
 							<div class="jarviswidget well transparent" id="wid-id-9" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">
 								<!-- widget options:
 								usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
-				
+
 								data-widget-colorbutton="false"
 								data-widget-editbutton="false"
 								data-widget-togglebutton="false"
@@ -1765,27 +1766,27 @@
 								data-widget-custombutton="false"
 								data-widget-collapsed="true"
 								data-widget-sortable="false"
-				
+
 								-->
 								<header>
 									<span class="widget-icon"> <i class="fa fa-comments"></i> </span>
 									<h2>Accordions </h2>
-				
+
 								</header>
-				
+
 								<!-- widget div-->
 								<div>
-				
+
 									<!-- widget edit box -->
 									<div class="jarviswidget-editbox">
 										<!-- This area used as dropdown edit box -->
-				
+
 									</div>
 									<!-- end widget edit box -->
-				
+
 									<!-- widget content -->
 									<div class="widget-body">
-				
+
 										<div class="panel-group smart-accordion-default" id="accordion">
 											<div class="panel panel-default">
 												<div class="panel-heading">
@@ -1847,27 +1848,27 @@
 												</div>
 											</div>
 										</div>
-				
+
 									</div>
 									<!-- end widget content -->
-				
+
 								</div>
 								<!-- end widget div -->
-				
+
 							</div>
 							<!-- end widget -->
-				
+
 						</article>
 						<!-- WIDGET END -->
-				
+
 						<!-- NEW WIDGET START -->
 						<article class="col-sm-12 col-md-12 col-lg-6">
-				
+
 							<!-- Widget ID (each widget will need unique ID)-->
 							<div class="jarviswidget jarviswidget-color-blueLight" id="wid-id-10" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-togglebutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false" data-widget-custombutton="false" data-widget-sortable="false">
 								<!-- widget options:
 								usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
-				
+
 								data-widget-colorbutton="false"
 								data-widget-editbutton="false"
 								data-widget-togglebutton="false"
@@ -1876,12 +1877,12 @@
 								data-widget-custombutton="false"
 								data-widget-collapsed="true"
 								data-widget-sortable="false"
-				
+
 								-->
 								<header>
 									<span class="widget-icon"> <i class="fa fa-list-alt"></i> </span>
 									<h2>Inside a widget </h2>
-				
+
 									<div class="widget-toolbar hidden-phone">
 										<div class="smart-form">
 											<label class="checkbox">
@@ -1889,22 +1890,22 @@
 												<i></i>Add Padding</label>
 										</div>
 									</div>
-				
+
 								</header>
-				
+
 								<!-- widget div-->
 								<div>
-				
+
 									<!-- widget edit box -->
 									<div class="jarviswidget-editbox">
 										<!-- This area used as dropdown edit box -->
-				
+
 									</div>
 									<!-- end widget edit box -->
-				
+
 									<!-- widget content -->
 									<div class="widget-body no-padding">
-				
+
 										<div class="panel-group smart-accordion-default" id="accordion-2">
 											<div class="panel panel-default">
 												<div class="panel-heading">
@@ -1937,31 +1938,31 @@
 												</div>
 											</div>
 										</div>
-				
+
 									</div>
 									<!-- end widget content -->
-				
+
 								</div>
 								<!-- end widget div -->
-				
+
 							</div>
 							<!-- end widget -->
-				
+
 						</article>
 						<!-- WIDGET END -->
-				
+
 					</div>
-				
+
 					<!-- end row -->
-				
+
 					<!-- start row -->
-				
+
 					<div class="row">
-				
+
 						<h2 class="row-seperator-header"><i class="fa fa-reorder"></i> Default Nav Bars </h2>
-				
+
 						<article class="col-sm-12">
-				
+
 							<div class="collapse navbar-collapse bg-color-white">
 								<ul class="nav navbar-nav">
 									<li class="active">
@@ -2022,22 +2023,22 @@
 									</li>
 								</ul>
 							</div>
-				
+
 							<br>
-				
+
 							<div class="collapse navbar-collapse navbar-inverse">
 								<ul class="nav navbar-nav">
 									<li class="active">
 										<a href="javascript:void(0);">Link</a>
 									</li>
-				
+
 									<li>
 										<a href="javascript:void(0);">Link</a>
 									</li>
-				
+
 									<li class="dropdown dropdown-large">
 										<a href="#" class="dropdown-toggle" data-toggle="dropdown">Large Dropdown <b class="caret"></b></a>
-				
+
 										<ul class="dropdown-menu dropdown-menu-large row">
 											<li class="col-sm-3">
 												<ul>
@@ -2164,10 +2165,10 @@
 												</ul>
 											</li>
 										</ul>
-				
+
 									</li>
 								</ul>
-				
+
 								<form class="navbar-form navbar-left pull-right" role="search">
 									<div class="form-group">
 										<input class="form-control" placeholder="Search" type="text">
@@ -2176,24 +2177,24 @@
 										Submit
 									</button>
 								</form>
-				
+
 							</div>
-				
+
 						</article>
-				
+
 					</div>
-				
+
 					<!-- end row -->
-				
+
 					<!-- start row -->
-				
+
 					<div class="row">
 						<br>
 						<br>
 						<h2 class="row-seperator-header"><i class="fa fa-tag"></i> Labels and Badges </h2>
-				
+
 						<div class="col-sm-12">
-				
+
 							<!-- well -->
 							<div class="well">
 								<!-- row -->
@@ -2205,12 +2206,12 @@
 										</p>
 										<!-- row -->
 										<div class="row">
-				
+
 											<div class="col-md-6">
 												<p>
 													Add any of the below mentioned modifier classes to change the appearance of a label.
 												</p>
-				
+
 												<table class="table table-bordered">
 													<thead>
 														<tr>
@@ -2264,7 +2265,7 @@
 													</tbody>
 												</table>
 											</div>
-				
+
 											<div class="col-md-6">
 												<p>
 													Add any of the below mentioned modifier classes to change the appearance of a badge.
@@ -2319,7 +2320,7 @@
 													</tbody>
 												</table>
 											</div>
-				
+
 										</div>
 										<!-- end row -->
 									</div>
@@ -2328,39 +2329,39 @@
 								<!-- end row -->
 							</div>
 							<!-- end well -->
-				
+
 						</div>
-				
+
 					</div>
-				
+
 					<!-- end row -->
-				
+
 					<!-- start row -->
-				
+
 					<div class="row">
-				
+
 						<h2 class="row-seperator-header"><i class="fa fa-comments"></i> Block Messages </h2>
-				
+
 						<div class="col-sm-12">
-				
+
 							<div class="alert alert-block alert-warning">
 								<a class="close" data-dismiss="alert" href="#">×</a>
 								<h4 class="alert-heading">Warning!</h4>
 								Best check yo self, you're not looking too good. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
 							</div>
-				
+
 							<div class="alert alert-success alert-block">
 								<a class="close" data-dismiss="alert" href="#">×</a>
 								<h4 class="alert-heading">Success!</h4>
 								Best check yo self, you're not looking too good. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
 							</div>
-				
+
 							<div class="alert alert-info alert-block">
 								<a class="close" data-dismiss="alert" href="#">×</a>
 								<h4 class="alert-heading">Info!</h4>
 								Best check yo self, you're not looking too good. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
 							</div>
-				
+
 							<div class="alert alert-danger alert-block">
 								<a class="close" data-dismiss="alert" href="#">×</a>
 								<h4 class="alert-heading">Error!</h4>
@@ -2370,23 +2371,23 @@
 									<a href="javascript:void(0);" class="btn btn-sm btn-default"><strong>Action Button</strong></a>
 								</p>
 							</div>
-				
+
 						</div>
-				
+
 					</div>
 					<!-- end row-->
-				
+
 					<!-- start row -->
 					<div class="row">
-				
+
 						<h2 class="row-seperator-header"><i class="glyphicon glyphicon-picture"></i> Carousel Slide / Fade </h2>
-				
+
 						<div class="col-sm-12">
-				
+
 							<div class="row">
-				
+
 								<div class="col-sm-12 col-md-12 col-lg-6">
-				
+
 									<!-- well -->
 									<div class="well">
 										<h3>Carousel <code>
@@ -2404,7 +2405,7 @@
 											<div class="carousel-inner">
 												<!-- Slide 1 -->
 												<div class="item active">
-													<img src="img/demo/m3.jpg" alt="">
+													<img src="{% static "smartadmin/img/demo/m3.jpg" %}" alt="">
 													<div class="carousel-caption caption-right">
 														<h4>Title 1</h4>
 														<p>
@@ -2416,7 +2417,7 @@
 												</div>
 												<!-- Slide 2 -->
 												<div class="item">
-													<img src="img/demo/m1.jpg" alt="">
+													<img src="{% static "smartadmin/img/demo/m1.jpg" %}" alt="">
 													<div class="carousel-caption caption-left">
 														<h4>Title 2</h4>
 														<p>
@@ -2428,7 +2429,7 @@
 												</div>
 												<!-- Slide 3 -->
 												<div class="item">
-													<img src="img/demo/m2.jpg" alt="">
+													<img src="{% static "smartadmin/img/demo/m2.jpg" %}" alt="">
 													<div class="carousel-caption">
 														<h4>A very long thumbnail title here to fill the space</h4>
 														<br>
@@ -2438,14 +2439,14 @@
 											<a class="left carousel-control" href="#myCarousel-2" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"></span> </a>
 											<a class="right carousel-control" href="#myCarousel-2" data-slide="next"> <span class="glyphicon glyphicon-chevron-right"></span> </a>
 										</div>
-				
+
 									</div>
 									<!-- end well-->
-				
+
 								</div>
-				
+
 								<div class="col-sm-12 col-md-12 col-lg-6">
-				
+
 									<!-- well -->
 									<div class="well">
 										<h3>Carousel <code>
@@ -2463,7 +2464,7 @@
 											<div class="carousel-inner">
 												<!-- Slide 1 -->
 												<div class="item active">
-													<img src="img/demo/m1.jpg" alt="">
+													<img src="{% static "smartadmin/img/demo/m1.jpg" %}" alt="">
 													<div class="carousel-caption caption-right">
 														<h4>Title 1</h4>
 														<p>
@@ -2475,7 +2476,7 @@
 												</div>
 												<!-- Slide 2 -->
 												<div class="item">
-													<img src="img/demo/m2.jpg" alt="">
+													<img src="{% static "smartadmin/img/demo/m2.jpg" %}" alt="">
 													<div class="carousel-caption caption-left">
 														<h4>Title 2</h4>
 														<p>
@@ -2487,7 +2488,7 @@
 												</div>
 												<!-- Slide 3 -->
 												<div class="item">
-													<img src="img/demo/m3.jpg" alt="">
+													<img src="{% static "smartadmin/img/demo/m3.jpg" %}" alt="">
 													<div class="carousel-caption">
 														<h4>A very long thumbnail title here to fill the space</h4>
 														<br>
@@ -2497,27 +2498,27 @@
 											<a class="left carousel-control" href="#myCarousel" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"></span> </a>
 											<a class="right carousel-control" href="#myCarousel" data-slide="next"> <span class="glyphicon glyphicon-chevron-right"></span> </a>
 										</div>
-				
+
 									</div>
 									<!-- end well -->
-				
+
 								</div>
-				
+
 							</div>
-				
+
 						</div>
-				
+
 					</div>
 					<!-- end row -->
-				
+
 					<!-- start row -->
 					<div class="row">
-				
+
 						<h2 class="row-seperator-header"><i class="fa fa-warning"></i> Alerts and Notifications </h2>
-				
+
 						<div class="col-sm-12">
 							<div class="row">
-				
+
 								<div class="col-sm-12 col-md-12 col-lg-6">
 									<!-- well -->
 									<div class="well">
@@ -2526,7 +2527,7 @@
 										<p>
 											A rendered modal with header, body, and set of actions in the footer.
 										</p>
-				
+
 										<div class="modal-dialog demo-modal">
 											<div class="modal-content">
 												<div class="modal-header">
@@ -2550,19 +2551,19 @@
 												</div>
 											</div><!-- /.modal-content -->
 										</div><!-- /.modal-dialog -->
-				
+
 										<h5>Live Demo</h5>
 										<p>
 											Toggle a modal via JavaScript by clicking the button below. It will slide down and fade in from the top of the page.
 										</p>
-				
+
 										<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
 											Launch demo modal
 										</button>
 										<h3 class="hidden-mobile">Options</h3>
-										
+
 										<div class="table-responsive">
-											
+
 											<table class="table table-bordered table-striped hidden-mobile">
 												<thead>
 													<tr>
@@ -2613,7 +2614,7 @@
 															</code>
 															attribute to specify the remote source. An example of this is shown below:
 														</p></td>
-					
+
 													</tr>
 													<tr>
 														<td colspan="4">									<pre>
@@ -2623,15 +2624,15 @@
 													</tr>
 												</tbody>
 											</table>
-											
+
 										</div>
 									</div>
 									<!-- end well-->
-				
+
 								</div>
-				
+
 								<div class="col-sm-12 col-md-12 col-lg-6">
-				
+
 									<!-- well -->
 									<div class="well">
 										<h3>Smart Notifications <small>with sound</small></h3>
@@ -2642,16 +2643,16 @@
 										<p>
 											<span class="label label-info"><i class="fa fa-music"></i> Sound Enabled</span>
 										</p>
-				
+
 										<div class="text-center">
-											<img src="img/demo/demo-smartbig-alert.png" alt="demo" class="img-responsive">
+											<img src="{% static "smartadmin/img/demo/demo-smartbig-alert.png" %}" alt="demo" class="img-responsive">
 										</div>
-				
+
 										<h5>Live Demo</h5>
 										<p class="note">
 											<span class="label bg-color-darken txt-color-white">INFO!</span> Messages are tabbale and does not overpopulate the user screen. Sounds can also be disabled if not needed
 										</p>
-				
+
 										<ul class="demo-btns">
 											<li>
 												<a href="#" id="eg1" class="btn btn-primary"> <i class="fa fa-warning"></i> Example 1 </a>
@@ -2666,9 +2667,9 @@
 												<a href="#" id="eg4" class="btn btn-primary"> <i class="fa fa-check"></i> Example 4 </a>
 											</li>
 										</ul>
-				
+
 										<h5>Small box alert</h5>
-				
+
 										<ul class="demo-btns">
 											<li>
 												<button type="button" id="eg5" class="btn btn-default">
@@ -2684,7 +2685,7 @@
 										<p class="note">
 											Easily customize the alerts to any colors of your choice, and add any icons from the theme library with animation!
 										</p>
-				
+
 										<h5><small>Extra Small Box </small></h5>
 										<ul class="demo-btns">
 											<li>
@@ -2696,15 +2697,15 @@
 										<p class="note">
 											Go even tinier with smaller attention messages!
 										</p>
-				
+
 									</div>
 									<!-- end well -->
-				
+
 									<!-- well -->
 									<div class="well">
-				
+
 										<h3>Smart Alert <small>with sound</small></h3>
-				
+
 										<h5 class="text-success">With Callback and Buttons <small>(Dynamic Example)</small></h5>
 										<ul class="demo-btns">
 											<li>
@@ -2729,36 +2730,36 @@
 												<a href="#" id="smart-mod-eg5" class="btn btn-danger"> Login me in </a>
 											</li>
 										</ul>
-				
+
 									</div>
 									<!-- end well -->
-				
+
 								</div>
-				
+
 							</div>
 						</div>
-				
+
 					</div>
 					<!-- end row -->
-				
+
 					<!-- start row -->
 					<div class="row">
-				
+
 						<h2 class="row-seperator-header"><i class="fa fa-question"></i> Tooltips and Popovers </h2>
-				
+
 						<div class="col-sm-12">
-				
+
 							<div class="row">
-				
+
 								<div class="col-sm-12 col-md-12 col-lg-6">
-				
+
 									<div class="well">
 										<h3>Tooltips</h3>
 										<p>
 											Tip your users with a small tooltip. Nifty helpful information can be disaplayed using this very simple and yet effictive component. Display pure <strong>HTML Content</strong>, <strong> Images</strong> and <strong>Icons</strong>
 										</p>
 										<br>
-				
+
 										<ul class="demo-btns text-center">
 											<li>
 												<a href="javascript:void(0);" class="btn btn-default btn-lg" rel="tooltip" data-placement="top" data-original-title="<h1><b>One</b> <em>Really</em> big tip!</h1>" data-html="true">Big Tip</a>
@@ -2770,7 +2771,7 @@
 												<a href="javascript:void(0);" class="btn btn-default btn-lg" rel="tooltip" data-placement="top" data-original-title="<img src='img/avatars/sunny.png' alt='me' class='online'>" data-html="true">also Image</a>
 											</li>
 										</ul>
-				
+
 										<ul class="demo-btns text-center">
 											<li>
 												<a href="javascript:void(0);" class="btn btn-default" rel="tooltip" data-placement="left" data-original-title="Tooltip Left"><i class="fa fa-arrow-left"></i> Tooltip Left</a>
@@ -2785,13 +2786,13 @@
 												<a href="javascript:void(0);" class="btn btn-default" rel="tooltip" data-placement="right" data-original-title="<i class='fa fa-check text-success'></i> Tooltip Right" data-html="true"><i class="fa fa-arrow-right"></i> Tooltip Right</a>
 											</li>
 										</ul>
-				
+
 									</div>
-				
+
 								</div>
-				
+
 								<div class="col-sm-12 col-md-12 col-lg-6">
-				
+
 									<div class="well">
 										<h3>Popovers</h3>
 										<p>
@@ -2809,7 +2810,7 @@
 												<a href="javascript:void(0);" class="btn btn-default btn-lg" rel="popover" data-placement="top" data-original-title="<i class='fa fa-fw fa-pencil'></i> Form inside popover" data-content="<form action='' style='min-width:170px'><div class='checkbox'><label><input type='checkbox' class='checkbox style-0' checked='checked'><span>Read</span></label></div><div class='checkbox'><label><input type='checkbox' class='checkbox style-0'><span>Write</span></label></div><div class='checkbox'><label><input type='checkbox' class='checkbox style-0'><span>Execute</span></label></div><div class='form-actions'><div class='row'><div class='col-md-12'><button class='btn btn-primary btn-sm' type='submit'>SAVE</button></div></div></div></form>" data-html="true"><strong>File</strong> <i>Access</i></a>
 											</li>
 										</ul>
-				
+
 										<ul class="demo-btns text-center">
 											<li>
 												<a href="javascript:void(0);" class="btn btn-default" rel="popover" data-placement="left" data-original-title="Popover Left" data-content="Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum."><i class="fa fa-arrow-left"></i> <strong>Popover</strong> <i>Left</i></a>
@@ -2824,26 +2825,26 @@
 												<a href="javascript:void(0);" class="btn btn-default" rel="popover" data-placement="right" data-original-title="Popover Right" data-content="Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum."><i class="fa fa-arrow-right"></i> <strong>Popover</strong> <i>Right</i></a>
 											</li>
 										</ul>
-				
+
 									</div>
-				
+
 								</div>
 							</div>
-				
+
 						</div>
-				
+
 					</div>
 					<!-- end row -->
-				
+
 					<!-- start row -->
 					<div class="row">
 						<h2 class="row-seperator-header"><i class="fa fa-square-o"></i> Containers, Media and Pagination</h2>
 						<div class="col-sm-12 col-md-12 col-lg-6">
-				
+
 							<div class="well">
-				
+
 								<h3>Jumbotron <small>Gets your user attention!</small></h3>
-				
+
 								<div class="jumbotron">
 									<h1>Hello, world!</h1>
 									<p>
@@ -2853,80 +2854,80 @@
 										<a class="btn btn-primary btn-lg" role="button">Learn more</a>
 									</p>
 								</div>
-				
+
 								<h3>Wells <small>Notice the well sizes</small></h3>
-				
+
 								<div class="well well-lg">
 									Large well
 									<br>
 									<code>
 										.well .well-lg</code>
 								</div>
-				
+
 								<div class="well ">
 									Default well
 									<br>
 									<code>
 										.well</code>
 								</div>
-				
+
 								<div class="well well-sm well-light">
 									Small well with light background
 									<br>
 									<code>
 										.well .well-sm .well-light</code>
 								</div>
-				
+
 								<div class="row">
-				
+
 									<div class="col-sm-4">
-				
+
 										<div class="well well-sm bg-color-darken txt-color-white text-center">
 											<h5>Well with background</h5>
 											<code>
 												.bg-color-darken</code>
 										</div>
-				
+
 									</div>
-				
+
 									<div class="col-sm-4">
-				
+
 										<div class="well well-sm bg-color-teal txt-color-white text-center">
 											<h5>Well with background</h5>
 											<code>
 												.bg-color-teal</code>
 										</div>
-				
+
 									</div>
-				
+
 									<div class="col-sm-4">
-				
+
 										<div class="well well-sm bg-color-pinkDark txt-color-white text-center">
 											<h5>Well with background</h5>
 											<code>
 												.bg-color-pinkDark</code>
 										</div>
-				
+
 									</div>
-				
+
 								</div>
 								<p>
 									Learn more about other colors that you can use for .well by going to <a href="typography.html"> typography page</a>
 								</p>
-				
+
 							</div>
-				
+
 						</div>
-				
+
 						<div class="col-sm-12 col-md-12 col-lg-6">
-				
+
 							<div class="well">
-				
+
 								<h3>Media</h3>
-				
+
 								<ul class="media-list">
 									<li class="media">
-										<a class="pull-left" href="javascript:void(0);"> <img class="media-object" alt="64x64" src="img/demo/64x64.png"> </a>
+										<a class="pull-left" href="javascript:void(0);"> <img class="media-object" alt="64x64" src="{% static "smartadmin/img/demo/64x64.png" %}"> </a>
 										<div class="media-body">
 											<h4 class="media-heading">Media heading</h4>
 											<p>
@@ -2934,13 +2935,13 @@
 											</p>
 											<!-- Nested media object -->
 											<div class="media">
-												<a class="pull-left" href="javascript:void(0);"> <img class="media-object" alt="64x64" src="img/demo/64x64.png"> </a>
+												<a class="pull-left" href="javascript:void(0);"> <img class="media-object" alt="64x64" src="{% static "smartadmin/img/demo/64x64.png" %}"> </a>
 												<div class="media-body">
 													<h4 class="media-heading">Nested media heading</h4>
 													Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
 													<!-- Nested media object -->
 													<div class="media">
-														<a class="pull-left" href="javascript:void(0);"> <img class="media-object" alt="64x64" src="img/demo/64x64.png"> </a>
+														<a class="pull-left" href="javascript:void(0);"> <img class="media-object" alt="64x64" src="{% static "smartadmin/img/demo/64x64.png" %}"> </a>
 														<div class="media-body">
 															<h4 class="media-heading">Nested media heading</h4>
 															Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
@@ -2950,7 +2951,7 @@
 											</div>
 											<!-- Nested media object -->
 											<div class="media">
-												<a class="pull-left" href="javascript:void(0);"> <img class="media-object" alt="64x64" src="img/demo/64x64.png"> </a>
+												<a class="pull-left" href="javascript:void(0);"> <img class="media-object" alt="64x64" src="{% static "smartadmin/img/demo/64x64.png" %}"> </a>
 												<div class="media-body">
 													<h4 class="media-heading">Nested media heading</h4>
 													Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
@@ -2959,16 +2960,16 @@
 										</div>
 									</li>
 									<li class="media">
-										<a class="pull-left" href="javascript:void(0);"> <img class="media-object" alt="64x64" src="img/demo/64x64.png"> </a>
+										<a class="pull-left" href="javascript:void(0);"> <img class="media-object" alt="64x64" src="{% static "smartadmin/img/demo/64x64.png" %}"> </a>
 										<div class="media-body">
 											<h4 class="media-heading">Media heading</h4>
 											Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
 										</div>
 									</li>
 								</ul>
-				
+
 							</div>
-				
+
 							<div class="well well-light">
 								<h3>Pagination <small>two different styles</small></h3>
 								<div class="text-center">
@@ -3128,17 +3129,17 @@
 										</li>
 									</ul>
 								</div>
-				
+
 							</div>
-				
+
 						</div>
-				
+
 					</div>
 					<!-- end row -->
-				
+
 				</section>
 				<!-- end widget grid -->
-				
+
 				<!-- Modal -->
 				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 					<div class="modal-dialog">
@@ -3150,7 +3151,7 @@
 								<h4 class="modal-title" id="myModalLabel">Article Post</h4>
 							</div>
 							<div class="modal-body">
-				
+
 								<div class="row">
 									<div class="col-md-12">
 										<div class="form-group">
@@ -3204,7 +3205,7 @@
 										</div>
 									</div>
 								</div>
-				
+
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-default" data-dismiss="modal">
@@ -3217,7 +3218,7 @@
 						</div><!-- /.modal-content -->
 					</div><!-- /.modal-dialog -->
 				</div><!-- /.modal -->
-				
+
 
 			</div>
 			<!-- END MAIN CONTENT -->
@@ -3311,61 +3312,61 @@
 		<!--================================================== -->
 
 		<!-- PACE LOADER - turn this on if you want ajax loading to show (caution: uses lots of memory on iDevices)-->
-		<script data-pace-options='{ "restartOnRequestAfter": true }' src="js/plugin/pace/pace.min.js"></script>
+		<script data-pace-options='{ "restartOnRequestAfter": true }' src="{% static "smartadmin/js/plugin/pace/pace.min.js" %}"></script>
 
 		<!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 		<script>
 			if (!window.jQuery) {
-				document.write('<script src="js/libs/jquery-2.0.2.min.js"><\/script>');
+				document.write('<script src="{% static "smartadmin/js/libs/jquery-2.0.2.min.js" %}"><\/script>');
 			}
 		</script>
 
 		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 		<script>
 			if (!window.jQuery.ui) {
-				document.write('<script src="js/libs/jquery-ui-1.10.3.min.js"><\/script>');
+				document.write('<script src="{% static "smartadmin/js/libs/jquery-ui-1.10.3.min.js" %}"><\/script>');
 			}
 		</script>
 
 		<!-- IMPORTANT: APP CONFIG -->
-		<script src="js/app.config.js"></script>
+		<script src="{% static "smartadmin/js/app.config.js" %}"></script>
 
 		<!-- JS TOUCH : include this plugin for mobile drag / drop touch events-->
-		<script src="js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script> 
+		<script src="{% static "smartadmin/js/plugin/jquery-touch/jquery.ui.touch-punch.min.js" %}"></script>
 
 		<!-- BOOTSTRAP JS -->
-		<script src="js/bootstrap/bootstrap.min.js"></script>
+		<script src="{% static "smartadmin/js/bootstrap/bootstrap.min.js" %}"></script>
 
 		<!-- CUSTOM NOTIFICATION -->
-		<script src="js/notification/SmartNotification.min.js"></script>
+		<script src="{% static "smartadmin/js/notification/SmartNotification.min.js" %}"></script>
 
 		<!-- JARVIS WIDGETS -->
-		<script src="js/smartwidgets/jarvis.widget.min.js"></script>
+		<script src="{% static "smartadmin/js/smartwidgets/jarvis.widget.min.js" %}"></script>
 
 		<!-- EASY PIE CHARTS -->
-		<script src="js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js" %}"></script>
 
 		<!-- SPARKLINES -->
-		<script src="js/plugin/sparkline/jquery.sparkline.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/sparkline/jquery.sparkline.min.js" %}"></script>
 
 		<!-- JQUERY VALIDATE -->
-		<script src="js/plugin/jquery-validate/jquery.validate.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/jquery-validate/jquery.validate.min.js" %}"></script>
 
 		<!-- JQUERY MASKED INPUT -->
-		<script src="js/plugin/masked-input/jquery.maskedinput.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/masked-input/jquery.maskedinput.min.js" %}"></script>
 
 		<!-- JQUERY SELECT2 INPUT -->
-		<script src="js/plugin/select2/select2.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/select2/select2.min.js" %}"></script>
 
 		<!-- JQUERY UI + Bootstrap Slider -->
-		<script src="js/plugin/bootstrap-slider/bootstrap-slider.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/bootstrap-slider/bootstrap-slider.min.js" %}"></script>
 
 		<!-- browser msie issue fix -->
-		<script src="js/plugin/msie-fix/jquery.mb.browser.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/msie-fix/jquery.mb.browser.min.js" %}"></script>
 
 		<!-- FastClick: For mobile devices -->
-		<script src="js/plugin/fastclick/fastclick.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/fastclick/fastclick.min.js" %}"></script>
 
 		<!--[if IE 8]>
 
@@ -3374,28 +3375,28 @@
 		<![endif]-->
 
 		<!-- Demo purpose only -->
-		<script src="js/demo.min.js"></script>
+		<script src="{% static "smartadmin/js/demo.min.js" %}"></script>
 
 		<!-- MAIN APP JS FILE -->
-		<script src="js/app.min.js"></script>
+		<script src="{% static "smartadmin/js/app.min.js" %}"></script>
 
 		<!-- ENHANCEMENT PLUGINS : NOT A REQUIREMENT -->
 		<!-- Voice command : plugin -->
-		<script src="js/speech/voicecommand.min.js"></script>
+		<script src="{% static "smartadmin/js/speech/voicecommand.min.js" %}"></script>
 
 		<!-- PAGE RELATED PLUGIN(S) -->
-		<script src="js/plugin/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/bootstrap-progressbar/bootstrap-progressbar.min.js" %}"></script>
 
-		
+
 
 		<script type="text/javascript">
-		
+
 		// DO NOT REMOVE : GLOBAL FUNCTIONS!
-		
+
 		$(document).ready(function() {
-			
+
 			pageSetUp();
-			
+
 			/*
 			 * Autostart Carousel
 			 */
@@ -3407,19 +3408,19 @@
 				interval : 3000,
 				cycle : true
 			});
-		
+
 			// Fill all progress bars with animation
-			
+
 			$('.progress-bar').progressbar({
 				display_text : 'fill'
 			});
-			
-		
+
+
 			/*
 			 * Smart Notifications
 			 */
 			$('#eg1').click(function(e) {
-		
+
 				$.bigBox({
 					title : "Big Information box",
 					content : "This message will dissapear in 6 seconds!",
@@ -3429,13 +3430,13 @@
 					number : "1",
 					timeout : 6000
 				});
-		
+
 				e.preventDefault();
-		
+
 			})
-		
+
 			$('#eg2').click(function(e) {
-		
+
 				$.bigBox({
 					title : "Big Information box",
 					content : "Lorem ipsum dolor sit amet, test consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
@@ -3444,12 +3445,12 @@
 					icon : "fa fa-bell swing animated",
 					number : "2"
 				});
-		
+
 				e.preventDefault();
 			})
-		
+
 			$('#eg3').click(function(e) {
-		
+
 				$.bigBox({
 					title : "Shield is up and running!",
 					content : "Lorem ipsum dolor sit amet, test consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
@@ -3458,13 +3459,13 @@
 					icon : "fa fa-shield fadeInLeft animated",
 					number : "3"
 				});
-		
+
 				e.preventDefault();
-		
+
 			})
-		
+
 			$('#eg4').click(function(e) {
-		
+
 				$.bigBox({
 					title : "Success Message Example",
 					content : "Lorem ipsum dolor sit amet, test consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
@@ -3475,15 +3476,15 @@
 				}, function() {
 					closedthis();
 				});
-		
+
 				e.preventDefault();
-		
+
 			})
-	
-			
-		
+
+
+
 			$('#eg5').click(function() {
-		
+
 				$.smallBox({
 					title : "Ding Dong!",
 					content : "Someone's at the door...shall one get it sir? <p class='text-align-right'><a href='javascript:void(0);' class='btn btn-primary btn-sm'>Yes</a> <a href='javascript:void(0);' class='btn btn-danger btn-sm'>No</a></p>",
@@ -3491,13 +3492,13 @@
 					//timeout: 8000,
 					icon : "fa fa-bell swing animated"
 				});
-		
-			});
-		
 
-		
+			});
+
+
+
 			$('#eg6').click(function() {
-		
+
 				$.smallBox({
 					title : "Big Information box",
 					content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
@@ -3505,11 +3506,11 @@
 					//timeout: 8000,
 					icon : "fa fa-bell"
 				});
-		
+
 			})
-		
+
 			$('#eg7').click(function() {
-		
+
 				$.smallBox({
 					title : "James Simmons liked your comment",
 					content : "<i class='fa fa-clock-o'></i> <i>2 seconds ago...</i>",
@@ -3517,9 +3518,9 @@
 					iconSmall : "fa fa-thumbs-up bounce animated",
 					timeout : 4000
 				});
-		
+
 			})
-			
+
 			function closedthis() {
 				$.smallBox({
 					title : "Great! You just closed that last alert!",
@@ -3529,7 +3530,7 @@
 					timeout : 5000
 				});
 			}
-		
+
 			/*
 			* SmartAlerts
 			*/
@@ -3541,7 +3542,7 @@
 					buttons : '[No][Yes]'
 				}, function(ButtonPressed) {
 					if (ButtonPressed === "Yes") {
-		
+
 						$.smallBox({
 							title : "Callback function",
 							content : "<i class='fa fa-clock-o'></i> <i>You pressed Yes...</i>",
@@ -3559,13 +3560,13 @@
 							timeout : 4000
 						});
 					}
-		
+
 				});
 				e.preventDefault();
 			})
 			// With Input
 			$("#smart-mod-eg2").click(function(e) {
-		
+
 				$.SmartMessageBox({
 					title : "Smart Alert: Input",
 					content : "Please enter your user name",
@@ -3575,23 +3576,23 @@
 				}, function(ButtonPress, Value) {
 					alert(ButtonPress + " " + Value);
 				});
-		
+
 				e.preventDefault();
 			})
 			// With Buttons
 			$("#smart-mod-eg3").click(function(e) {
-		
+
 				$.SmartMessageBox({
 					title : "Smart Notification: Buttons",
 					content : "Lots of buttons to go...",
 					buttons : '[Need?][You][Do][Buttons][Many][How]'
 				});
-		
+
 				e.preventDefault();
 			})
 			// With Select
 			$("#smart-mod-eg4").click(function(e) {
-		
+
 				$.SmartMessageBox({
 					title : "Smart Alert: Select",
 					content : "You can even create a group of options.",
@@ -3601,13 +3602,13 @@
 				}, function(ButtonPress, Value) {
 					alert(ButtonPress + " " + Value);
 				});
-		
+
 				e.preventDefault();
 			});
-		
+
 			// With Login
 			$("#smart-mod-eg5").click(function(e) {
-		
+
 				$.SmartMessageBox({
 					title : "Login form",
 					content : "Please enter your user name",
@@ -3619,7 +3620,7 @@
 						alert("Why did you cancel that? :(");
 						return 0;
 					}
-		
+
 					Value1 = Value.toUpperCase();
 					ValueOriginal = Value;
 					$.SmartMessageBox({
@@ -3632,11 +3633,11 @@
 						alert("Username: " + ValueOriginal + " and your password is: " + Value);
 					});
 				});
-		
-				e.preventDefault();
-			});			
 
-		
+				e.preventDefault();
+			});
+
+
 		})
 
 		</script>
@@ -3646,7 +3647,7 @@
 			var _gaq = _gaq || [];
 				_gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
 				_gaq.push(['_trackPageview']);
-			
+
 			(function() {
 				var ga = document.createElement('script');
 				ga.type = 'text/javascript';

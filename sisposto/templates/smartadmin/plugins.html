@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en-us">
 	<head>
@@ -7,50 +8,50 @@
 		<title> SmartAdmin </title>
 		<meta name="description" content="">
 		<meta name="author" content="">
-			
+
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		<!-- Basic Styles -->
-		<link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="{% static "smartadmin/css/bootstrap.min.css" %}">
+		<link rel="stylesheet" type="text/css" media="screen" href="{% static "smartadmin/css/font-awesome.min.css" %}">
 
 		<!-- SmartAdmin Styles : Please note (smartadmin-production.css) was created using LESS variables -->
-		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.min.css">
-		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="{% static "smartadmin/css/smartadmin-production.min.css" %}">
+		<link rel="stylesheet" type="text/css" media="screen" href="{% static "smartadmin/css/smartadmin-skins.min.css" %}">
 
 		<!-- SmartAdmin RTL Support is under construction
 			 This RTL CSS will be released in version 1.5
-		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-rtl.min.css"> -->
+		<link rel="stylesheet" type="text/css" media="screen" href="{% static "smartadmin/css/smartadmin-rtl.min.css" %}"> -->
 
 		<!-- We recommend you use "your_style.css" to override SmartAdmin
 		     specific styles this will also ensure you retrain your customization with each SmartAdmin update.
-		<link rel="stylesheet" type="text/css" media="screen" href="css/your_style.css"> -->
+		<link rel="stylesheet" type="text/css" media="screen" href="{% static "smartadmin/css/your_style.css" %}"> -->
 
 		<!-- Demo purpose only: goes with demo.js, you can delete this css when designing your own WebApp -->
-		<link rel="stylesheet" type="text/css" media="screen" href="css/demo.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="{% static "smartadmin/css/demo.min.css" %}">
 
 		<!-- FAVICONS -->
-		<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
-		<link rel="icon" href="img/favicon/favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="{% static "smartadmin/img/favicon/favicon.ico" %}" type="image/x-icon">
+		<link rel="icon" href="{% static "smartadmin/img/favicon/favicon.ico" %}" type="image/x-icon">
 
 		<!-- GOOGLE FONT -->
 		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
 
-		<!-- Specifying a Webpage Icon for Web Clip 
+		<!-- Specifying a Webpage Icon for Web Clip
 			 Ref: https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html -->
-		<link rel="apple-touch-icon" href="img/splash/sptouch-icon-iphone.png">
-		<link rel="apple-touch-icon" sizes="76x76" href="img/splash/touch-icon-ipad.png">
-		<link rel="apple-touch-icon" sizes="120x120" href="img/splash/touch-icon-iphone-retina.png">
-		<link rel="apple-touch-icon" sizes="152x152" href="img/splash/touch-icon-ipad-retina.png">
-		
+		<link rel="apple-touch-icon" href="{% static "smartadmin/img/splash/sptouch-icon-iphone.png" %}">
+		<link rel="apple-touch-icon" sizes="76x76" href="{% static "smartadmin/img/splash/touch-icon-ipad.png" %}">
+		<link rel="apple-touch-icon" sizes="120x120" href="{% static "smartadmin/img/splash/touch-icon-iphone-retina.png" %}">
+		<link rel="apple-touch-icon" sizes="152x152" href="{% static "smartadmin/img/splash/touch-icon-ipad-retina.png" %}">
+
 		<!-- iOS web-app metas : hides Safari UI Components and Changes Status Bar Appearance -->
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		
+
 		<!-- Startup image for web apps -->
-		<link rel="apple-touch-startup-image" href="img/splash/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
-		<link rel="apple-touch-startup-image" href="img/splash/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
-		<link rel="apple-touch-startup-image" href="img/splash/iphone.png" media="screen and (max-device-width: 320px)">
+		<link rel="apple-touch-startup-image" href="{% static "smartadmin/img/splash/ipad-landscape.png" %}" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
+		<link rel="apple-touch-startup-image" href="{% static "smartadmin/img/splash/ipad-portrait.png" %}" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
+		<link rel="apple-touch-startup-image" href="{% static "smartadmin/img/splash/iphone.png" %}" media="screen and (max-device-width: 320px)">
 
 	</head>
 	<body class="">
@@ -61,7 +62,7 @@
 			<div id="logo-group">
 
 				<!-- PLACE YOUR LOGO HERE -->
-				<span id="logo"> <img src="img/logo.png" alt="SmartAdmin"> </span>
+				<span id="logo"> <img src="{% static "smartadmin/img/logo.png" %}" alt="SmartAdmin"> </span>
 				<!-- END LOGO PLACEHOLDER -->
 
 				<!-- Note: The activity badge color changes when clicked and resets the number to 0
@@ -137,19 +138,19 @@
 
 			<!-- pulled right: nav area -->
 			<div class="pull-right">
-				
+
 				<!-- collapse menu button -->
 				<div id="hide-menu" class="btn-header pull-right">
 					<span> <a href="javascript:void(0);" data-action="toggleMenu" title="Collapse Menu"><i class="fa fa-reorder"></i></a> </span>
 				</div>
 				<!-- end collapse menu -->
-				
+
 				<!-- #MOBILE -->
 				<!-- Top menu profile link : this shows only when top menu is active -->
 				<ul id="mobile-profile-img" class="header-dropdown-list hidden-xs padding-5">
 					<li class="">
-						<a href="#" class="dropdown-toggle no-margin userdropdown" data-toggle="dropdown"> 
-							<img src="img/avatars/sunny.png" alt="John Doe" class="online" />  
+						<a href="#" class="dropdown-toggle no-margin userdropdown" data-toggle="dropdown">
+							<img src="{% static "smartadmin/img/avatars/sunny.png" %}" alt="John Doe" class="online" />
 						</a>
 						<ul class="dropdown-menu pull-right">
 							<li>
@@ -224,11 +225,11 @@
 					<span> <a href="javascript:void(0);" data-action="launchFullscreen" title="Full Screen"><i class="fa fa-arrows-alt"></i></a> </span>
 				</div>
 				<!-- end fullscreen button -->
-				
+
 				<!-- #Voice Command: Start Speech -->
 				<div id="speech-btn" class="btn-header transparent pull-right hidden-sm hidden-xs">
-					<div> 
-						<a href="javascript:void(0)" title="Voice Command" data-action="voiceCommand"><i class="fa fa-microphone"></i></a> 
+					<div>
+						<a href="javascript:void(0)" title="Voice Command" data-action="voiceCommand"><i class="fa fa-microphone"></i></a>
 						<div class="popover bottom"><div class="arrow"></div>
 							<div class="popover-content">
 								<h4 class="vc-title">Voice command activated <br><small>Please speak clearly into the mic</small></h4>
@@ -237,8 +238,8 @@
 									<br><small class="txt-color-red">Must <strong>"Allow"</strong> Microphone</small>
 									<br><small class="txt-color-red">Must have <strong>Internet Connection</strong></small>
 								</h4>
-								<a href="javascript:void(0);" class="btn btn-success" onclick="commands.help()">See Commands</a> 
-								<a href="javascript:void(0);" class="btn bg-color-purple txt-color-white" onclick="$('#speech-btn .popover').fadeOut(50);">Close Popup</a> 
+								<a href="javascript:void(0);" class="btn btn-success" onclick="commands.help()">See Commands</a>
+								<a href="javascript:void(0);" class="btn bg-color-purple txt-color-white" onclick="$('#speech-btn .popover').fadeOut(50);">Close Popup</a>
 							</div>
 						</div>
 					</div>
@@ -248,39 +249,39 @@
 				<!-- multiple lang dropdown : find all flags in the flags page -->
 				<ul class="header-dropdown-list hidden-xs">
 					<li>
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="img/blank.gif" class="flag flag-us" alt="United States"> <span> English (US) </span> <i class="fa fa-angle-down"></i> </a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-us" alt="United States"> <span> English (US) </span> <i class="fa fa-angle-down"></i> </a>
 						<ul class="dropdown-menu pull-right">
 							<li class="active">
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-us" alt="United States"> English (US)</a>
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-us" alt="United States"> English (US)</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-fr" alt="France"> Français</a>
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-fr" alt="France"> Français</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-es" alt="Spanish"> Español</a>
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-es" alt="Spanish"> Español</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-de" alt="German"> Deutsch</a>
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-de" alt="German"> Deutsch</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-jp" alt="Japan"> 日本語</a>
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-jp" alt="Japan"> 日本語</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-cn" alt="China"> 中文</a>
-							</li>	
-							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-it" alt="Italy"> Italiano</a>
-							</li>	
-							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-pt" alt="Portugal"> Portugal</a>
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-cn" alt="China"> 中文</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-ru" alt="Russia"> Русский язык</a>
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-it" alt="Italy"> Italiano</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);"><img src="img/blank.gif" class="flag flag-kp" alt="Korea"> 한국어</a>
-							</li>						
-							
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-pt" alt="Portugal"> Portugal</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-ru" alt="Russia"> Русский язык</a>
+							</li>
+							<li>
+								<a href="javascript:void(0);"><img src="{% static "smartadmin/img/blank.gif" %}" class="flag flag-kp" alt="Korea"> 한국어</a>
+							</li>
+
 						</ul>
 					</li>
 				</ul>
@@ -298,16 +299,16 @@
 
 			<!-- User info -->
 			<div class="login-info">
-				<span> <!-- User image size is adjusted inside CSS, it should stay as it --> 
-					
+				<span> <!-- User image size is adjusted inside CSS, it should stay as it -->
+
 					<a href="javascript:void(0);" id="show-shortcut" data-action="toggleShortcut">
-						<img src="img/avatars/sunny.png" alt="me" class="online" /> 
+						<img src="{% static "smartadmin/img/avatars/sunny.png" %}" alt="me" class="online" />
 						<span>
-							john.doe 
+							john.doe
 						</span>
 						<i class="fa fa-angle-down"></i>
-					</a> 
-					
+					</a>
+
 				</span>
 			</div>
 			<!-- end user info -->
@@ -408,10 +409,10 @@
 								<ul>
 									<li>
 										<a href="fa.html"><i class="fa fa-plane"></i> Font Awesome</a>
-									</li>	
+									</li>
 									<li>
 										<a href="glyph.html"><i class="glyphicon glyphicon-plane"></i> Glyph Icons</a>
-									</li>	
+									</li>
 									<li>
 										<a href="flags.html"><i class="fa fa-flag"></i> Flags</a>
 									</li>
@@ -460,7 +461,7 @@
 									</li>
 									<li>
 										<a href="#"><i class="fa fa-fw fa-folder-open"></i> Item #3</a>
-		
+
 										<ul>
 											<li>
 												<a href="#"><i class="fa fa-fw fa-folder-open"></i> 3ed Level </a>
@@ -474,13 +475,13 @@
 												</ul>
 											</li>
 										</ul>
-		
+
 									</li>
 								</ul>
 							</li>
 						</ul>
 					</li>
-				
+
 					<li>
 						<a href="calendar.html"><i class="fa fa-lg fa-fw fa-calendar"><em>3</em></i> <span class="menu-item-parent">Calendar</span></a>
 					</li>
@@ -564,8 +565,8 @@
 					</li>
 				</ul>
 			</nav>
-			<span class="minifyme" data-action="minifyMenu"> 
-				<i class="fa fa-arrow-circle-left hit"></i> 
+			<span class="minifyme" data-action="minifyMenu">
+				<i class="fa fa-arrow-circle-left hit"></i>
 			</span>
 
 		</aside>
@@ -577,10 +578,10 @@
 			<!-- RIBBON -->
 			<div id="ribbon">
 
-				<span class="ribbon-button-alignment"> 
+				<span class="ribbon-button-alignment">
 					<span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh"  rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings." data-html="true">
 						<i class="fa fa-refresh"></i>
-					</span> 
+					</span>
 				</span>
 
 				<!-- breadcrumb -->
@@ -609,9 +610,9 @@
 				<div class="row">
 					<div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
 						<h1 class="page-title txt-color-blueDark">
-							<i class="fa fa-pencil-square-o fa-fw "></i> 
+							<i class="fa fa-pencil-square-o fa-fw "></i>
 								Forms
-							<span>> 
+							<span>>
 								Form Plugins
 							</span>
 						</h1>
@@ -639,21 +640,21 @@
 						</ul>
 					</div>
 				</div>
-				
+
 				<!-- widget grid -->
 				<section id="widget-grid" class="">
-				
+
 					<!-- row -->
 					<div class="row">
-				
+
 						<!-- NEW COL START -->
 						<article class="col-sm-12">
-				
+
 							<!-- Widget ID (each widget will need unique ID)-->
 							<div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-0" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-custombutton="false">
 								<!-- widget options:
 								usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
-				
+
 								data-widget-colorbutton="false"
 								data-widget-editbutton="false"
 								data-widget-togglebutton="false"
@@ -662,68 +663,68 @@
 								data-widget-custombutton="false"
 								data-widget-collapsed="true"
 								data-widget-sortable="false"
-				
+
 								-->
 								<header>
 									<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
 									<h2>x-ediable </h2>
-				
+
 								</header>
-				
+
 								<!-- widget div-->
 								<div>
-				
+
 									<!-- widget edit box -->
 									<div class="jarviswidget-editbox">
 										<!-- This area used as dropdown edit box -->
-				
+
 									</div>
 									<!-- end widget edit box -->
-				
+
 									<!-- widget content -->
 									<div class="widget-body">
 										<div class="widget-body-toolbar">
-											
+
 											<div class="row">
-												
+
 												<div class="col-sm-6">
 													<button id="enable" class="btn btn btn-default">
 														enable / disable
 													</button>
 												</div>
 												<div class="col-sm-6 text-right">
-													
+
 													<div class="onoffswitch-container">
-														<span class="onoffswitch-title">Auto Open Next</span> 
+														<span class="onoffswitch-title">Auto Open Next</span>
 														<span class="onoffswitch">
 															<input type="checkbox" class="onoffswitch-checkbox" id="autoopen">
-															<label class="onoffswitch-label" for="autoopen"> 
-																<span class="onoffswitch-inner" data-swchon-text="ON" data-swchoff-text="OFF"></span> 
+															<label class="onoffswitch-label" for="autoopen">
+																<span class="onoffswitch-inner" data-swchon-text="ON" data-swchoff-text="OFF"></span>
 																<span class="onoffswitch-switch"></span>
-															</label> 
-														</span> 
-														
-														
+															</label>
+														</span>
+
+
 													</div>
-													
+
 													<div class="onoffswitch-container">
-														<span class="onoffswitch-title">Open Inline</span> 
+														<span class="onoffswitch-title">Open Inline</span>
 														<span class="onoffswitch">
 															<input type="checkbox" class="onoffswitch-checkbox" id="inline">
-															<label class="onoffswitch-label" for="inline"> 
-																<span class="onoffswitch-inner" data-swchon-text="ON" data-swchoff-text="OFF"></span> 
+															<label class="onoffswitch-label" for="inline">
+																<span class="onoffswitch-inner" data-swchon-text="ON" data-swchoff-text="OFF"></span>
 																<span class="onoffswitch-switch"></span>
-															</label> 
+															</label>
 														</span>
-													</div>	
-													
+													</div>
+
 												</div>
-												
+
 											</div>
-												
-				
+
+
 										</div>
-				
+
 										<table id="user" class="table table-bordered table-striped" style="clear: both">
 											<tbody>
 												<tr>
@@ -746,7 +747,7 @@
 													<td>Select, error while loading</td>
 													<td><a href="form-x-editable.html#" id="status" data-type="select" data-pk="1" data-value="0" data-source="/status" data-original-title="Select status">Active</a></td>
 												</tr>
-				
+
 												<tr>
 													<td>Datepicker</td>
 													<td><a href="#" id="vacation" data-type="date" data-viewformat="dd.mm.yyyy" data-pk="1" data-placement="right" data-original-title="When you want vacation to start?">25.02.2013</a></td>
@@ -759,54 +760,54 @@
 													<td>Combodate (datetime)</td>
 													<td><a href="form-x-editable.html#" id="event" data-type="combodate" data-template="D MMM YYYY  HH:mm" data-format="YYYY-MM-DD HH:mm" data-viewformat="MMM D, YYYY, HH:mm" data-pk="1" data-original-title="Setup event date and time"></a></td>
 												</tr>
-				
+
 												<tr>
 													<td>Textarea, buttons below. Submit by <i>ctrl+enter</i></td>
 													<td><a href="form-x-editable.html#" id="comments" data-type="textarea" data-pk="1" data-placeholder="Your comments here..." data-original-title="Enter comments">awesome user!</a></td>
 												</tr>
-				
+
 												<tr>
 													<td>Twitter typeahead.js</td>
 													<td><a href="form-x-editable.html#" id="state2" data-type="typeaheadjs" data-pk="1" data-placement="right" data-original-title="Start typing State.."></a></td>
 												</tr>
-				
+
 												<tr>
 													<td>Checklist</td>
 													<td><a href="form-x-editable.html#" id="fruits" data-type="checklist" data-value="2,3" data-original-title="Select fruits"></a></td>
 												</tr>
-				
+
 												<tr>
 													<td>Select2 (tags mode)</td>
 													<td><a href="form-x-editable.html#" id="tags" data-type="select2" data-pk="1" data-original-title="Enter tags">html, javascript</a></td>
 												</tr>
-				
+
 												<tr>
 													<td>Select2 (dropdown mode)</td>
 													<td><a href="form-x-editable.html#" id="country" data-type="select2" data-pk="1" data-select-search="true" data-value="BS" data-original-title="Select country"></a></td>
 												</tr>
-				
+
 												<tr>
 													<td>Custom input, several fields</td>
 													<td><a href="form-x-editable.html#" id="address" data-type="address" data-pk="1" data-original-title="Please, fill address"></a></td>
 												</tr>
-				
+
 											</tbody>
 										</table>
-				
+
 									</div>
 									<!-- end widget content -->
-				
+
 								</div>
 								<!-- end widget div -->
-				
+
 							</div>
 							<!-- end widget -->
-				
+
 							<!-- Widget ID (each widget will need unique ID)-->
 							<div class="jarviswidget jarviswidget-color-darken" id="wid-id-1" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-custombutton="false">
 								<!-- widget options:
 								usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
-				
+
 								data-widget-colorbutton="false"
 								data-widget-editbutton="false"
 								data-widget-togglebutton="false"
@@ -815,178 +816,178 @@
 								data-widget-custombutton="false"
 								data-widget-collapsed="true"
 								data-widget-sortable="false"
-				
+
 								-->
 								<header>
 									<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
 									<h2>Sliders </h2>
-				
+
 								</header>
-				
+
 								<!-- widget div-->
 								<div>
-				
+
 									<!-- widget edit box -->
 									<div class="jarviswidget-editbox">
 										<!-- This area used as dropdown edit box -->
-				
+
 									</div>
 									<!-- end widget edit box -->
-				
+
 									<!-- widget content -->
 									<div class="widget-body">
-				
+
 										<form>
-				
+
 											<fieldset>
 												<legend>
 													Smart Scale Slider
 												</legend>
 												<div class="row">
 													<div class="col-sm-6">
-				
+
 														<div class="form-group">
 															<input id="range-slider-1" type="text" name="range_1" value="">
 														</div>
 													</div>
 													<div class="col-sm-6">
-				
+
 														<div class="form-group">
 															<input id="range-slider-2" type="text" name="range_2" value="1000;100000" data-type="double" data-step="500" data-postfix=" €" data-from="30000" data-to="90000" data-hasgrid="true">
 														</div>
 													</div>
 												</div>
-				
+
 												<div class="row">
 													<div class="col-sm-6">
-				
+
 														<div class="form-group">
 															<input id="range-slider-3" type="text" name="range_2a" value="">
 														</div>
 													</div>
 													<div class="col-sm-6">
-				
+
 														<div class="form-group">
 															<input id="range-slider-4" type="text" name="range_4" value="">
 														</div>
 													</div>
 												</div>
-				
+
 												<div class="row">
 													<div class="col-sm-12">
-				
+
 														<div class="form-group">
 															<input id="range-slider-5" type="text" name="range_5a" value="">
 														</div>
 													</div>
 												</div>
-				
+
 											</fieldset>
-				
+
 											<fieldset>
 												<legend>
 													noScale Slider
 												</legend>
 												<div class="row">
 													<div class="col-sm-6">
-				
+
 														<div class="form-group">
 															<label>Default</label>
 															<div id="nouislider-1" class="noUiSlider"></div>
 														</div>
 													</div>
 													<div class="col-sm-6">
-				
+
 														<div class="form-group">
 															<label>Range slider (<span class="nouislider-value">20 - 60</span>)</label>
 															<div id="nouislider-3" class="noUiSlider"></div>
 														</div>
-				
+
 													</div>
 												</div>
-				
-				
+
+
 												<div class="row">
 													<div class="col-sm-6">
-				
+
 														<div class="form-group">
 															<label>Default Slider (disabled)</label>
 															<div id="nouislider-4" class="noUiSlider"></div>
 														</div>
 													</div>
 													<div class="col-sm-6">
-				
+
 														<div class="form-group">
 															<label>Skips a beat</label>
 															<div id="nouislider-2" class="noUiSlider"></div>
 														</div>
-				
+
 													</div>
 												</div>
 											</fieldset>
-											
+
 											<fieldset class="margin-top-10">
-												
+
 												<legend>
 													JQuery UI Slider
 												</legend>
 												<div class="row">
 													<div class="col-sm-6">
 														<label><code>.slider .slider-danger</code></label>
-														<input type="text" class="slider slider-danger" id="sal" value="" 
-														data-slider-min="10" 
-														data-slider-max="1000" 
-														data-slider-step="1" 
+														<input type="text" class="slider slider-danger" id="sal" value=""
+														data-slider-min="10"
+														data-slider-max="1000"
+														data-slider-step="1"
 														data-slider-value="[50,450]"
 														data-slider-handle="round">
 													</div>
 													<div class="col-sm-6">
 														<label><code>.slider .slider-success</code></label>
-														<input type="text" class="slider slider-success" id="sa2" value="" 
-														data-slider-min="10" 
-														data-slider-max="1000" 
-														data-slider-step="1" 
-														data-slider-value="[150,760]" 
+														<input type="text" class="slider slider-success" id="sa2" value=""
+														data-slider-min="10"
+														data-slider-max="1000"
+														data-slider-step="1"
+														data-slider-value="[150,760]"
 														data-slider-handle="triangle">
 													</div>
-												</div>	
+												</div>
 												<div class="row">
 													<div class="col-sm-6">
 														<label><code>.slider .slider-warning</code></label>
-														<input type="text" class="slider slider-warning" id="sa3" value="" 
-														data-slider-min="1" 
-														data-slider-max="300"  
-														data-slider-value="150" 
+														<input type="text" class="slider slider-warning" id="sa3" value=""
+														data-slider-min="1"
+														data-slider-max="300"
+														data-slider-value="150"
 														data-slider-selection = "before"
 														data-slider-handle="squar">
 													</div>
 													<div class="col-sm-6">
 														<label><code>.slider .slider-info</code></label>
-														<input type="text" class="slider slider-info" id="sa4" value="" 
-														data-slider-min="1" 
-														data-slider-max="300"  
-														data-slider-value="150" 
+														<input type="text" class="slider slider-info" id="sa4" value=""
+														data-slider-min="1"
+														data-slider-max="300"
+														data-slider-value="150"
 														data-slider-selection = "after"
 														data-slider-handle="round">
 													</div>
-												</div>	
-												
+												</div>
+
 												<div class="row">
 													<div class="col-sm-12">
 														<label><code>.slider .slider-primary</code></label>
-														<input type="text" class="slider slider-primary" id="sa5" value="" 
-														data-slider-min="1" 
-														data-slider-max="300"  
-														data-slider-value="150" 
+														<input type="text" class="slider slider-primary" id="sa5" value=""
+														data-slider-min="1"
+														data-slider-max="300"
+														data-slider-value="150"
 														data-slider-selection = "before"
 														data-slider-handle="round">
 													</div>
-												</div>	
-												
+												</div>
+
 												<div class="row">
-													
+
 													<div class="col-sm-6">
-											
+
 														<pre><strong class="margin-top-10 margin-bottom-10 font-lg">Usage</strong><br>
 				<code><strong>&lt;input data-slider-min="10" ..  /&gt;</strong></code>
 				data-slider-orientation="vertical" <span class="text-muted"> // vertical or horizontal</span>
@@ -995,133 +996,133 @@
 				data-slider-max="500"              <span class="text-muted"> // slider max value</span>
 				data-slider-value="315"            <span class="text-muted"> // handler position on slider</span>
 				data-slider-selection = "after"    <span class="text-muted"> // handler position on slider</span>
-				data-slider-handle="round"         <span class="text-muted"> // round or square</span> 
-				data-slider-tooltip = "show"       <span class="text-muted"> // show or hide</span> 
+				data-slider-handle="round"         <span class="text-muted"> // round or square</span>
+				data-slider-tooltip = "show"       <span class="text-muted"> // show or hide</span>
 														</pre>
 													</div>
-													
+
 													<div class="col-sm-6">
-														
+
 														<div class="well">
-								
+
 												          <table>
 												            <tbody>
 												              <tr>
 												                <td>
-												                  <input type="text" class="slider slider-danger" value="" 
-												                  data-slider-min="-20" 
-												                  data-slider-max="20" 
-												                  data-slider-step="1" 
-												                  data-slider-value="-13" 
-												                  data-slider-orientation="vertical" 
-												                  data-slider-selection="after" 
-												                  data-slider-handle="square" 
+												                  <input type="text" class="slider slider-danger" value=""
+												                  data-slider-min="-20"
+												                  data-slider-max="20"
+												                  data-slider-step="1"
+												                  data-slider-value="-13"
+												                  data-slider-orientation="vertical"
+												                  data-slider-selection="after"
+												                  data-slider-handle="square"
 												                  data-slider-tooltip="hide">
 												                </td>
 												                <td>
-												                  <input type="text" class="slider" value="" 
-												                  data-slider-min="-20" 
-												                  data-slider-max="20" 
-												                  data-slider-step="1" 
-												                  data-slider-value="-11" 
-												                  data-slider-orientation="vertical" 
-												                  data-slider-selection="after" 
-												                  data-slider-handle="triangle" 
+												                  <input type="text" class="slider" value=""
+												                  data-slider-min="-20"
+												                  data-slider-max="20"
+												                  data-slider-step="1"
+												                  data-slider-value="-11"
+												                  data-slider-orientation="vertical"
+												                  data-slider-selection="after"
+												                  data-slider-handle="triangle"
 												                  data-slider-tooltip="hide">
 												                </td>
 												                <td>
-												                  <input type="text" class="slider" value="" 
-												                  data-slider-min="-20" 
-												                  data-slider-max="20" 
-												                  data-slider-step="1" 
-												                  data-slider-value="-6" 
-												                  data-slider-orientation="vertical" 
-												                  data-slider-selection="after" 
+												                  <input type="text" class="slider" value=""
+												                  data-slider-min="-20"
+												                  data-slider-max="20"
+												                  data-slider-step="1"
+												                  data-slider-value="-6"
+												                  data-slider-orientation="vertical"
+												                  data-slider-selection="after"
 												                  data-slider-tooltip="hide">
 												                </td>
 												                <td>
-												                  <input type="text" class="slider" value="" 
-												                  data-slider-min="-20" 
-												                  data-slider-max="20" 
-												                  data-slider-step="1" 
-												                  data-slider-value="-4" 
-												                  data-slider-orientation="vertical" 
-												                  data-slider-selection="after" 
+												                  <input type="text" class="slider" value=""
+												                  data-slider-min="-20"
+												                  data-slider-max="20"
+												                  data-slider-step="1"
+												                  data-slider-value="-4"
+												                  data-slider-orientation="vertical"
+												                  data-slider-selection="after"
 												                  data-slider-tooltip="hide">
 												                </td>
 												                <td>
-												                  <input type="text" class="slider" value="" 
-												                  data-slider-min="-20" 
-												                  data-slider-max="20" 
-												                  data-slider-step="1" 
-												                  data-slider-value="-6" 
-												                  data-slider-orientation="vertical" 
-												                  data-slider-selection="after" 
+												                  <input type="text" class="slider" value=""
+												                  data-slider-min="-20"
+												                  data-slider-max="20"
+												                  data-slider-step="1"
+												                  data-slider-value="-6"
+												                  data-slider-orientation="vertical"
+												                  data-slider-selection="after"
 												                  data-slider-tooltip="hide">
 												                </td>
 												                <td>
-												                  <input type="text" class="slider slider-warning" value="" 
-												                  data-slider-min="-20" 
-												                  data-slider-max="20" 
-												                  data-slider-step="1" 
-												                  data-slider-value="[-11, 19]" 
-												                  data-slider-orientation="vertical" 
-												                  data-slider-selection="after" 
-												                  data-slider-handle="triangle" 
+												                  <input type="text" class="slider slider-warning" value=""
+												                  data-slider-min="-20"
+												                  data-slider-max="20"
+												                  data-slider-step="1"
+												                  data-slider-value="[-11, 19]"
+												                  data-slider-orientation="vertical"
+												                  data-slider-selection="after"
+												                  data-slider-handle="triangle"
 												                  data-slider-tooltip="show">
 												                </td>
 												                <td>
-												                  <input type="text" class="slider slider-success" value="" 
-												                  data-slider-min="-20" 
-												                  data-slider-max="20" 
-												                  data-slider-step="1" 
-												                  data-slider-value="-17" 
-												                  data-slider-orientation="vertical" 
-												                  data-slider-selection="after" 
+												                  <input type="text" class="slider slider-success" value=""
+												                  data-slider-min="-20"
+												                  data-slider-max="20"
+												                  data-slider-step="1"
+												                  data-slider-value="-17"
+												                  data-slider-orientation="vertical"
+												                  data-slider-selection="after"
 												                  data-slider-tooltip="show">
 												                </td>
 												              </tr>
 												            </tbody>
 												          </table>
-												          
+
 					      								</div>
-														
+
 													</div>
-													
-												</div>	
-											</fieldset>	
-				
-											
+
+												</div>
+											</fieldset>
+
+
 										</form>
-				
+
 									</div>
 									<!-- end widget content -->
-				
+
 								</div>
 								<!-- end widget div -->
-				
+
 							</div>
 							<!-- end widget -->
-				
+
 						</article>
 						<!-- END COL -->
-				
+
 					</div>
-				
+
 					<!-- end row -->
-				
+
 					<!-- START ROW -->
-				
+
 					<div class="row">
-				
+
 						<!-- NEW COL START -->
 						<article class="col-sm-12 col-md-12 col-lg-6">
-				
+
 							<!-- Widget ID (each widget will need unique ID)-->
 							<div class="jarviswidget" id="wid-id-2" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-custombutton="false">
 								<!-- widget options:
 								usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
-				
+
 								data-widget-colorbutton="false"
 								data-widget-editbutton="false"
 								data-widget-togglebutton="false"
@@ -1130,34 +1131,34 @@
 								data-widget-custombutton="false"
 								data-widget-collapsed="true"
 								data-widget-sortable="false"
-				
+
 								-->
 								<header>
 									<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
 									<h2>Plugins & Enhancers </h2>
-				
+
 								</header>
-				
+
 								<!-- widget div-->
 								<div>
-				
+
 									<!-- widget edit box -->
 									<div class="jarviswidget-editbox">
 										<!-- This area used as dropdown edit box -->
-				
+
 									</div>
 									<!-- end widget edit box -->
-				
+
 									<!-- widget content -->
 									<div class="widget-body">
-				
+
 										<form class="">
-				
+
 											<fieldset>
 												<legend>
 													Select 2
 												</legend>
-				
+
 												<div class="form-group">
 													<label>Select2 Plugin (select)</label>
 													<select style="width:100%" class="select2">
@@ -1217,12 +1218,12 @@
 															<option value="WV">West Virginia</option>
 														</optgroup>
 													</select>
-				
+
 													<div class="note">
 														<strong>Usage:</strong> &lt;select style=&quot;width:100%&quot; class=&quot;select2&quot; &quot;&gt;...&lt;/select&gt;
 													</div>
 												</div>
-				
+
 												<div class="form-group">
 													<label>Select2 Plugin (multi-select)</label>
 													<select multiple style="width:100%" class="select2">
@@ -1286,19 +1287,19 @@
 															<option value="WV">West Virginia</option>
 														</optgroup>
 													</select>
-				
+
 													<div class="note">
 														<strong>Usage:</strong> &lt;select multiple style=&quot;width:100%&quot; class=&quot;select2&quot; &gt;...&lt;/select&gt;
 													</div>
 												</div>
-				
+
 											</fieldset>
-				
+
 											<fieldset>
 												<legend>
 													Date Picker (Jquery UI)
 												</legend>
-				
+
 												<div class="row">
 													<div class="col-sm-12">
 														<div class="form-group">
@@ -1309,44 +1310,44 @@
 															</div>
 														</div>
 													</div>
-				
+
 													<div class="col-sm-12">
 														<label>Select a date (range):</label>
 													</div>
 													<div class="col-sm-6">
-				
+
 														<div class="form-group">
 															<div class="input-group">
 																<input class="form-control" id="from" type="text" placeholder="From">
 																<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
 															</div>
 														</div>
-				
+
 													</div>
 													<div class="col-sm-6">
-				
+
 														<div class="form-group">
 															<div class="input-group">
 																<input class="form-control" id="to" type="text" placeholder="Select a date">
 																<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
 															</div>
 														</div>
-				
+
 													</div>
-				
+
 												</div>
 											</fieldset>
-				
+
 											<fieldset>
 												<legend>
 													Bootstrap Timepicker
 												</legend>
-				
+
 												<div class="row">
-				
+
 													<div class="col-sm-12">
 														<div class="row">
-				
+
 															<div class="col-sm-12">
 																<div class="form-group">
 																	<label>Timepicker (default):</label>
@@ -1356,24 +1357,24 @@
 																	</div>
 																</div>
 															</div>
-				
+
 														</div>
 													</div>
-				
+
 												</div>
-				
+
 											</fieldset>
 
 											<fieldset>
 												<legend>
 													Clockpicker
 												</legend>
-				
+
 												<div class="row">
-				
+
 													<div class="col-sm-12">
 														<div class="row">
-				
+
 															<div class="col-sm-12">
 																<div class="form-group">
 																	<label>Clockpicker:</label>
@@ -1383,28 +1384,28 @@
 																	</div>
 																</div>
 															</div>
-				
+
 														</div>
 													</div>
-				
+
 												</div>
-				
+
 											</fieldset>
-				
+
 											<fieldset>
 												<legend>
 													Spinners
 												</legend>
-				
+
 												<div class="row">
-				
+
 													<div class="col-sm-6 col-md-4 col-lg-4">
-				
+
 														<div class="form-group">
 															<label>Default</label>
 															<input class="form-control spinner-left"  id="spinner" name="spinner" value="1" type="text">
 														</div>
-				
+
 													</div>
 													<div class="col-sm-6 col-md-4 col-lg-4">
 														<div class="form-group">
@@ -1419,23 +1420,23 @@
 														</div>
 													</div>
 												</div>
-				
+
 											</fieldset>
-				
+
 											<fieldset>
 												<legend>
 													Color Pickers
 												</legend>
-				
+
 												<div class="row">
-				
+
 													<div class="col-sm-6">
-				
+
 														<div class="form-group">
 															<label>Color Picker (HEX)</label>
 															<input class="form-control" id="colorpicker-1" type="text" value="#8fff00">
 														</div>
-				
+
 													</div>
 													<div class="col-sm-6">
 														<div class="form-group">
@@ -1444,27 +1445,27 @@
 														</div>
 													</div>
 												</div>
-				
+
 											</fieldset>
-				
+
 											<fieldset>
 												<legend>
 													Tags
 												</legend>
-				
+
 												<div class="row">
-													
+
 													<div class="col-sm-12">
 														<div class="form-group">
 															<label>Type and enter to add tag</label>
 															<input class="form-control tagsinput" value="Amsterdam,Washington,Sydney,Beijing,Cairo" data-role="tagsinput">
 														</div>
 													</div>
-													
+
 												</div>
-				
+
 											</fieldset>
-											
+
 											<div class="form-actions">
 												<div class="row">
 													<div class="col-md-12">
@@ -1478,29 +1479,29 @@
 													</div>
 												</div>
 											</div>
-				
+
 										</form>
-				
+
 									</div>
 									<!-- end widget content -->
-				
+
 								</div>
 								<!-- end widget div -->
-				
+
 							</div>
 							<!-- end widget -->
-				
+
 						</article>
 						<!-- END COL -->
-				
+
 						<!-- NEW COL START -->
 						<article class="col-sm-12 col-md-12 col-lg-6">
-				
+
 							<!-- Widget ID (each widget will need unique ID)-->
 							<div class="jarviswidget" id="wid-id-3" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-custombutton="false">
 								<!-- widget options:
 								usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
-				
+
 								data-widget-colorbutton="false"
 								data-widget-editbutton="false"
 								data-widget-togglebutton="false"
@@ -1509,37 +1510,37 @@
 								data-widget-custombutton="false"
 								data-widget-collapsed="true"
 								data-widget-sortable="false"
-				
+
 								-->
 								<header>
 									<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
 									<h2>All Masking </h2>
-				
+
 								</header>
-				
+
 								<!-- widget div-->
 								<div>
-				
+
 									<!-- widget edit box -->
 									<div class="jarviswidget-editbox">
 										<!-- This area used as dropdown edit box -->
-				
+
 									</div>
 									<!-- end widget edit box -->
-				
+
 									<!-- widget content -->
 									<div class="widget-body">
 										<p class="alert alert-info text-align-center">
 											USAGE: &lt;input type=&quot;text&quot; <strong>data-mask=&quot;99/99/9999&quot; data-mask-placeholder= &quot;-&quot;&gt;</strong>
 										</p>
-				
+
 										<form>
-				
+
 											<fieldset>
 												<legend>
 													Input Masking made easier!
 												</legend>
-				
+
 												<div class="form-group">
 													<label>Date masking</label>
 													<div class="input-group">
@@ -1550,7 +1551,7 @@
 														Data format **/**/****
 													</p>
 												</div>
-				
+
 												<div class="form-group">
 													<label>Phone masking</label>
 													<div class="input-group">
@@ -1561,7 +1562,7 @@
 														Data format (XXX) XXX-XXXX
 													</p>
 												</div>
-				
+
 												<div class="form-group">
 													<label>Credit card masking</label>
 													<div class="input-group">
@@ -1572,7 +1573,7 @@
 														Data format ****-****-****-****
 													</p>
 												</div>
-				
+
 												<div class="form-group">
 													<label>Serial number masking</label>
 													<div class="input-group">
@@ -1583,7 +1584,7 @@
 														Data format ***-***-***-***-***-***
 													</p>
 												</div>
-				
+
 												<div class="form-group">
 													<label>Tax ID masking</label>
 													<div class="input-group">
@@ -1594,7 +1595,7 @@
 														Data format 99-9999999
 													</p>
 												</div>
-				
+
 												<div class="form-actions">
 													<div class="row">
 														<div class="col-md-12">
@@ -1608,24 +1609,24 @@
 														</div>
 													</div>
 												</div>
-				
+
 											</fieldset>
 										</form>
-				
+
 									</div>
 									<!-- end widget content -->
-				
+
 								</div>
 								<!-- end widget div -->
-				
+
 							</div>
 							<!-- end widget -->
-				
+
 							<!-- Widget ID (each widget will need unique ID)-->
 							<div class="jarviswidget jarviswidget-color-darken" id="wid-id-5" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-custombutton="false">
 								<!-- widget options:
 								usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
-				
+
 								data-widget-colorbutton="false"
 								data-widget-editbutton="false"
 								data-widget-togglebutton="false"
@@ -1634,53 +1635,53 @@
 								data-widget-custombutton="false"
 								data-widget-collapsed="true"
 								data-widget-sortable="false"
-				
+
 								-->
 								<header>
 									<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
 									<h2>JS Knob </h2>
-				
+
 								</header>
-				
+
 								<!-- widget div-->
 								<div>
-				
+
 									<!-- widget edit box -->
 									<div class="jarviswidget-editbox">
 										<!-- This area used as dropdown edit box -->
-				
+
 									</div>
 									<!-- end widget edit box -->
-				
+
 									<!-- widget content -->
 									<div class="widget-body">
-				
+
 										<form>
-				
+
 											<fieldset>
 												<legend>
 													JS Knob Input
 												</legend>
-				
+
 												<div class="knobs-demo">
-				
+
 													<div>
 														<input class="knob" data-width="120" data-height="120" data-displayInput=true value="35" data-displayPrevious=true data-fgColor="#428BCA">
 													</div>
-				
+
 													<div>
 														<input class="knob" data-width="180" data-height="180" data-cursor=true data-fgColor="#222222" data-thickness=.3 value="29">
 													</div>
-				
+
 													<div>
 														<input class="knob" data-width="80" data-height="80" data-fgColor="#71843F" data-angleOffset=-125 data-angleArc=250 value="33" data-thickness=.3>
 													</div>
-				
+
 												</div>
-				
+
 											</fieldset>
 											<div class="form-actions">
-				
+
 												<div class="row">
 													<div class="col-md-12">
 														<button class="btn btn-default" type="submit">
@@ -1694,23 +1695,23 @@
 												</div>
 											</div>
 										</form>
-				
+
 									</div>
 									<!-- end widget content -->
-				
+
 								</div>
 								<!-- end widget div -->
-				
+
 							</div>
 							<!-- end widget -->
-				
+
 						</article>
 						<!-- END COL -->
-				
+
 					</div>
-				
+
 					<!-- END ROW -->
-				
+
 				</section>
 				<!-- end widget grid -->
 
@@ -1806,61 +1807,61 @@
 		<!--================================================== -->
 
 		<!-- PACE LOADER - turn this on if you want ajax loading to show (caution: uses lots of memory on iDevices)-->
-		<script data-pace-options='{ "restartOnRequestAfter": true }' src="js/plugin/pace/pace.min.js"></script>
+		<script data-pace-options='{ "restartOnRequestAfter": true }' src="{% static "smartadmin/js/plugin/pace/pace.min.js" %}"></script>
 
 		<!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 		<script>
 			if (!window.jQuery) {
-				document.write('<script src="js/libs/jquery-2.0.2.min.js"><\/script>');
+				document.write('<script src="{% static "smartadmin/js/libs/jquery-2.0.2.min.js" %}"><\/script>');
 			}
 		</script>
 
 		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 		<script>
 			if (!window.jQuery.ui) {
-				document.write('<script src="js/libs/jquery-ui-1.10.3.min.js"><\/script>');
+				document.write('<script src="{% static "smartadmin/js/libs/jquery-ui-1.10.3.min.js" %}"><\/script>');
 			}
 		</script>
 
 		<!-- IMPORTANT: APP CONFIG -->
-		<script src="js/app.config.js"></script>
+		<script src="{% static "smartadmin/js/app.config.js" %}"></script>
 
 		<!-- JS TOUCH : include this plugin for mobile drag / drop touch events-->
-		<script src="js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script> 
+		<script src="{% static "smartadmin/js/plugin/jquery-touch/jquery.ui.touch-punch.min.js" %}"></script>
 
 		<!-- BOOTSTRAP JS -->
-		<script src="js/bootstrap/bootstrap.min.js"></script>
+		<script src="{% static "smartadmin/js/bootstrap/bootstrap.min.js" %}"></script>
 
 		<!-- CUSTOM NOTIFICATION -->
-		<script src="js/notification/SmartNotification.min.js"></script>
+		<script src="{% static "smartadmin/js/notification/SmartNotification.min.js" %}"></script>
 
 		<!-- JARVIS WIDGETS -->
-		<script src="js/smartwidgets/jarvis.widget.min.js"></script>
+		<script src="{% static "smartadmin/js/smartwidgets/jarvis.widget.min.js" %}"></script>
 
 		<!-- EASY PIE CHARTS -->
-		<script src="js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js" %}"></script>
 
 		<!-- SPARKLINES -->
-		<script src="js/plugin/sparkline/jquery.sparkline.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/sparkline/jquery.sparkline.min.js" %}"></script>
 
 		<!-- JQUERY VALIDATE -->
-		<script src="js/plugin/jquery-validate/jquery.validate.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/jquery-validate/jquery.validate.min.js" %}"></script>
 
 		<!-- JQUERY MASKED INPUT -->
-		<script src="js/plugin/masked-input/jquery.maskedinput.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/masked-input/jquery.maskedinput.min.js" %}"></script>
 
 		<!-- JQUERY SELECT2 INPUT -->
-		<script src="js/plugin/select2/select2.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/select2/select2.min.js" %}"></script>
 
 		<!-- JQUERY UI + Bootstrap Slider -->
-		<script src="js/plugin/bootstrap-slider/bootstrap-slider.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/bootstrap-slider/bootstrap-slider.min.js" %}"></script>
 
 		<!-- browser msie issue fix -->
-		<script src="js/plugin/msie-fix/jquery.mb.browser.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/msie-fix/jquery.mb.browser.min.js" %}"></script>
 
 		<!-- FastClick: For mobile devices -->
-		<script src="js/plugin/fastclick/fastclick.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/fastclick/fastclick.min.js" %}"></script>
 
 		<!--[if IE 8]>
 
@@ -1869,48 +1870,48 @@
 		<![endif]-->
 
 		<!-- Demo purpose only -->
-		<script src="js/demo.min.js"></script>
+		<script src="{% static "smartadmin/js/demo.min.js" %}"></script>
 
 		<!-- MAIN APP JS FILE -->
-		<script src="js/app.min.js"></script>
+		<script src="{% static "smartadmin/js/app.min.js" %}"></script>
 
 		<!-- ENHANCEMENT PLUGINS : NOT A REQUIREMENT -->
 		<!-- Voice command : plugin -->
-		<script src="js/speech/voicecommand.min.js"></script>
+		<script src="{% static "smartadmin/js/speech/voicecommand.min.js" %}"></script>
 
 		<!-- PAGE RELATED PLUGIN(S) -->
-		<script src="js/plugin/maxlength/bootstrap-maxlength.min.js"></script>
-		<script src="js/plugin/bootstrap-timepicker/bootstrap-timepicker.min.js"></script>
-		<script src="js/plugin/clockpicker/clockpicker.min.js"></script>
-		<script src="js/plugin/bootstrap-tags/bootstrap-tagsinput.min.js"></script>
-		<script src="js/plugin/noUiSlider/jquery.nouislider.min.js"></script>
-		<script src="js/plugin/ion-slider/ion.rangeSlider.min.js"></script>
-		<script src="js/plugin/colorpicker/bootstrap-colorpicker.min.js"></script>
-		<script src="js/plugin/knob/jquery.knob.min.js"></script>
-		<script src="js/plugin/x-editable/moment.min.js"></script>
-		<script src="js/plugin/x-editable/jquery.mockjax.min.js"></script>
-		<script src="js/plugin/x-editable/x-editable.min.js"></script>
-		<script src="js/plugin/typeahead/typeahead.min.js"></script>
-		<script src="js/plugin/typeahead/typeaheadjs.min.js"></script>
+		<script src="{% static "smartadmin/js/plugin/maxlength/bootstrap-maxlength.min.js" %}"></script>
+		<script src="{% static "smartadmin/js/plugin/bootstrap-timepicker/bootstrap-timepicker.min.js" %}"></script>
+		<script src="{% static "smartadmin/js/plugin/clockpicker/clockpicker.min.js" %}"></script>
+		<script src="{% static "smartadmin/js/plugin/bootstrap-tags/bootstrap-tagsinput.min.js" %}"></script>
+		<script src="{% static "smartadmin/js/plugin/noUiSlider/jquery.nouislider.min.js" %}"></script>
+		<script src="{% static "smartadmin/js/plugin/ion-slider/ion.rangeSlider.min.js" %}"></script>
+		<script src="{% static "smartadmin/js/plugin/colorpicker/bootstrap-colorpicker.min.js" %}"></script>
+		<script src="{% static "smartadmin/js/plugin/knob/jquery.knob.min.js" %}"></script>
+		<script src="{% static "smartadmin/js/plugin/x-editable/moment.min.js" %}"></script>
+		<script src="{% static "smartadmin/js/plugin/x-editable/jquery.mockjax.min.js" %}"></script>
+		<script src="{% static "smartadmin/js/plugin/x-editable/x-editable.min.js" %}"></script>
+		<script src="{% static "smartadmin/js/plugin/typeahead/typeahead.min.js" %}"></script>
+		<script src="{% static "smartadmin/js/plugin/typeahead/typeaheadjs.min.js" %}"></script>
 
 
 		<script type="text/javascript">
-		
+
 		// DO NOT REMOVE : GLOBAL FUNCTIONS!
-		
+
 		$(document).ready(function() {
-			
+
 			pageSetUp();
-			
+
 			 // PAGE RELATED SCRIPTS
-		
+
 			 // Spinners
 			$("#spinner").spinner();
 			$("#spinner-decimal").spinner({
 			    step: 0.01,
 			    numberFormat: "n"
 			});
-		
+
 			$("#spinner-currency").spinner({
 			    min: 5,
 			    max: 2500,
@@ -1918,15 +1919,15 @@
 			    start: 1000,
 			    numberFormat: "C"
 			});
-		
+
 			 //Maxlength
-			
+
 		    $('input[maxlength]').maxlength({
 		        warningClass: "label label-success",
 		        limitReachedClass: "label label-important",
 		    });
-		
-			
+
+
 			 // START AND FINISH DATE
 			$('#startdate').datepicker({
 			    dateFormat: 'dd.mm.yy',
@@ -1944,7 +1945,7 @@
 			        $('#startdate').datepicker('option', 'maxDate', selectedDate);
 			    }
 			});
-		
+
 			 // Date Range Picker
 			$("#from").datepicker({
 			    defaultDate: "+1w",
@@ -1955,7 +1956,7 @@
 			    onClose: function (selectedDate) {
 			        $("#to").datepicker("option", "maxDate", selectedDate);
 			    }
-		
+
 			});
 			$("#to").datepicker({
 			    defaultDate: "+1w",
@@ -1967,33 +1968,33 @@
 			        $("#from").datepicker("option", "minDate", selectedDate);
 			    }
 			});
-		
+
 			/*
 			 * TIMEPICKER
 			 */
-		
+
 			$('#timepicker').timepicker();
 
 			/*
 			 * CLOCKPICKER
 			 */
-			
+
 			$('#clockpicker').clockpicker({
 				placement: 'top',
 			    donetext: 'Done'
 			});
-			
+
 			/*
 			 * JS SLIDER
 			 */
-		
+
 		    $("#nouislider-1").noUiSlider({
 		        range: [2, 100],
 		        start: 55,
 		        handles: 1,
 		        connect: true,
 		    });
-		
+
 		    $("#nouislider-2").noUiSlider({
 		        range: [0, 300],
 		        start: [55, 130],
@@ -2001,7 +2002,7 @@
 		        handles: 2,
 		        connect: true
 		    });
-		
+
 		    $("#nouislider-3").noUiSlider({
 		        range: [0, 1000],
 		        start: [264, 776],
@@ -2012,19 +2013,19 @@
 		            $(".nouislider-value").text(values[0] + " - " + values[1]);
 		        }
 		    });
-		
+
 		    $("#nouislider-4").noUiSlider({
 		        range: [0, 100],
 		        start: 50,
 		        handles: 1
 		    }).attr("disabled", "disabled");
-		
-		
-		
+
+
+
 			/*
 			 * ION SLIDER
 			 */
-		
+
 		    $("#range-slider-1").ionRangeSlider({
 		        min: 0,
 		        max: 5000,
@@ -2036,9 +2037,9 @@
 		        prettify: false,
 		        hasGrid: true
 		    });
-		
+
 		    $("#range-slider-2").ionRangeSlider();
-		
+
 		    $("#range-slider-3").ionRangeSlider({
 		        min: 0,
 		        from: 2.3,
@@ -2049,7 +2050,7 @@
 		        prettify: false,
 		        hasGrid: true
 		    });
-		
+
 		    $("#range-slider-4").ionRangeSlider({
 		        min: -50,
 		        max: 50,
@@ -2061,7 +2062,7 @@
 		        prettify: false,
 		        hasGrid: true
 		    });
-		
+
 		    $("#range-slider-5").ionRangeSlider({
 		        min: 0,
 		        from: 0,
@@ -2072,22 +2073,22 @@
 		        prettify: false,
 		        hasGrid: true
 		    });
-		
-		
-		
+
+
+
 			/*
 			 * COLOR PICKER
 			 */
-		
+
 		    $('#colorpicker-1').colorpicker()
 		    $('#colorpicker-2').colorpicker()
-		
-		
-		
+
+
+
 			/*
 			 * KNOB
 			 */
-		
+
 		    $('.knob').knob({
 		        change: function (value) {
 		            //console.log("change : " + value);
@@ -2100,15 +2101,15 @@
 		            //console.log("cancel : ", this);
 		        }
 		    });
-		
-		
+
+
 			/*
 			 * X-Ediable
 			 */
-		
-		
-		
-		
+
+
+
+
 		    (function (e) {
 		        "use strict";
 		        var t = function (e) {
@@ -2170,17 +2171,17 @@
 		        });
 		        e.fn.editabletypes.address = t
 		    })(window.jQuery);
-		
+
 		    //ajax mocks
 		    $.mockjaxSettings.responseTime = 500;
-		
+
 		    $.mockjax({
 		        url: '/post',
 		        response: function (settings) {
 		            log(settings, this);
 		        }
 		    });
-		
+
 		    $.mockjax({
 		        url: '/error',
 		        status: 400,
@@ -2190,7 +2191,7 @@
 		            log(settings, this);
 		        }
 		    });
-		
+
 		    $.mockjax({
 		        url: '/status',
 		        status: 500,
@@ -2199,7 +2200,7 @@
 		            log(settings, this);
 		        }
 		    });
-		
+
 		    $.mockjax({
 		        url: '/groups',
 		        response: function (settings) {
@@ -2225,7 +2226,7 @@
 		            log(settings, this);
 		        }
 		    });
-		
+
 		    //TODO: add this div to page
 		    function log(settings, response) {
 		        var s = [],
@@ -2244,7 +2245,7 @@
 		            s.push(a + ' = ' + str);
 		        }
 		        s.push('RESPONSE: status = ' + response.status);
-		
+
 		        if (response.responseText) {
 		            if ($.isArray(response.responseText)) {
 		                s.push('[');
@@ -2259,11 +2260,11 @@
 		        s.push('--------------------------------------\n');
 		        $('#console').val(s.join('\n') + $('#console').val());
 		    }
-		
+
 		    /*
 		     * X-EDITABLES
 		     */
-		
+
 		    $('#inline').on('change', function (e) {
 		        if ($(this).prop('checked')) {
 		            window.location.href = '?mode=inline#ajax/plugins.html';
@@ -2271,7 +2272,7 @@
 		            window.location.href = '?#ajax/plugins.html';
 		        }
 		    });
-		
+
 		    if (window.location.href.indexOf("?mode=inline") > -1) {
 		        $('#inline').prop('checked', true);
 		        $.fn.editable.defaults.mode = 'inline';
@@ -2279,16 +2280,16 @@
 		        $('#inline').prop('checked', false);
 		        $.fn.editable.defaults.mode = 'popup';
 		    }
-		
+
 		    //defaults
 		    $.fn.editable.defaults.url = '/post';
 		    //$.fn.editable.defaults.mode = 'inline'; use this to edit inline
-		
+
 		    //enable / disable
 		    $('#enable').click(function () {
 		        $('#user .editable').editable('toggleDisabled');
 		    });
-		
+
 		    //editables
 		    $('#username').editable({
 		        url: '/post',
@@ -2297,14 +2298,14 @@
 		        name: 'username',
 		        title: 'Enter username'
 		    });
-		
+
 		    $('#firstname').editable({
 		        validate: function (value) {
 		            if ($.trim(value) == '')
 		                return 'This field is required';
 		        }
 		    });
-		
+
 		    $('#sex').editable({
 		        prepend: "not selected",
 		        source: [{
@@ -2322,7 +2323,7 @@
 		            }, elem = $.grep(sourceData, function (o) {
 		                    return o.value == value;
 		                });
-		
+
 		            if (elem.length) {
 		                $(this).text(elem[0].text).css("color", colors[value]);
 		            } else {
@@ -2330,28 +2331,28 @@
 		            }
 		        }
 		    });
-		
+
 		    $('#status').editable();
-		
+
 		    $('#group').editable({
 		        showbuttons: false
 		    });
-		
+
 		    $('#vacation').editable({
 		        datepicker: {
 		            todayBtn: 'linked'
 		        }
 		    });
-		
+
 		    $('#dob').editable();
-		
+
 		    $('#event').editable({
 		        placement: 'right',
 		        combodate: {
 		            firstItem: 'name'
 		        }
 		    });
-		
+
 		    $('#meeting_start').editable({
 		        format: 'yyyy-mm-dd hh:ii',
 		        viewformat: 'dd/mm/yyyy hh:ii',
@@ -2364,18 +2365,18 @@
 		            weekStart: 1
 		        }
 		    });
-		
+
 		    $('#comments').editable({
 		        showbuttons: 'bottom'
 		    });
-		
+
 		    $('#note').editable();
 		    $('#pencil').click(function (e) {
 		        e.stopPropagation();
 		        e.preventDefault();
 		        $('#note').editable('toggle');
 		    });
-		
+
 		    $('#state').editable({
 		        source: ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut",
 		            "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas",
@@ -2386,7 +2387,7 @@
 		            "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"
 		        ]
 		    });
-		
+
 		    $('#state2').editable({
 		        value: 'California',
 		        typeahead: {
@@ -2402,7 +2403,7 @@
 		            ]
 		        }
 		    });
-		
+
 		    $('#fruits').editable({
 		        pk: 1,
 		        limit: 3,
@@ -2423,7 +2424,7 @@
 		            text: 'orange'
 		        }]
 		    });
-		
+
 		    $('#tags').editable({
 		        inputclass: 'input-large',
 		        select2: {
@@ -2431,7 +2432,7 @@
 		            tokenSeparators: [",", " "]
 		        }
 		    });
-		
+
 		    var countries = [];
 		    $.each({
 		        "BD": "Bangladesh",
@@ -2692,14 +2693,14 @@
 		            text: v
 		        });
 		    });
-		
+
 		    $('#country').editable({
 		        source: countries,
 		        select2: {
 		            width: 200
 		        }
 		    });
-		
+
 		    $('#address').editable({
 		        url: '/post',
 		        value: {
@@ -2721,7 +2722,7 @@
 		            $(this).html(html);
 		        }
 		    });
-		
+
 		    $('#user .editable').on('hidden', function (e, reason) {
 		        if (reason === 'save' || reason === 'nochange') {
 		            var $next = $(this).closest('tr').next().find('.editable');
@@ -2733,8 +2734,8 @@
 		                $next.focus();
 		            }
 		        }
-		    });			
-	
+		    });
+
 		})
 
 		</script>
@@ -2744,7 +2745,7 @@
 			var _gaq = _gaq || [];
 				_gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
 				_gaq.push(['_trackPageview']);
-			
+
 			(function() {
 				var ga = document.createElement('script');
 				ga.type = 'text/javascript';
