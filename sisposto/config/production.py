@@ -56,6 +56,13 @@ class Production(Common):
 
     INSTALLED_APPS += ("gunicorn", )
 
+    # Logging CONFIGURATION
+    INSTALLED_APPS += ("raven.contrib.django.raven_compat", )
+    RAVEN_CONFIG = {
+        'dsn': values.SecretValue(environ_prefix="", environ_name="SENTRY_DSN"),
+    }
+    # END Logging CONFIGURATION
+
     # STORAGE CONFIGURATION
     # See: http://django-storages.readthedocs.org/en/latest/index.html
     INSTALLED_APPS += (

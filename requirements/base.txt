@@ -18,6 +18,10 @@ django-model-utils==2.2
 # images
 Pillow==2.5.3
 
+# Logging
+raven==5.0.0
+
+
 # For user registration, manager, either via email
 django-organizations==0.4.1
 
