@@ -1,5 +1,6 @@
 #basic build dependencies of various Django apps for Ubuntu 14.04
 python
+gettext
 build-essential
 python-dev
 python-setuptools
