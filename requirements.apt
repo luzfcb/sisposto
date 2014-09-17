@@ -22,3 +22,6 @@ libwebp-dev
 #pylibmc
 libmemcached-dev
 libssl-dev
+
+# django-extensions
+graphviz-dev
