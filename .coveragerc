@@ -1,0 +1,3 @@
+[run]
+source = sisposto
+omit = *migrations*, *tests*
