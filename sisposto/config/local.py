@@ -50,3 +50,88 @@ class Local(Common):
     # END DATABASE CONFIGURATION
 
     # Your local stuff: Below this line define 3rd party libary settings
+
+
+# Hack feio para que o autocompletar do Pycharm Funcione
+if 1 == 2:
+    INSTALLED_APPS = (
+        # Default Django apps:
+        'django.contrib.auth',
+        'django.contrib.contenttypes',
+        'django.contrib.sessions',
+        'django.contrib.sites',
+        'django.contrib.messages',
+        'django.contrib.staticfiles',
+
+        # Useful template tags:
+        # 'django.contrib.humanize',
+
+        # Admin
+        'django.contrib.admin',
+
+        'core',  #
+        'users',  # custom users app
+        'account',
+    )
+    MIDDLEWARE_CLASSES = (
+        # Make sure djangosecure.middleware.SecurityMiddleware is listed first
+        'djangosecure.middleware.SecurityMiddleware',
+        'django.contrib.sessions.middleware.SessionMiddleware',
+        'django.middleware.common.CommonMiddleware',
+        'django.middleware.csrf.CsrfViewMiddleware',
+        'django.contrib.auth.middleware.AuthenticationMiddleware',
+        'django.contrib.messages.middleware.MessageMiddleware',
+        'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    )
+    # TEMPLATE CONFIGURATION
+    # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-context-processors
+    TEMPLATE_CONTEXT_PROCESSORS = (
+        'django.contrib.auth.context_processors.auth',
+        'django.core.context_processors.debug',
+        'django.core.context_processors.i18n',
+        'django.core.context_processors.media',
+        'django.core.context_processors.static',
+        'django.core.context_processors.tz',
+        'django.contrib.messages.context_processors.messages',
+        'django.core.context_processors.request',
+        # Your stuff: custom template context processers go here
+    )
+
+    # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-dirs
+    TEMPLATE_DIRS = (
+        join(BASE_DIR, 'templates'),
+    )
+
+    TEMPLATE_LOADERS = (
+        'django.template.loaders.filesystem.Loader',
+        'django.template.loaders.app_directories.Loader',
+    )
+
+    # END TEMPLATE CONFIGURATION
+
+    # STATIC FILE CONFIGURATION
+    # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-root
+    STATIC_ROOT = join(os.path.dirname(BASE_DIR), 'staticfiles')
+
+    # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-url
+    STATIC_URL = '/static/'
+
+    # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
+    STATICFILES_DIRS = (
+        join(BASE_DIR, 'static'),
+    )
+
+    # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
+    STATICFILES_FINDERS = (
+        'django.contrib.staticfiles.finders.FileSystemFinder',
+        'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    )
+    # END STATIC FILE CONFIGURATION
+
+    # MEDIA CONFIGURATION
+    # See: https://docs.djangoproject.com/en/dev/ref/settings/#media-root
+    MEDIA_ROOT = join(BASE_DIR, 'media')
+
+    # See: https://docs.djangoproject.com/en/dev/ref/settings/#media-url
+    MEDIA_URL = '/media/'
+    # END MEDIA CONFIGURATION
