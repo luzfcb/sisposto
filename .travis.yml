@@ -4,7 +4,8 @@ language: python
 
 python:
   - "2.7"
-  - "3.4"
+# pylibmc does not work on python3
+#  - "3.4"
 
 install:
   - "bash venv-debian-install.sh"
