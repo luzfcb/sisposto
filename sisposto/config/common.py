@@ -42,6 +42,7 @@ class Common(Configuration):
         'autoslug',
         'django_extensions',
         'crispy_forms',  # Form layouts
+        'account',  # pinax django-user-accounts
     )
 
     # Apps specific for this project go here.
@@ -67,6 +68,8 @@ class Common(Configuration):
         'django.contrib.auth.middleware.AuthenticationMiddleware',
         'django.contrib.messages.middleware.MessageMiddleware',
         'django.middleware.clickjacking.XFrameOptionsMiddleware',
+        'account.middleware.LocaleMiddleware',
+        'account.middleware.TimezoneMiddleware',
     )
     # END MIDDLEWARE CONFIGURATION
 
@@ -161,6 +164,7 @@ class Common(Configuration):
         'django.contrib.messages.context_processors.messages',
         'django.core.context_processors.request',
         # Your stuff: custom template context processers go here
+        'account.context_processors.account',
     )
 
     # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-dirs

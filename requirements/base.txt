@@ -24,6 +24,7 @@ raven==5.0.0
 
 # For user registration, manager, either via email
 django-organizations==0.4.1
+django-user-accounts==1.0
 
 
 # For the persistance stores
