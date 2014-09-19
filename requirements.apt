@@ -1,4 +1,5 @@
 #basic build dependencies of various Django apps for Ubuntu 14.04
+make
 python
 gettext
 build-essential

@@ -1,4 +1,3 @@
-SHELL := d
 
 help:
 	@echo "Usage:"
@@ -9,5 +8,5 @@ release:
 	python setup.py register sdist bdist_wheel upload
 
 test:
-	@coverage run sisposto/manage.py test
+	@coverage run --source sisposto sisposto/manage.py test
 	@coverage report --show-missing
