@@ -10,12 +10,12 @@ python:
 install:
   - "bash venv-debian-install.sh"
   - "pip install -r requirements-test.txt"
+  - "pip install coveralls"
 
 script:
-  python sisposto/manage.py test
+  coverage run --source=sisposto sisposto/manage.py test
 
 after_success:
-  pip install --quiet coveralls
   coveralls
 
 notifications:
