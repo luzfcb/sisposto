@@ -8,6 +8,9 @@ sgt
 .. image:: https://coveralls.io/repos/luzfcb/sisposto/badge.png
   :target: https://coveralls.io/r/luzfcb/sisposto
 
+.. image:: https://landscape.io/github/luzfcb/sisposto/master/landscape.png
+   :target: https://landscape.io/github/luzfcb/sisposto/master
+   :alt: Code Health
 
 .. image:: https://requires.io/github/luzfcb/sisposto/requirements.svg?branch=master
      :target: https://requires.io/github/luzfcb/sisposto/requirements/?branch=master
