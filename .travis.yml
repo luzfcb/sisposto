@@ -1,0 +1,17 @@
+# .travis.yml for sisposto
+
+language: python
+
+python:
+  - "2.7"
+  - "3.4"
+
+install:
+  - "bash venv-debian-install.sh"
+  - "pip install -r requirements-test.txt"
+
+script:
+  make test
+
+after_success:
+  coveralls
