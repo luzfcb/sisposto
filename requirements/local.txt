@@ -7,5 +7,5 @@ Sphinx==1.2.3
 django-debug-toolbar==1.2.1
 
 # pygraphviz criacao de diagrama dos relacionamentos
-pygraphviz==1.2
+#pygraphviz==1.2
 
