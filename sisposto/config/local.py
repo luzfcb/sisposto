@@ -7,6 +7,7 @@ Local Configurations
 - Use Django Debug Toolbar
 - Use sqlite3 as database
 '''
+import platform
 from os.path import join, dirname
 from configurations import values
 from .common import Common, BASE_DIR
@@ -46,7 +47,14 @@ class Local(Common):
     # DATABASE CONFIGURATION
     # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
     #DATABASES = values.DatabaseURLValue('postgres://localhost/projetosgt')
-    DATABASES = values.DatabaseURLValue('sqlite:////{0}.sqlite'.format(join(BASE_DIR, 'projeto_posto')))
+    #DB_NAME = 'sqlite:////{0}.sqlite'.format(join(BASE_DIR, 'projeto_posto'))
+
+    if 'Windows' in platform.system():
+        DB_NAME = 'sqlite:\\{0}.sqlite'.format(join(BASE_DIR, 'projeto_posto'))
+    else:
+        DB_NAME = 'sqlite:////{0}.sqlite'.format(join(BASE_DIR, 'projeto_posto'))
+
+    DATABASES = values.DatabaseURLValue(DB_NAME)
     # END DATABASE CONFIGURATION
 
     # Your local stuff: Below this line define 3rd party libary settings
@@ -111,7 +119,7 @@ if 1 == 2:
 
     # STATIC FILE CONFIGURATION
     # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-root
-    STATIC_ROOT = join(os.path.dirname(BASE_DIR), 'staticfiles')
+    STATIC_ROOT = join(dirname(BASE_DIR), 'staticfiles')
 
     # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-url
     STATIC_URL = '/static/'
