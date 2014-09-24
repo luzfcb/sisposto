@@ -1,0 +1,27 @@
+{% extends "basic_site_template.html" %}
+{% load crispy_forms_tags %}
+
+{% load sitetree %}
+{% block title %}{% endblock title %}
+
+
+{% block left_panel_menu_nav %}
+    {% sitetree_menu from "users" include "trunk,topmenu,level1,level2,level3" %}
+{% endblock %}
+
+{% block content_title %}
+Isso é um titulo
+{% endblock content_title %}
+{% block content %}
+    {% if object_list %}
+        {% for obj in object_list %}
+            {{ obj }}
+        {% endfor %}
+    {% else %}
+        Não há itens
+    {% endif %}
+
+    {% if form %}
+        {% crispy form %}
+    {% endif %}
+{% endblock content %}
