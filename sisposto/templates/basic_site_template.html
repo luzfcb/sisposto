@@ -420,7 +420,7 @@ Use search to find needed section.
                 Please note that these links work a bit different than
                 traditional href="" links. See documentation for details.
                 -->
-
+                {% block left_panel_menu_nav %}
                 <ul>
                     <li>
                         <a href="index.html" title="Dashboard"><i class="fa fa-lg fa-fw fa-home"></i> <span
@@ -521,6 +521,7 @@ Use search to find needed section.
                     </li>
 
                 </ul>
+                    {% endblock left_panel_menu_nav %}
             </nav>
             <span class="minifyme" data-action="minifyMenu">
 				<i class="fa fa-arrow-circle-left hit"></i>
@@ -606,13 +607,29 @@ Use search to find needed section.
                                     <!-- col -->
                                     <div class="col-xs-12 col-sm-5 col-md-5 col-lg-8">
                                         {% block content_header_right %}
+
+                                        {% endblock content_header_right %}
+
+                                            {% block content_header_right_sparkline_define %}
                                             <!-- sparks -->
                                             <ul id="sparks">
+                                                {% block content_header_right_sparkline_li %}
                                                 <li class="sparks-info">
-                                                    <h5> My Income <span class="txt-color-blue">$47,171</span></h5>
+                                                    <h5> Gasolina <span class="txt-color-blue">47,171L</span>
+
+                                                    </h5>
 
                                                     <div class="sparkline txt-color-blue hidden-mobile hidden-md hidden-sm">
                                                         1300, 1877, 2500, 2577, 2000, 2100, 3000, 2700, 3631, 2471,
+                                                        2700,
+                                                        3631, 2471
+                                                    </div>
+                                                </li>
+                                                <li class="sparks-info">
+                                                    <h5> Diesel <span class="txt-color-blue">23,171L</span></h5>
+
+                                                    <div class="sparkline txt-color-blue hidden-mobile hidden-md hidden-sm">
+                                                        3300, 1877, 2500, 2577, 2000, 2100, 3000, 2700, 3631, 2471,
                                                         2700,
                                                         3631, 2471
                                                     </div>
@@ -636,9 +653,11 @@ Use search to find needed section.
                                                         110,150,300,130,400,240,220,310,220,300, 270, 210
                                                     </div>
                                                 </li>
+                                                 {% endblock content_header_right_sparkline_li %}
                                             </ul>
                                             <!-- end sparks -->
-                                        {% endblock content_header_right %}
+                                            {% endblock content_header_right_sparkline_define %}
+
                                     </div>
                                     <!-- end col -->
                                 {% endblock content_header_right_define %}
@@ -740,7 +759,7 @@ Use search to find needed section.
     <div class="page-footer">
         <div class="row">
             <div class="col-xs-12 col-sm-6">
-                <span class="txt-color-white">Sisposto WebApp © 2013-2014</span>
+                <span class="txt-color-white"><img src="{% static "images/favicon/favicon.png" %}" alt="Sisposto"> Sisposto WebApp © 2013-2014</span>
             </div>
 
             <div class="col-xs-6 col-sm-6 text-right hidden-xs">
@@ -906,7 +925,7 @@ Use search to find needed section.
 		<![endif]-->
 
 <!-- Demo purpose only -->
-{#<script src="{% static "smartadmin/js/demo.min.js" %}"></script>#}
+<script src="{% static "smartadmin/js/demo.min.js" %}"></script>
 
 <!-- MAIN APP JS FILE -->
 <script src="{% static "smartadmin/js/app.min.js" %}"></script>
