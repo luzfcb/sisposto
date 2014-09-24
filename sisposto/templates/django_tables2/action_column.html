@@ -1,0 +1,14 @@
+<td class="">
+    <a href="{% url 'postos:abastecimento_update' record.pk %}" data-id="1" class="btn btn-xs blue btn-editable">
+        <i class="fa fa-pencil"></i> Edit</a>
+    <a href="{% url 'postos:abastecimento_delete' record.pk %}" data-id="1" class="btn btn-xs red btn-removable"><i class="fa fa-times"></i> Delete</a>
+
+    <div class="btn-group">
+        <button class="btn default btn-xs dropdown-toggle" type="button" data-toggle="dropdown">More <i
+                class="fa fa-angle-down"></i></button>
+        <ul class="dropdown-menu pull-right" role="menu">
+{#            <li><a href="{% url 'postos:abastecimento_detail' record.pk %}">Detail</a></li>#}
+            <li><a href="#">Another action</a></li>
+        </ul>
+    </div>
+</td>

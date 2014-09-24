@@ -1,0 +1,214 @@
+{% spaceless %}
+    {% load django_tables2 %}
+    {% load i18n %}
+{#    {% load coreutils %}#}
+{#    {% load endless %}#}
+
+    <!-- BEGIN EXAMPLE TABLE PORTLET-->
+    <div class="portlet box light-grey">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-globe"></i>Managed Table
+            </div>
+            <div class="tools">
+                <a href="javascript:;" class="collapse"></a>
+                <a href="#portlet-config" data-toggle="modal" class="config"></a>
+                <a href="javascript:;" class="reload"></a>
+                <a href="javascript:;" class="remove"></a>
+            </div>
+        </div>
+        <div class="portlet-body">
+            <div class="table-toolbar">
+                <div class="btn-group">
+
+                    <a href="" id="sample_editable_1_new" class="btn green">
+                        Adicionar Novo <i class="fa fa-plus"></i>
+                    </a>
+                </div>
+                <div class="btn-group pull-right">
+                    <button class="btn dropdown-toggle" data-toggle="dropdown">Tools <i
+                            class="fa fa-angle-down"></i>
+                    </button>
+                    <ul class="dropdown-menu pull-right">
+                        <li>
+                            <a href="#">Print</a>
+                        </li>
+                        <li>
+                            <a href="#">Save as PDF</a>
+                        </li>
+                        <li>
+                            <a href="#">Export to Excel</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="sample_1_wrapper" class="dataTables_wrapper form-inline" role="grid">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <div id="sample_1_length" class="dataTables_length"><label><select size="1"
+                                                                                           name="sample_1_length"
+                                                                                           aria-controls="{{ table.table_id }}"
+                                                                                           class="form-control input-xsmall">
+                            <option value="5" selected="selected">5</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                            <option value="-1">All</option>
+                        </select> records</label></div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <div class="dataTables_filter" id="{{ table.table_id }}_filter"><label>Search: <input
+                                type="text"
+                                aria-controls="{{ table.table_id }}"
+                                class="form-control input-medium"></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-scrollable">
+                    {% block table %}
+                        <table {% if table.attrs %} {{ table.attrs.as_html }}{% endif %}
+                                aria-describedby="{{ table.table_id }}_info">
+                            {% nospaceless %}
+                                {% block table.thead %}
+                                    <thead>
+                                    <tr role="row">
+                                        {% for column in table.columns %}
+                                            {% if column.orderable %}
+                                                <th {{ column.attrs.th.as_html }} role="columnheader" rowspan="1"
+                                                                                  colspan="1"><a
+                                                        href="{% querystring table.prefixed_order_by_field=column.order_by_alias.next %}">{{ column.header }}</a>
+                                                </th>
+                                            {% else %}
+                                                <th {{ column.attrs.th.as_html }} role="columnheader" rowspan="1"
+                                                                                  colspan="1">{{ column.header }}</th>
+                                            {% endif %}
+                                        {% endfor %}
+
+                                    </tr>
+                                    </thead>
+                                {% endblock table.thead %}
+                                {% block table.tbody %}
+                                    <tbody role="alert" aria-live="polite" aria-relevant="all">
+                                    {% for row in table.page.object_list|default:table.rows %} {# support pagination #}
+                                        {% block table.tbody.row %}
+                                            <tr class="odd gradeX {{ forloop.counter|divisibleby:2|yesno:"even," }}">
+                                                {# avoid cycle for Django 1.2-1.6 compatibility #}
+                                                {% for column, cell in row.items %}
+                                                    <td {{ column.attrs.td.as_html }}>
+                                                        {% if column.localize == None %}{{ cell }}{% else %}
+                                                            {% if column.localize %}
+                                                                {{ cell|localize }}{% else %}{{ cell|unlocalize }}
+                                                            {% endif %}{% endif %}</td>
+                                                {% endfor %}
+                                            </tr>
+                                        {% endblock table.tbody.row %}
+                                    {% empty %}
+                                        {% if table.empty_text %}
+                                            {% block table.tbody.empty_text %}
+                                                <tr>
+                                                    <td colspan="{{ table.columns|length }}">{{ table.empty_text }}</td>
+                                                </tr>
+                                            {% endblock table.tbody.empty_text %}
+                                        {% endif %}
+                                    {% endfor %}
+                                    </tbody>
+                                {% endblock table.tbody %}
+                                {% block table.tfoot %}
+                                    <tfoot></tfoot>
+                                {% endblock table.tfoot %}
+                            {% endnospaceless %}
+                        </table>
+                    {% endblock table %}
+                </div>
+                {% if table.page %}
+
+                    {% with table.page.paginator.count as total %}
+                        {% with table.page.object_list|length as count %}
+                            {% block pagination %}
+                                <div class="row">
+                                    <div class="col-md-5 col-sm-12">
+                                        <div class="dataTables_info" id="{{ table.table_id }}_info">
+                                            {% if total != count %}{% blocktrans %}{{ count }} of {{ total }}
+                                            {% endblocktrans %}{% else %}{{ total }}{% endif %}
+                                            {% if total == 1 %}{{ table.data.verbose_name }}{% else %}
+                                                {{ table.data.verbose_name_plural }}{% endif %}</div>
+                                    </div>
+                                    <div class="col-md-7 col-sm-12">
+                                        <div class="dataTables_paginate paging_bootstrap">
+                                            <ul class="pagination" style="visibility: visible;">
+                                                {% if table.page.has_previous %}
+                                                    {% nospaceless %}
+                                                        {% block pagination.previous %}
+                                                            <li class="prev">
+                                                                <a href="{% querystring table.prefixed_page_field=table.page.previous_page_number %}"
+                                                                   title="{% trans "Previous" %}">
+                                                                    <i class="fa fa-angle-left"></i>
+                                                                </a>
+                                                            </li>
+                                                        {% endblock pagination.previous %}
+                                                    {% endnospaceless %}
+                                                {% else %}
+                                                    {% nospaceless %}
+                                                        {% block pagination.not_previous %}
+                                                            <li class="prev disabled">
+                                                                <a title="{% trans "Previous" %}">
+                                                                    <i class="fa fa-angle-left"></i>
+                                                                </a>
+                                                            </li>
+                                                        {% endblock pagination.not_previous %}
+                                                    {% endnospaceless %}
+                                                {% endif %}
+
+
+                                                {% for num in table.page_range %}
+                                                    {% if not num %} ...  {# literally dots #}
+                                                        {% else %}{# pagelink num #}
+
+                                                    {% endif %}
+                                                {% endfor %}
+
+                                                {% if table.page.has_next %}
+                                                    {% nospaceless %}
+                                                        {% block pagination.next %}
+                                                            <li class="next">
+                                                                <a href="{% querystring table.prefixed_page_field=table.page.next_page_number %}"
+                                                                   title="{% trans "Next" %}">
+                                                                    <i class="fa fa-angle-right"></i>
+                                                                </a>
+                                                            </li>
+                                                        {% endblock pagination.next %}
+                                                    {% endnospaceless %}
+                                                {% else %}
+                                                    {% nospaceless %}
+                                                        {% block pagination.not_next %}
+                                                            <li class="next disabled">
+                                                                <a title="{% trans "Next" %}">
+                                                                    <i class="fa fa-angle-right"></i>
+                                                                </a>
+                                                            </li>
+                                                        {% endblock pagination.not_next %}
+                                                    {% endnospaceless %}
+                                                {% endif %}
+
+                                                {% nospaceless %}{% block pagination.cardinality %}
+                                                    <li class="cardinality">
+                                                    {% if total != count %}{% blocktrans %}{{ count }} of {{ total }}
+                                                    {% endblocktrans %}{% else %}{{ total }}{% endif %}
+                                                    {% if total == 1 %}{{ table.data.verbose_name }}{% else %}
+                                                        {{ table.data.verbose_name_plural }}{% endif %}</li>
+                                                {% endblock pagination.cardinality %}{% endnospaceless %}
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                                </div>
+                                </div>
+                            {% endblock pagination %}
+                        {% endwith %}
+                    {% endwith %}
+    {% endif %}
+
+    <!-- END EXAMPLE TABLE PORTLET-->
+
+{% endspaceless %}
