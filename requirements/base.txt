@@ -40,3 +40,9 @@ django-extensions==1.4.0
 
 # Your custom requirements go here
 
+# Menu app
+django-sitetree==1.1.0
+
+#
+#django-tables2==
+https://github.com/luzfcb/django-tables2/archive/master.zip#egg=django-tables2

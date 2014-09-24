@@ -76,10 +76,14 @@ if 1 == 2:
 
         # Admin
         'django.contrib.admin',
-
-        'core',  #
-        'users',  # custom users app
-        'account',
+        'autoslug',
+        'django_extensions',
+        'crispy_forms',  # Form layouts
+        'account',  # pinax django-user-accounts
+        'sitetree',
+        'apps.core',  #
+        'apps.users',  # custom users app
+        'django_tables2',
     )
     MIDDLEWARE_CLASSES = (
         # Make sure djangosecure.middleware.SecurityMiddleware is listed first

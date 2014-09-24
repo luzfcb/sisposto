@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+from __future__ import absolute_import
+from __future__ import unicode_literals
+
 """
 Django settings for sisposto project.
 
@@ -43,13 +46,15 @@ class Common(Configuration):
         'django_extensions',
         'crispy_forms',  # Form layouts
         'account',  # pinax django-user-accounts
+        'sitetree',
+        'django_tables2',
     )
 
     # Apps specific for this project go here.
     # LOCAL_APPS
     LOCAL_APPS = (
-        'core',  #
-        'users',  # custom users app
+        'apps.core',  #
+        'apps.users',  # custom users app
 
         # Your stuff: custom apps go here
     )
@@ -75,7 +80,7 @@ class Common(Configuration):
 
     # MIGRATIONS CONFIGURATION
     MIGRATION_MODULES = {
-        'sites': 'contrib.sites.migrations'
+        'sites': 'apps.contrib.sites.migrations'
     }
     # END MIGRATIONS CONFIGURATION
 
@@ -270,3 +275,4 @@ class Common(Configuration):
     # END LOGGING CONFIGURATION
 
     # Your common stuff: Below this line define 3rd party libary settings
+    SITETREE_MODEL_TREE_ITEM = 'core.SmartTreeItem'
