@@ -27,4 +27,5 @@ setup(
     ],
     zip_safe=False,
     scripts=['sisposto/manage.py'],
+    url='https://github.com/luzfcb/sisposto',
 )
