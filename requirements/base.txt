@@ -46,3 +46,5 @@ django-sitetree==1.1.0
 #
 #django-tables2==
 https://github.com/luzfcb/django-tables2/archive/master.zip#egg=django-tables2
+
+django-municipios==0.8.1

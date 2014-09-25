@@ -48,6 +48,7 @@ class Common(Configuration):
         'account',  # pinax django-user-accounts
         'sitetree',
         'django_tables2',
+        'municipios',
     )
 
     # Apps specific for this project go here.
@@ -55,7 +56,7 @@ class Common(Configuration):
     LOCAL_APPS = (
         'apps.core',  #
         'apps.users',  # custom users app
-
+        'apps.posto',
         # Your stuff: custom apps go here
     )
 
