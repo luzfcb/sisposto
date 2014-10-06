@@ -16,7 +16,7 @@ django-crispy-forms==1.4.0
 django-model-utils==2.2
 
 # images
-Pillow==2.5.3
+Pillow==2.6.0
 
 # Logging
 raven==5.0.0
