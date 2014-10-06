@@ -997,6 +997,13 @@ Use search to find needed section.
     })
 
 </script>
+{% block extra_button_js %}
+{% endblock extra_button_js %}
+
+{% block autocomplete_light %}
+    {% include 'autocomplete_light/static.html' %}
+{% endblock autocomplete_light %}
+
 
 <!-- Your GOOGLE ANALYTICS CODE Below -->
 <script type="text/javascript">
