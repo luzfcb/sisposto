@@ -45,10 +45,9 @@ urlpatterns = patterns('',
 )
 
 THIRD_PARTY_URLS =  patterns('',
-                                 url(r'^autocomplete/', include('autocomplete_light.urls')),
-    url(r'^djangojs/', include('djangojs.urls')),
+    url(r'^autocomplete/', include('autocomplete_light.urls')),
 
-                            )
+)
 
 urlpatterns += THIRD_PARTY_URLS
 
