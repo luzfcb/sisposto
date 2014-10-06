@@ -35,3 +35,9 @@ class CustomTreeItemAdmin(TreeItemAdmin):
 # Now we tell the SiteTree to replace generic representations with custom.
 
 override_item_admin(CustomTreeItemAdmin)
+
+
+from apps.utils.autoregister import autoregister_admin
+
+from . import models
+autoregister_admin(models)

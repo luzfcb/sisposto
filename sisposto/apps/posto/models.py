@@ -35,13 +35,14 @@ class EncerranteBico(models.Model):
     class Meta:
         ordering = ['-criado_em']
         get_latest_by = 'criado_em'
-        app_label = 'postos'
+
 
 
 class Bico(models.Model):
     numero_bico = models.PositiveIntegerField(verbose_name=u'Número do Bico de Abastecimento',
                                               help_text=u'Número Unico para identificação do Bico de Abastecimento',
     )
+
     tipo_combustivel = models.ForeignKey('core.Combustivel', verbose_name='Tipo de Combustivel')
     bomba = models.ForeignKey('Bomba', related_name='bicos', null=True)
 
@@ -70,8 +71,6 @@ class Bico(models.Model):
                 self.bomba.pk,
                 self.pk)
 
-    class Meta:
-        app_label = 'postos'
 
 
 class Bomba(models.Model):
@@ -92,8 +91,6 @@ class Bomba(models.Model):
     def __unicode__(self):
         return unicode('Bomba {0}'.format(self.numero_bomba))
 
-    class Meta:
-        app_label = 'postos'
 
 
 class ArqueacaoVolume(models.Model):
@@ -115,8 +112,6 @@ class ArqueacaoVolume(models.Model):
     def __unicode__(self):
         return '{altura} cm = {volume} L'.format(altura=self.altura_em_cm, volume=self.volume)
 
-    class Meta:
-        app_label = 'postos'
 
 class VolumeHistorico(models.Model):
     """
@@ -151,7 +146,7 @@ class VolumeHistorico(models.Model):
 
     class Meta:
         ordering = ['-criado_em']
-        app_label = 'postos'
+
 
 #signals.pre_save.connect(volumeHistorico_antes_salvar_function, sender=VolumeHistorico)
 
@@ -187,8 +182,6 @@ class Tanque(models.Model):
     def __unicode__(self):
         return unicode('{0} - {1}'.format(self.numero, self.volume_maximo_armazenamento))
 
-    class Meta:
-        app_label = 'postos'
 
 
 class Posto(models.Model):
@@ -221,8 +214,6 @@ class Posto(models.Model):
     def get_absolute_url(self):
         return ('posto-edit', self.pk, )
 
-    class Meta:
-        app_label = 'postos'
 
 
 #class EstoqueContabil(models.Model):
@@ -301,4 +292,4 @@ class EntradaCombustivel(ModeloBasico):
     class Meta:
         verbose_name = 'Entrada de Combustivel'
         verbose_name_plural = 'Entrada de Combustiveis'
-        app_label = 'postos'
+

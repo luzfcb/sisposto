@@ -1,0 +1,31 @@
+{% extends "veiculos/veiculo_base.html" %}
+{% load staticfiles %}
+{% block extrastyle %}
+     <link rel="stylesheet" type="text/css" href="{% static "css/tables2/bootstrap-tables2.css" %}">
+{% endblock %}
+
+
+{% load crispy_forms_tags %}
+{% load render_table from django_tables2 %}
+
+{% block content_title %}
+    Veiculo Lista
+{% endblock %}
+
+
+{% block content %}
+
+
+    {% if object_list %}
+        {% render_table object_list "django_tables2/table.html"%}
+    {% else %}
+        Não há itens
+    {% endif %}
+
+    {% if form %}
+        {% crispy form %}
+    {% endif %}
+
+
+{% endblock %}
+

@@ -16,6 +16,8 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
     url(r'^i18n/', include('django.conf.urls.i18n')),
+    url(r'^postos/', include('apps.posto.urls')),
+    url(r'^veiculos/', include('apps.veiculos.urls')),
     url(r'^account/', include('account.urls')),
     url(r'^account/list/$',         UsersListView.as_view(),
         name='account_users_list'),
@@ -39,9 +41,16 @@ urlpatterns = patterns('',
         Home.as_view(),
         name='home_view'
         ),
+
 )
 
+THIRD_PARTY_URLS =  patterns('',
+                                 url(r'^autocomplete/', include('autocomplete_light.urls')),
+    url(r'^djangojs/', include('djangojs.urls')),
 
+                            )
+
+urlpatterns += THIRD_PARTY_URLS
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
