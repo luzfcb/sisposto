@@ -85,7 +85,11 @@ if 1 == 2:
         'apps.users',  # custom users app
         'django_tables2',
         'municipios',
+        'autocomplete_light',
+        'bootstrap3',
+        'datetimewidget',
         'apps.posto',
+        'apps.veiculos',
     )
     MIDDLEWARE_CLASSES = (
         # Make sure djangosecure.middleware.SecurityMiddleware is listed first

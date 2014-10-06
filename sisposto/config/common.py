@@ -37,6 +37,8 @@ class Common(Configuration):
         # Useful template tags:
         # 'django.contrib.humanize',
 
+        #
+        'autocomplete_light',
         # Admin
         'django.contrib.admin',
     )
@@ -49,6 +51,9 @@ class Common(Configuration):
         'sitetree',
         'django_tables2',
         'municipios',
+        'bootstrap3',
+        'datetimewidget',
+
     )
 
     # Apps specific for this project go here.
@@ -57,6 +62,7 @@ class Common(Configuration):
         'apps.core',  #
         'apps.users',  # custom users app
         'apps.posto',
+        'apps.veiculos',
         # Your stuff: custom apps go here
     )
 
