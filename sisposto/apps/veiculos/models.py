@@ -7,6 +7,111 @@ from apps import core
 from apps.core.models import ModeloBasico
 from django.core.validators import MinValueValidator
 
+#
+# class TipoPlaca(models.Model):
+#     """
+#        CBT:
+#        Art. 115.
+#        § 7o  Excepcionalmente, mediante autorização específica e fundamentada das respectivas corregedorias e com a
+#        devida comunicação aos órgãos de trânsito competentes, os veículos utilizados por membros do Poder Judiciário e
+#        do Ministério Público que exerçam competência ou atribuição criminal poderão temporariamente ter placas
+#        especiais, de forma a impedir a identificação de seus usuários específicos, na forma de regulamento a ser
+#        emitido, conjuntamente, pelo Conselho Nacional de Justiça - CNJ, pelo Conselho Nacional do Ministério Público
+#        - CNMP e pelo Conselho Nacional de Trânsito - CONTRAN. (Incluído pela Lei nº 12.694, de 2012)
+#
+#        Art. 116. Os veículos de propriedade da União, dos Estados e do Distrito Federal, devidamente registrados e
+#        licenciados, somente quando estritamente usados em serviço reservado de caráter policial, poderão usar placas
+#        particulares, obedecidos os critérios e limites estabelecidos pela legislação que regulamenta o uso de veículo
+#        oficial.
+#
+#        http://www.ctbdigital.com.br/?p=Comentarios&Registro=19&campo_busca=&artigo=115
+#        http://pt.wikipedia.org/wiki/Placas_de_identifica%C3%A7%C3%A3o_de_ve%C3%ADculos_no_Brasil#Cores
+#
+#         +-----------------------------------+-----------------------------+
+#         |                                   |            COR              |
+#         | CATEGORIA DO VEÍCULO              +-----------------------------+
+#         |                                   |       PLACA E TARJETA       |
+#         |                                   +----------+------------------+
+#         |                                   | Fundo    | Caracteres       |
+#         +===================================+==========+==================+
+#         | Particular                        | Cinza    | Preto            |
+#         +-----------------------------------+----------+------------------+
+#         | Aluguel                           | Vermelho | Branco           |
+#         +-----------------------------------+----------+------------------+
+#         | Experiência/Fabricante            | Verde    | Branco           |
+#         +-----------------------------------+----------+------------------+
+#         | Aprendizagem                      | Branco   | Vermelho         |
+#         +-----------------------------------+----------+------------------+
+#         | Coleção                           | Preto    | Branco           |
+#         +-----------------------------------+----------+------------------+
+#         | Coleção ( > 30 anos )             | Preto    | Cinza            |
+#         +-----------------------------------+----------+------------------+
+#         | Oficial                           | Branco   | Preto            |
+#         +-----------------------------------+----------+------------------+
+#         | Missão Diplomática                | Azul     | Branco           |
+#         +-----------------------------------+----------+------------------+
+#         | Corpo Consular                    | Azul     | Branco           |
+#         +-----------------------------------+----------+------------------+
+#         | Organismo Internacional           | Azul     | Branco           |
+#         +-----------------------------------+----------+------------------+
+#         | Corpo Diplomático                 | Azul     | Branco           |
+#         +-----------------------------------+----------+------------------+
+#         | Organismo Consular/Internacional  | Azul     | Branco           |
+#         +-----------------------------------+----------+------------------+
+#         | Acordo Cooperação Internacional   | Azul     | Branco           |
+#         +-----------------------------------+----------+------------------+
+#         | Representação                     | Preto    | Dourado          |
+#         +-----------------------------------+----------+------------------+
+#         | Representação (Presidência)       | Preto    | Verde/Amarelo    |
+#         +-----------------------------------+----------+------------------+
+#
+#
+#
+#
+#     """
+#     CORES_FUNDO = (
+#         ('Cinza', 'Cinza'),
+#         ('Branco', 'Branco'),
+#         ('Preto', 'Preto'),
+#         ('Vermelho', 'Vermelho'),
+#         ('Verde', 'Verde'),
+#         ('Azul', 'Azul'),
+#         ('Verde e Amarelo', 'Verde e Amarelo')
+#     )
+#
+#     CORES_LETRAS = (
+#         ('Cinza', 'Cinza'),
+#         ('Branco', 'Branco'),
+#         ('Preto', 'Preto'),
+#         ('Vermelho', 'Vermelho'),
+#         ('Dourado', 'Dourado')
+#     )
+#     descricao_resumida = models.CharField(u'Descrição Resumida', max_length=350)
+#     descricao = models.CharField(u'Descrição', max_length=350)
+#     cor_letras = models.CharField(verbose_name=u'Cor das Letras', max_length=255, choices=CORES_LETRAS)
+#     cor_fundo = models.CharField(verbose_name=u'Cor do Fundo', max_length=255, choices=CORES_FUNDO)
+#
+#     def __unicode__(self):
+#         return '{desc_resu} - {cor_letra} sobre fundo {cor_fundo}'.format(desc_resu=self.descricao_resumida,
+#                                                                           cor_letra=self.cor_letras,
+#                                                                           cor_fundo=self.cor_fundo)
+#
+#
+# class Placa(ModeloBasico):
+#     numero = models.CharField(max_length=7)
+#     municipio = models.ForeignKey('municipios.Municipio')
+#     eh_invalida = models.BooleanField(verbose_name=u'É inválida', default=False,
+#                                       help_text=u'Marque caso seja veiculo '
+#                                                 u'policial de investigação com placa "fria"')
+#     tipo_placa = models.ForeignKey('TipoPlaca', verbose_name=u'Cor da Placa',
+#                                    help_text=u'Selecione a cor da placa do veiculo conforme a sua utilização')
+#
+#     veiculo = models.OneToOneField('veiculos.Veiculo', related_name='placa')
+#
+#     def __unicode__(self):
+#         return '{0} - {1}'.format(self.numero, self.municipio)
+
+
 
 SITUACAO_PATRIMONIAL = (
     ('EM UTILIZACAO', 'Em Utilização pelo Estado'),

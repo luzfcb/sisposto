@@ -1,3 +1,4 @@
+from django.core.urlresolvers import reverse_lazy
 from django.shortcuts import render
 
 # Create your views here.
@@ -14,16 +15,20 @@ class VeiculoList(SingleTableMixin, generic.ListView):
 
 
 class VeiculoCreate(generic.CreateView):
-    pass
+    model = models.Veiculo
+    success_url = reverse_lazy('veiculo_list')
 
 
 class VeiculoDetail(generic.DetailView):
-    pass
+    model = models.Veiculo
+    success_url = reverse_lazy('veiculo_list')
 
 
 class VeiculoUpdate(generic.UpdateView):
-    pass
+    model = models.Veiculo
+    success_url = reverse_lazy('veiculo_list')
 
 
 class VeiculoDelete(generic.DeleteView):
-    pass
+    model = models.Veiculo
+    success_url = reverse_lazy('veiculo_list')
