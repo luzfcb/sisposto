@@ -1,0 +1,380 @@
+{% load querystring from django_tables2 %}
+{% load staticfiles %}
+{% load trans blocktrans from i18n %}
+{% load bootstrap3 %}
+{% load cycle from future %}
+
+{#{% if table.page %}#}
+{#    <div class="table-responsive">#}
+{#{% endif %}#}
+{##}
+{#{% block table %}#}
+{#    <table class="table table-condensed table-bordered table-hover"{% if table.attrs %} {{ table.attrs.as_html }}{% endif %}>#}
+{#        {% block table.thead %}#}
+{#            <thead>#}
+{#            <tr>#}
+{#                {% for column in table.columns %}#}
+{#                    {% if column.orderable %}#}
+{#                        <th {{ column.attrs.th.as_html }}><a#}
+{#                                href="{% querystring table.prefixed_order_by_field=column.order_by_alias.next %}">{{ column.header }}</a>#}
+{#                        </th>#}
+{#                    {% else %}#}
+{#                        <th {{ column.attrs.th.as_html }}>{{ column.header }}</th>#}
+{#                    {% endif %}#}
+{#                {% endfor %}#}
+{#            </tr>#}
+{#            </thead>#}
+{#        {% endblock table.thead %}#}
+{#        {% block table.tbody %}#}
+{#            <tbody>#}
+{#            {% for row in table.page.object_list|default:table.rows %} {# support pagination #}
+{#                {% block table.tbody.row %}#}
+{#                    <tr class="{% cycle "odd" "even" %}">#}
+{#                        {% for column, cell in row.items %}#}
+{#                            <td {{ column.attrs.td.as_html }}>{{ cell }}</td>#}
+{#                        {% endfor %}#}
+{#                    </tr>#}
+{#                {% endblock table.tbody.row %}#}
+{#            {% empty %}#}
+{#                {% if table.empty_text %}#}
+{#                    {% block table.tbody.empty_text %}#}
+{#                        <tr>#}
+{#                            <td colspan="{{ table.columns|length }}">{{ table.empty_text }}</td>#}
+{#                        </tr>#}
+{#                    {% endblock table.tbody.empty_text %}#}
+{#                {% endif %}#}
+{#            {% endfor %}#}
+{#            </tbody>#}
+{#        {% endblock table.tbody %}#}
+{#        {% block table.tfoot %}#}
+{#            <tfoot></tfoot>#}
+{#        {% endblock table.tfoot %}#}
+{#    </table>#}
+{#{% endblock table %}#}
+{##}
+{#{% if table.page %}#}
+{#    {% block pagination %}#}
+{#        {% bootstrap_pagination table.page url=request.get_full_path %}#}
+{#        { table.page|pagination }#}
+{#    {% endblock pagination %}#}
+{#{% endif %}#}
+{#</div>#}
+{##}
+
+
+
+        <!-- widget content -->
+        <div class="widget-body no-padding">
+
+            <div id="datatable_tabletools_wrapper" class="form-inline no-footer">
+                <div class="dt-toolbar">
+                    <div class="col-xs-12 col-sm-6">
+                        <div id="datatable_tabletools_filter" class="dataTables_filter"><label><span
+                                class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span> <input
+                                type="search" class="form-control" aria-controls="datatable_tabletools"></label></div>
+                    </div>
+                    <div class="col-sm-6 col-xs-6 hidden-xs">
+                        <div class="DTTT btn-group"><a class="btn btn-default DTTT_button_copy"
+                                                       id="ToolTables_datatable_tabletools_0"><span>Copy</span>
+
+                            <div style="position: absolute; left: 0px; top: 0px; width: 54px; height: 31px; z-index: 99;">
+                                <embed id="ZeroClipboard_TableToolsMovie_5"
+                                       src="{% static "smartadmin/js/plugin/datatables/swf/copy_csv_xls_pdf.swf" %}" loop="false" menu="false"
+                                       quality="best" bgcolor="#ffffff" width="54" height="31"
+                                       name="ZeroClipboard_TableToolsMovie_5" align="middle" allowscriptaccess="always"
+                                       allowfullscreen="false" type="application/x-shockwave-flash"
+                                       pluginspage="http://www.macromedia.com/go/getflashplayer"
+                                       flashvars="id=5&amp;width=54&amp;height=31" wmode="transparent">
+                            </div>
+                        </a><a class="btn btn-default DTTT_button_csv"
+                               id="ToolTables_datatable_tabletools_1"><span>CSV</span>
+
+                            <div style="position: absolute; left: 0px; top: 0px; width: 48px; height: 31px; z-index: 99;">
+                                <embed id="ZeroClipboard_TableToolsMovie_6"
+                                       src="{% static "smartadmin/js/plugin/datatables/swf/copy_csv_xls_pdf.swf" %}" loop="false" menu="false"
+                                       quality="best" bgcolor="#ffffff" width="48" height="31"
+                                       name="ZeroClipboard_TableToolsMovie_6" align="middle" allowscriptaccess="always"
+                                       allowfullscreen="false" type="application/x-shockwave-flash"
+                                       pluginspage="http://www.macromedia.com/go/getflashplayer"
+                                       flashvars="id=6&amp;width=48&amp;height=31" wmode="transparent">
+                            </div>
+                        </a><a class="btn btn-default DTTT_button_xls" id="ToolTables_datatable_tabletools_2"><span>Excel</span>
+
+                            <div style="position: absolute; left: 0px; top: 0px; width: 55px; height: 31px; z-index: 99;">
+                                <embed id="ZeroClipboard_TableToolsMovie_7"
+                                       src="{% static "smartadmin/js/plugin/datatables/swf/copy_csv_xls_pdf.swf" %}" loop="false" menu="false"
+                                       quality="best" bgcolor="#ffffff" width="55" height="31"
+                                       name="ZeroClipboard_TableToolsMovie_7" align="middle" allowscriptaccess="always"
+                                       allowfullscreen="false" type="application/x-shockwave-flash"
+                                       pluginspage="http://www.macromedia.com/go/getflashplayer"
+                                       flashvars="id=7&amp;width=55&amp;height=31" wmode="transparent">
+                            </div>
+                        </a><a class="btn btn-default DTTT_button_pdf"
+                               id="ToolTables_datatable_tabletools_3"><span>PDF</span>
+
+                            <div style="position: absolute; left: 0px; top: 0px; width: 48px; height: 31px; z-index: 99;">
+                                <embed id="ZeroClipboard_TableToolsMovie_8"
+                                       src="{% static "smartadmin/js/plugin/datatables/swf/copy_csv_xls_pdf.swf" %}" loop="false" menu="false"
+                                       quality="best" bgcolor="#ffffff" width="48" height="31"
+                                       name="ZeroClipboard_TableToolsMovie_8" align="middle" allowscriptaccess="always"
+                                       allowfullscreen="false" type="application/x-shockwave-flash"
+                                       pluginspage="http://www.macromedia.com/go/getflashplayer"
+                                       flashvars="id=8&amp;width=48&amp;height=31" wmode="transparent">
+                            </div>
+                        </a><a class="btn btn-default DTTT_button_print" id="ToolTables_datatable_tabletools_4"
+                               title="View print view"><span>Print</span></a></div>
+                    </div>
+                </div>
+
+                <table id="datatable_tabletools
+                       class="table table-bordered table-striped table-condensed table-hover smart-form has-tickbox dataTable no-footer " width="100%"
+                       role="grid" aria-describedby="datatable_tabletools_info" style="width: 100%;">
+                    {% block table.thead %}
+                    <thead>
+
+                    <tr role="row">
+                    {% spaceless %}
+                        {% for column in table.columns %}
+                            {% if column.orderable %}
+                                <th class="sorting_asc" tabindex="0" aria-controls="datatable_tabletools"
+                                rowspan="1" colspan="1" aria-sort="ascending"
+                                aria-label="{{ column.header| capfirst  }}: activate to sort column ascending" style="width: 55px;" {{ column.attrs.th.as_html }} >
+                                <a href="{% querystring table.prefixed_order_by_field=column.order_by_alias.next %}">{{ column.header| capfirst  }}</a>
+                                </th>
+                            {% else %}
+                                <th {{ column.attrs.th.as_html }}>{{ column.header| capfirst }}</th>
+                            {% endif %}
+                        {% endfor %}
+                    {% endspaceless %}
+
+                    </tr>
+
+                    </thead>
+                    {% endblock table.thead %}
+                    {% block table.tbody %}
+                    <tbody>
+{#                    <tr role="row" class="odd">#}
+{#                        <td class="sorting_1">1</td>#}
+{#                        <td><span class="responsiveExpander"></span>Jennifer</td>#}
+{#                        <td>1-342-463-8341</td>#}
+{#                        <td>Et Rutrum Non Associates</td>#}
+{#                        <td>35728</td>#}
+{#                        <td>Fogo</td>#}
+{#                        <td>03/04/14</td>#}
+{#                    </tr>#}
+{#                    <tr role="row" class="even">#}
+{#                        <td class="sorting_1">2</td>#}
+{#                        <td><span class="responsiveExpander"></span>Clark</td>#}
+{#                        <td>1-516-859-1120</td>#}
+{#                        <td>Nam Ac Inc.</td>#}
+{#                        <td>7162</td>#}
+{#                        <td>Machelen</td>#}
+{#                        <td>03/23/13</td>#}
+{#                    </tr>#}
+
+
+            {% for row in table.page.object_list|default:table.rows %} {# support pagination #}
+                {% block table.tbody.row %}
+                    <tr role="row" class="{% cycle "odd" "even" %}">
+                        {% for column, cell in row.items %}
+                            <td {{ column.attrs.td.as_html }}>{{ cell }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endblock table.tbody.row %}
+            {% empty %}
+                {% if table.empty_text %}
+                    {% block table.tbody.empty_text %}
+                        <tr>
+                            <td colspan="{{ table.columns|length }}">{{ table.empty_text }}</td>
+                        </tr>
+                    {% endblock table.tbody.empty_text %}
+                {% endif %}
+            {% endfor %}
+
+
+
+
+
+                    </tbody>
+                    {% endblock table.tbody %}
+                </table>
+
+                <div class="dt-toolbar-footer">
+                    <div class="col-sm-6 col-xs-12 hidden-xs">
+                        <div class="dataTables_info" id="datatable_tabletools_info" role="status" aria-live="polite">
+                            Showing <span class="txt-color-darken">1</span> to <span class="txt-color-darken">10</span>
+                            of <span class="text-primary">100</span> entries
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xs-12">
+                        <div class="dataTables_paginate paging_simple_numbers" id="datatable_tabletools_paginate">
+                            <ul class="pagination pagination-sm">
+                                <li class="paginate_button previous disabled" aria-controls="datatable_tabletools"
+                                    tabindex="0" id="datatable_tabletools_previous"><a href="#">Previous</a></li>
+                                <li class="paginate_button active" aria-controls="datatable_tabletools" tabindex="0"><a
+                                        href="#">1</a></li>
+                                <li class="paginate_button " aria-controls="datatable_tabletools" tabindex="0"><a
+                                        href="#">2</a></li>
+                                <li class="paginate_button " aria-controls="datatable_tabletools" tabindex="0"><a
+                                        href="#">3</a></li>
+                                <li class="paginate_button " aria-controls="datatable_tabletools" tabindex="0"><a
+                                        href="#">4</a></li>
+                                <li class="paginate_button " aria-controls="datatable_tabletools" tabindex="0"><a
+                                        href="#">5</a></li>
+                                <li class="paginate_button disabled" aria-controls="datatable_tabletools" tabindex="0"
+                                    id="datatable_tabletools_ellipsis"><a href="#">…</a></li>
+                                <li class="paginate_button " aria-controls="datatable_tabletools" tabindex="0"><a
+                                        href="#">10</a></li>
+                                <li class="paginate_button next" aria-controls="datatable_tabletools" tabindex="0"
+                                    id="datatable_tabletools_next"><a href="#">Next</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- end widget content -->
+
+<div class="jarviswidget jarviswidget-sortable" id="wid-id-4" data-widget-editbutton="false" role="widget" style="">
+				<!-- widget options:
+				usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+				data-widget-colorbutton="false"
+				data-widget-editbutton="false"
+				data-widget-togglebutton="false"
+				data-widget-deletebutton="false"
+				data-widget-fullscreenbutton="false"
+				data-widget-custombutton="false"
+				data-widget-collapsed="true"
+				data-widget-sortable="false"
+
+				-->
+				<header role="heading"><div class="jarviswidget-ctrls" role="menu">   <a href="javascript:void(0);" class="button-icon jarviswidget-toggle-btn" rel="tooltip" title="" data-placement="bottom" data-original-title="Collapse"><i class="fa fa-minus "></i></a> <a href="javascript:void(0);" class="button-icon jarviswidget-fullscreen-btn" rel="tooltip" title="" data-placement="bottom" data-original-title="Fullscreen"><i class="fa fa-expand "></i></a> <a href="javascript:void(0);" class="button-icon jarviswidget-delete-btn" rel="tooltip" title="" data-placement="bottom" data-original-title="Delete"><i class="fa fa-times"></i></a></div><div class="widget-toolbar" role="menu"><a data-toggle="dropdown" class="dropdown-toggle color-box selector" href="javascript:void(0);"></a><ul class="dropdown-menu arrow-box-up-right color-select pull-right"><li><span class="bg-color-green" data-widget-setstyle="jarviswidget-color-green" rel="tooltip" data-placement="left" data-original-title="Green Grass"></span></li><li><span class="bg-color-greenDark" data-widget-setstyle="jarviswidget-color-greenDark" rel="tooltip" data-placement="top" data-original-title="Dark Green"></span></li><li><span class="bg-color-greenLight" data-widget-setstyle="jarviswidget-color-greenLight" rel="tooltip" data-placement="top" data-original-title="Light Green"></span></li><li><span class="bg-color-purple" data-widget-setstyle="jarviswidget-color-purple" rel="tooltip" data-placement="top" data-original-title="Purple"></span></li><li><span class="bg-color-magenta" data-widget-setstyle="jarviswidget-color-magenta" rel="tooltip" data-placement="top" data-original-title="Magenta"></span></li><li><span class="bg-color-pink" data-widget-setstyle="jarviswidget-color-pink" rel="tooltip" data-placement="right" data-original-title="Pink"></span></li><li><span class="bg-color-pinkDark" data-widget-setstyle="jarviswidget-color-pinkDark" rel="tooltip" data-placement="left" data-original-title="Fade Pink"></span></li><li><span class="bg-color-blueLight" data-widget-setstyle="jarviswidget-color-blueLight" rel="tooltip" data-placement="top" data-original-title="Light Blue"></span></li><li><span class="bg-color-teal" data-widget-setstyle="jarviswidget-color-teal" rel="tooltip" data-placement="top" data-original-title="Teal"></span></li><li><span class="bg-color-blue" data-widget-setstyle="jarviswidget-color-blue" rel="tooltip" data-placement="top" data-original-title="Ocean Blue"></span></li><li><span class="bg-color-blueDark" data-widget-setstyle="jarviswidget-color-blueDark" rel="tooltip" data-placement="top" data-original-title="Night Sky"></span></li><li><span class="bg-color-darken" data-widget-setstyle="jarviswidget-color-darken" rel="tooltip" data-placement="right" data-original-title="Night"></span></li><li><span class="bg-color-yellow" data-widget-setstyle="jarviswidget-color-yellow" rel="tooltip" data-placement="left" data-original-title="Day Light"></span></li><li><span class="bg-color-orange" data-widget-setstyle="jarviswidget-color-orange" rel="tooltip" data-placement="bottom" data-original-title="Orange"></span></li><li><span class="bg-color-orangeDark" data-widget-setstyle="jarviswidget-color-orangeDark" rel="tooltip" data-placement="bottom" data-original-title="Dark Orange"></span></li><li><span class="bg-color-red" data-widget-setstyle="jarviswidget-color-red" rel="tooltip" data-placement="bottom" data-original-title="Red Rose"></span></li><li><span class="bg-color-redLight" data-widget-setstyle="jarviswidget-color-redLight" rel="tooltip" data-placement="bottom" data-original-title="Light Red"></span></li><li><span class="bg-color-white" data-widget-setstyle="jarviswidget-color-white" rel="tooltip" data-placement="right" data-original-title="Purity"></span></li><li><a href="javascript:void(0);" class="jarviswidget-remove-colors" data-widget-setstyle="" rel="tooltip" data-placement="bottom" data-original-title="Reset widget color to default">Remove</a></li></ul></div>
+					<span class="widget-icon"> <i class="fa fa-table"></i> </span>
+					<h2>Condenced table + combined prev. classes </h2>
+
+				<span class="jarviswidget-loader"><i class="fa fa-refresh fa-spin"></i></span></header>
+
+				<!-- widget div-->
+				<div role="content">
+
+					<!-- widget edit box -->
+					<div class="jarviswidget-editbox">
+						<!-- This area used as dropdown edit box -->
+
+					</div>
+					<!-- end widget edit box -->
+
+					<!-- widget content -->
+					<div class="widget-body no-padding">
+						<div class="alert alert-warning no-margin fade in">
+							<button class="close" data-dismiss="alert">
+								×
+							</button>
+							<i class="fa-fw fa fa-info"></i>
+							A combined table effect with all classes mentioned above added to <code>&lt;table&gt;</code>. <code> .table-bordered .table-striped .table-condensed .table-hover .smart-form .has-tickbox </code>
+						</div>
+
+						<div class="table-responsive">
+
+							<table class="table table-bordered table-striped table-condensed table-hover smart-form has-tickbox">
+								<thead>
+									<tr>
+										<th>
+											<label class="checkbox">
+												<input type="checkbox" name="checkbox-inline">
+												<i></i>
+											</label>
+										</th>
+										<th>Column name <a href="javascript:void(0);" class="btn btn-xs btn-default pull-right"><i class="fa fa-filter"></i></a> </th>
+										<th>Column name <a href="javascript:void(0);" class="btn btn-xs btn-default pull-right"><i class="fa fa-filter"></i></a></th>
+										<th>Column name <a href="javascript:void(0);" class="btn btn-xs btn-default pull-right"><i class="fa fa-filter"></i></a></th>
+										<th>Column name <a href="javascript:void(0);" class="btn btn-xs btn-default pull-right"><i class="fa fa-filter"></i></a></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>
+											<label class="checkbox">
+												<input type="checkbox" name="checkbox-inline">
+												<i></i>
+											</label>
+										</td>
+										<td>Row 1</td>
+										<td>Row 2</td>
+										<td>Row 3</td>
+										<td>Row 4</td>
+									</tr>
+									<tr>
+										<td>
+											<label class="checkbox">
+												<input type="checkbox" name="checkbox-inline">
+												<i></i>
+											</label>
+										</td>
+										<td>Row 1</td>
+										<td>Row 2</td>
+										<td>Row 3</td>
+										<td>Row 4</td>
+									</tr>
+									<tr>
+										<td>
+											<label class="checkbox">
+												<input type="checkbox" name="checkbox-inline">
+												<i></i>
+											</label>
+										</td>
+										<td>Row 1</td>
+										<td>Row 2</td>
+										<td>Row 3</td>
+										<td>Row 4</td>
+									</tr>
+									<tr>
+										<td>
+											<label class="checkbox">
+												<input type="checkbox" name="checkbox-inline">
+												<i></i>
+											</label>
+										</td>
+										<td>Row 1</td>
+										<td>Row 2</td>
+										<td>Row 3</td>
+										<td>Row 4</td>
+									</tr>
+									<tr>
+										<td>
+											<label class="checkbox">
+												<input type="checkbox" name="checkbox-inline">
+												<i></i>
+											</label>
+										</td>
+										<td>Row 1</td>
+										<td>Row 2</td>
+										<td>Row 3</td>
+										<td>Row 4</td>
+									</tr>
+									<tr>
+										<td>
+											<label class="checkbox">
+												<input type="checkbox" name="checkbox-inline">
+												<i></i>
+											</label>
+										</td>
+										<td>Row 1</td>
+										<td>Row 2</td>
+										<td>Row 3</td>
+										<td>Row 4</td>
+									</tr>
+								</tbody>
+							</table>
+
+						</div>
+
+					</div>
+					<!-- end widget content -->
+
+				</div>
+				<!-- end widget div -->
+
+			</div>
