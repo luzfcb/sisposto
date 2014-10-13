@@ -1,3 +1,6 @@
+.. image:: https://badge.waffle.io/luzfcb/sisposto.png?label=ready&title=Ready 
+ :target: https://waffle.io/luzfcb/sisposto
+ :alt: 'Stories in Ready'
 sgt
 ==============================
 
