@@ -1,6 +1,3 @@
-.. image:: https://badge.waffle.io/luzfcb/sisposto.png?label=ready&title=Ready 
- :target: https://waffle.io/luzfcb/sisposto
- :alt: 'Stories in Ready'
 sgt
 ==============================
 
@@ -21,6 +18,10 @@ sgt
 
 .. image:: https://api.coderwall.com/luzfcb/endorsecount.png
         :target: https://coderwall.com/luzfcb
+
+.. image:: https://badge.waffle.io/luzfcb/sisposto.png?label=ready&title=Ready 
+ :target: https://waffle.io/luzfcb/sisposto
+ :alt: 'Stories in Ready'        
 
 
 Sistema *Experimental* de Gerenciamento de Postos de Combustivel e Frota de Veiculos
