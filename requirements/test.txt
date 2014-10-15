@@ -28,5 +28,10 @@ model_mommy==1.2.2
 
 # http://pytest-django.readthedocs.org/en/latest/
 #pytest-django
+splinter
+
+nose
+
+django-nose
 
 

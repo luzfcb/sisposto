@@ -34,6 +34,17 @@ class Local(Common):
     MIDDLEWARE_CLASSES = Common.MIDDLEWARE_CLASSES + ('debug_toolbar.middleware.DebugToolbarMiddleware',)
     INSTALLED_APPS += ('debug_toolbar',)
 
+    INSTALLED_APPS += ('django_nose',)
+    TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+
+    NOSE_ARGS = [
+        '--verbosity=2',
+        '--with-coverage',
+        '--cover-package=sisposto'
+        # '--with-notify',
+        # '--pdb-failures',
+    ]
+
     INTERNAL_IPS = ('127.0.0.1',)
 
     DEBUG_TOOLBAR_CONFIG = {
@@ -49,7 +60,7 @@ class Local(Common):
     #DATABASES = values.DatabaseURLValue('postgres://localhost/projetosgt')
     #DB_NAME = 'sqlite:////{0}.sqlite'.format(join(BASE_DIR, 'projeto_posto'))
 
-    if 'Windows' in platform.system():
+    if 'Windows' in platform.system():  # pragma: no cover
         DB_NAME = 'sqlite:\\{0}.sqlite'.format(join(BASE_DIR, 'projeto_posto'))
     else:
         DB_NAME = 'sqlite:////{0}.sqlite'.format(join(BASE_DIR, 'projeto_posto'))
@@ -60,8 +71,8 @@ class Local(Common):
     # Your local stuff: Below this line define 3rd party libary settings
 
 
-# Hack feio para que o autocompletar do Pycharm Funcione
-if 1 == 2:
+# Hack feio para que o autocompletar do Pycharm Funcione quando se usa django-configuration
+if 1 == 2:  # pragma: no cover
     INSTALLED_APPS = (
         # Default Django apps:
         'django.contrib.auth',
