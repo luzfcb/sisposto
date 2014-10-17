@@ -13,11 +13,11 @@
 {% endblock %}
 
 
-{% block content %}
+{% block content_define %}
 
 
-    {% if object_list %}
-        {% render_table object_list "django_tables2/table.html"%}
+    {% if table %}
+        {% render_table table "django_tables2/table.html"%}
     {% else %}
         Não há itens
     {% endif %}
