@@ -51,6 +51,18 @@ THIRD_PARTY_URLS =  patterns('',
 
 urlpatterns += THIRD_PARTY_URLS
 
+
+
+js_info_dict = {
+    'packages': ('django.conf',),
+}
+
+urlpatterns += patterns('',
+   url(r'^inplaceeditform/', include('inplaceeditform.urls')),
+   url(r'^jsi18n$', 'django.views.i18n.javascript_catalog', js_info_dict),
+)
+
+
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns += staticfiles_urlpatterns()

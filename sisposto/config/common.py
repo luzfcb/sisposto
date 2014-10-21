@@ -22,7 +22,6 @@ BASE_DIR = dirname(dirname(__file__))
 
 
 class Common(Configuration):
-
     # APP CONFIGURATION
     # DJANGO_APPS
     DJANGO_APPS = (
@@ -53,6 +52,11 @@ class Common(Configuration):
         'municipios',
         'bootstrap3',
         'datetimewidget',
+        # it is very important that this app is before that inplaceeditform and inplaceeditform_extra_fields
+        'inplaceeditform_bootstrap',
+        'inplaceeditform',
+        'inplaceeditform_extra_fields',  # this is optional but recommended
+        'bootstrap3_datetime',  # this is optional but recommended
 
     )
 
@@ -103,7 +107,7 @@ class Common(Configuration):
     # SECRET CONFIGURATION
     # See: https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
     # Note: This key only used for development and testing.
-    #       In production, this is changed to a values.SecretValue() setting
+    # In production, this is changed to a values.SecretValue() setting
     SECRET_KEY = "CHANGEME!!!"
     # END SECRET CONFIGURATION
 

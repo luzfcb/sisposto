@@ -38,7 +38,7 @@ class Local(Common):
     TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 
     NOSE_ARGS = [
-        '--verbosity=2',
+        '--verbosity=0',
         '--with-coverage',
         '--cover-package=sisposto'
         # '--with-notify',
@@ -101,6 +101,12 @@ if 1 == 2:  # pragma: no cover
         'datetimewidget',
         'apps.posto',
         'apps.veiculos',
+        # it is very important that this app is before that inplaceeditform and inplaceeditform_extra_fields
+        'inplaceeditform_bootstrap',
+        'inplaceeditform',
+        'inplaceeditform_extra_fields',  # this is optional but recommended
+        'bootstrap3_datetime',  # this is optional but recommended
+
     )
     MIDDLEWARE_CLASSES = (
         # Make sure djangosecure.middleware.SecurityMiddleware is listed first

@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load inplace_edit %}
 <!DOCTYPE html>
 <html lang="{{ LANGUAGE_CODE|default:"en-us" }}">
 <head>
@@ -1004,6 +1005,7 @@ Use search to find needed section.
     {% include 'autocomplete_light/static.html' %}
 {% endblock autocomplete_light %}
 
+{% inplace_toolbar %}
 
 <!-- Your GOOGLE ANALYTICS CODE Below -->
 <script type="text/javascript">

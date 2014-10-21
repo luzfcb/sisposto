@@ -60,3 +60,8 @@ https://github.com/yourlabs/django-autocomplete-light/archive/v2.zip#egg=django-
 django-bootstrap3
 
 django-datetime-widget
+
+django-inplaceedit
+django-inplaceedit-extra-fields
+django-inplaceedit-bootstrap
+django-bootstrap3-datetimepicker

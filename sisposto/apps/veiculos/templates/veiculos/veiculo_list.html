@@ -14,17 +14,30 @@
 
 
 {% block content_define %}
+    {% load inplace_edit %}
+    {% inplace_static %} {% comment %} or inplace_static {% endcomment %}
 
 
-    {% if table %}
-        {% render_table table "django_tables2/table.html"%}
-    {% else %}
-        Não há itens
-    {% endif %}
 
-    {% if form %}
-        {% crispy form %}
-    {% endif %}
+   <div class="smart-form">
+       {% for v in object_list%}
+            {% inplace_edit "v.modelo" %}
+        {% endfor %}
+
+   </div>
+{#   <div class="body">#}
+{#       {% inplace_edit "content.body|safe|truncatewords_html:15" %}#}
+{#   </div>#}
+
+{#    {% if table %}#}
+{#        {% render_table table "django_tables2/table_inplace_edit.html"%}#}
+{#    {% else %}#}
+{#        Não há itens#}
+{#    {% endif %}#}
+
+{#    {% if form %}#}
+{#        {% crispy form %}#}
+{#    {% endif %}#}
 
 
 {% endblock %}
