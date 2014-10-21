@@ -1,4 +1,5 @@
 {% extends "veiculos/veiculo_base.html" %}
+{% load coffee_table %}
 {% load staticfiles %}
 {% block extrastyle %}
      <link rel="stylesheet" type="text/css" href="{% static "css/tables2/bootstrap-tables2.css" %}">
@@ -15,12 +16,13 @@
 
 {% block content_define %}
 
-
-    {% if table %}
-        {% render_table table "django_tables2/table.html"%}
-    {% else %}
-        Não há itens
-    {% endif %}
+{##}
+{#    {% if table %}#}
+{#        {% render_table table "django_tables2/table.html"%}#}
+{#    {% else %}#}
+{#        Não há itens#}
+{#    {% endif %}#}
+    {% coffee_table object_list field_accessors='modelo, content_type__app_label' paginate_by='10' table_class='table table-condensed' checkbox_column=True primary_key_column=True help_text=True %}
 
     {% if form %}
         {% crispy form %}

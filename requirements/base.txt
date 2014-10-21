@@ -60,3 +60,8 @@ https://github.com/yourlabs/django-autocomplete-light/archive/v2.zip#egg=django-
 django-bootstrap3
 
 django-datetime-widget
+
+linaro-django-pagination
+django_resort
+django-tag-parser
+django_coffee_table

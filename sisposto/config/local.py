@@ -81,6 +81,7 @@ if 1 == 2:  # pragma: no cover
         'django.contrib.sites',
         'django.contrib.messages',
         'django.contrib.staticfiles',
+        'django.contrib.humanize',
 
         # Useful template tags:
         # 'django.contrib.humanize',
@@ -101,6 +102,9 @@ if 1 == 2:  # pragma: no cover
         'datetimewidget',
         'apps.posto',
         'apps.veiculos',
+        'linaro_django_pagination',
+        'resort',
+        'coffee_table',
     )
     MIDDLEWARE_CLASSES = (
         # Make sure djangosecure.middleware.SecurityMiddleware is listed first

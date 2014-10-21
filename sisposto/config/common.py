@@ -33,6 +33,7 @@ class Common(Configuration):
         'django.contrib.sites',
         'django.contrib.messages',
         'django.contrib.staticfiles',
+        'django.contrib.humanize',
 
         # Useful template tags:
         # 'django.contrib.humanize',
@@ -53,6 +54,10 @@ class Common(Configuration):
         'municipios',
         'bootstrap3',
         'datetimewidget',
+        'coffee_table',
+        'linaro_django_pagination',
+        'resort',
+
 
     )
 
@@ -82,6 +87,7 @@ class Common(Configuration):
         'django.middleware.clickjacking.XFrameOptionsMiddleware',
         'account.middleware.LocaleMiddleware',
         'account.middleware.TimezoneMiddleware',
+        'linaro_django_pagination.middleware.PaginationMiddleware',
     )
     # END MIDDLEWARE CONFIGURATION
 
