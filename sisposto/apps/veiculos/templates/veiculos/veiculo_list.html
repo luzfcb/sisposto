@@ -5,7 +5,7 @@
 {% endblock %}
 
 
-{% load crispy_forms_tags %}
+{% load crispy_forms_filters %}
 {% load render_table from django_tables2 %}
 
 {% block content_title %}
@@ -17,13 +17,20 @@
 
 
     {% if table %}
-        {% render_table table "django_tables2/table.html"%}
+        {% render_table table "django_tables2/tables4.html"%}
     {% else %}
         Não há itens
     {% endif %}
 
     {% if form %}
-        {% crispy form %}
+        <form method="post">
+        {% csrf_token %}
+            {{ form | crispy }}
+            <label>
+                <input type="submit">
+            </label>
+        </form>
+
     {% endif %}
 
 

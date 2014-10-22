@@ -7,8 +7,9 @@ from apps.veiculos import forms
 
 class VeiculoAdmin(admin.ModelAdmin):
 
-    list_display = ("fabricante",
+    list_display = (
                  "modelo",
+                 "fabricante",
                  "ano_fabricacao", "ano_modelo", "cor_predominante", "chassi", "renavan", "tipo_combustivel",
                  "numero_portas", "consumo_medio_por_litro_teorico", "volume_maximo_tanque", "lotacao_maxima",
                  "tipo_veiculo", "orgao", "eh_caracterizado", "situacao_patrimonial",
