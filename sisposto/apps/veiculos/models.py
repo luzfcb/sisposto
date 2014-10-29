@@ -174,6 +174,7 @@ class Veiculo(ModeloBasico):
     )
 
     # informacoes de controle veicular
+    # identificacao_patrimonial = models.CharField(max_length=100, null=True)
     orgao = models.ForeignKey('core.Orgao')
     eh_caracterizado = models.NullBooleanField(verbose_name=u'É caracterizado?',
                                            default=None,
