@@ -20,15 +20,18 @@ class VeiculoCreate(generic.CreateView):
 
 
 class VeiculoDetail(generic.DetailView):
+    pk_url_kwarg = 'veiculo_pk'
     model = models.Veiculo
     success_url = reverse_lazy('veiculo_list')
 
 
 class VeiculoUpdate(generic.UpdateView):
+    pk_url_kwarg = 'veiculo_pk'
     model = models.Veiculo
     success_url = reverse_lazy('veiculo_list')
 
 
 class VeiculoDelete(generic.DeleteView):
+    pk_url_kwarg = 'veiculo_pk'
     model = models.Veiculo
     success_url = reverse_lazy('veiculo_list')
