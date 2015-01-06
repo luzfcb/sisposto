@@ -3,3 +3,5 @@
 pylibmc>=1.2.3
 django-heroku-memcacheify==0.7
 -r requirements/production.txt
+# requirements management
+yolk3k
